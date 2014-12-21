@@ -32,6 +32,13 @@ exports.initLocals = function(req, res, next) {
 		{ label: 'Contact',		key: 'contact',		href: '/contact' }
 	];
 	
+    //Information for the right side
+    locals.navRight = [
+        { label: 'Contact Us',  key:'contactUs',    href: '/contact-us' },
+        { setting: 'Twitter',   href: 'http://twitter.com' },
+        { setting: 'Facebook',   href: 'http://facebook.com' }
+    ];
+    
 	locals.user = req.user;
 	
 	next();

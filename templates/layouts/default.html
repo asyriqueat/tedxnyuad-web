@@ -12,7 +12,10 @@
 
 		{# Customise the stylesheet for your site by editing /public/styles/site.sass #}
 		<link href="/styles/site.css" rel="stylesheet">
-
+        
+        {# Include google fonts #}
+        <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700|Open+Sans:400,700' rel='stylesheet' type='text/css'>        
+        
 		{# This file provides the default styling for the KeystoneJS Content Editor #}
 		{% if user and user.canAccessKeystone %}
 			<link href="/keystone/styles/content/editor.min.css" rel="stylesheet">
@@ -32,46 +35,77 @@
 		{% block head %}{% endblock %}
 	</head>
 	<body>
+        {# HEADER }
+        {% include "header.html" %}
+        
+        {# HEADER #}
+        <div id="header">
 
-		{# HEADER #}
-		<div id="header" class="container">
+            {# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
+               ... or completely change this header to suit your design. #}
+            <div role="navigation" class="navbar">
+                <div class="container-fluid navbar-logo hidden-xs">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-5">
+                                <a href="/"><img src="images/logo.png" height="60px"></a>
+                            </div>
+                            <div class="col-xs-7">
+                                <div class="float-container">
+                                    <p class="tag text-right">Thursday 23 March, 2015</br>New York University</br>Saadiyat Island, Abu Dhabi</p>
+                                    <button class="btn btn-primary btn-right">Volunteer</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-fluid">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <div class="visible-xs">
+                                <a href="/"><img src="images/logo.png" height="40px"></a>
+                            </div>
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav navbar-left">
+                                    {% for link in navLinks %}
+                                        <li class="{{ 'active' if link.key == section else '' }}">
+                                            <a href="{{ link.href }}">{{ link.label }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
 
-			{# Customise your site"s navigation by changing the navLinks Array in ./routes/middleware.js
-			   ... or completely change this header to suit your design. #}
-			<div role="navigation" class="navbar navbar-default">
-				<div class="container-fluid">
-					<div class="navbar-header">
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-							<span class="sr-only">Toggle navigation</span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</button>
-						<a class="navbar-brand" href="/">TEDxNYUAD</a>
-					</div>
-					<div class="collapse navbar-collapse">
-						<ul class="nav navbar-nav navbar-left">
-							{% for link in navLinks %}
-								<li class="{{ 'active' if link.key == section else '' }}">
-									<a href="{{ link.href }}">{{ link.label }}</a>
-								</li>
-							{% endfor %}
-						</ul>
-						<ul class="nav navbar-nav navbar-right">
-							{% if user %}
-								{% if user.canAccessKeystone %}
-								<li><a href="/keystone">Open Keystone</a></li>
-								{% endif %}
-								<li><a href="/keystone/signout">Sign Out</a></li>
-							{% else %}
-								<li><a href="/keystone/signin">Sign In</a></li>
-							{% endif %}
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-
+                                <ul class="nav navbar-nav navbar-right">
+                                    <div class="half-border"></div>
+                                    {% for link in navRight %}
+                                        {% if link.label %}
+                                        <li class="{{ 'active' if link.key == section else '' }}">
+                                            <a href="{{ link.href }}">{{ link.label }}</a>
+                                        </li>
+                                        {% else %}
+                                            {% if link.setting=="Twitter" %}
+                                                <li class="icon hidden-xs"><a href="http://facebook.com"><span class="icon-facebook-circled"></span></a></li>
+                                            {% elif link.setting=="Facebook" %}
+                                                <li class="icon hidden-xs"><a href="http://twitter.com"><span class="icon-twitter-bird"></span></a></li>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% endfor %}
+                                </ul>
+                            </div>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
 		{# BODY #}
 		<div id="body">
 			{# NOTE:

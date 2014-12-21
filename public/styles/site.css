@@ -4808,16 +4808,188 @@ button.close {
     display: none !important; }
  }
 
+@font-face {
+  font-family: 'fontello';
+  src: url('/fonts/fontello.eot?16097091');
+  src: url('/fonts/fontello.eot?16097091#iefix') format('embedded-opentype'), url('/fonts/fontello.woff?16097091') format('woff'), url('/fonts/fontello.ttf?16097091') format('truetype'), url('/fonts/fontello.svg?16097091#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal; }
+
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('/font/fontello.svg?16097091#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 10px;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: 0.2em;
+  /* you can be more comfortable with increased icons size */
+  font-size: 150%; }
+
+.icon-facebook-circled:before {
+  content: '\e800'; }
+
+/* '' */
+.icon-twitter-bird:before {
+  content: '\e801'; }
+
+/* '' */
+.icon-youtube:before {
+  content: '\e802'; }
+
+/* '' */
+body {
+  padding-top: 150px; }
+
 #header {
-  margin-top: 30px; }
+  height: 150px;
+  padding-top: 25px;
+  border-bottom: 3px #e62b1e solid;
+  background-color: #fff;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  z-index: 1030; }
+  #header .navbar-logo {
+    border-bottom: 1px #cccccc solid;
+    padding-bottom: 25px; }
+  #header .navbar-header {
+    float: none; }
+
+.navbar-nav li a, .nav li a {
+  margin-right: 50px;
+  padding: 7px 0px 8px 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #000; }
+.navbar-nav li a:hover, .nav li a:hover {
+  background-color: inherit;
+  border-bottom: 3px solid #000;
+  color: inherit; }
+.navbar-nav li a:focus, .nav li a:focus {
+  border-bottom: inherit;
+  background-color: inherit;
+  color: inherit; }
+.navbar-nav li.active a, .nav li.active a {
+  border-bottom: 3px solid #000; }
+.navbar-nav li.icon, .nav li.icon {
+  pad-right: 5px; }
+  .navbar-nav li.icon a, .nav li.icon a {
+    margin: 0;
+    font-size: 120%;
+    color: #808080; }
+.navbar-nav li.icon a:hover, .nav li.icon a:hover {
+  background-color: none;
+  border-bottom: none;
+  color: #000;
+  -moz-transition: color 0.2s ease-in;
+  -o-transition: color 0.2s ease-in;
+  -webkit-transition: color 0.2s ease-in;
+  transition: color 0.2s ease-in; }
+
+.half-border {
+  margin-left: -20px;
+  border-left: 1px solid #cccccc;
+  position: absolute;
+  top: 8px;
+  bottom: 11px; }
+
+.navbar-nav.navbar-right {
+  position: relative; }
+
+.navbar-nav.navbar-right:last-child {
+  margin: 0; }
+
+.nav > li > a:hover, .nav > li > a:focus {
+  background-color: none; }
 
 #footer {
   margin-top: 30px;
   border-top: 1px solid #eeeeee;
   padding-top: 30px;
-  color: #777777; }
+  color: #cccccc; }
 
 .gallery-image img {
   display: block;
   max-width: 100%;
   height: auto; }
+
+p.tag {
+  font-family: 'Droid Serif', serif;
+  font-size: 12px;
+  color: #808080;
+  margin: 0; }
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 40px; }
+
+  #header {
+    height: 40px;
+    padding: 0;
+    border-bottom: none; }
+
+  .navbar-toggle .icon-bar {
+    background-color: #e62b1e;
+    padding: 0; }
+
+  .container > .navbar-header {
+    padding: 0;
+    background-color: #fff;
+    border-bottom: 3px #e62b1e solid;
+    margin-right: -30px;
+    margin-left: -30px; }
+
+  .navbar-header img {
+    margin: 5px 0 0px 15px; }
+
+  .navbar-nav {
+    margin: 0; }
+
+  .navbar-nav li a, .navbar-nav li a:hover, .nav li a, .nav li a:hover {
+    border-bottom: inherit; }
+  .navbar-nav li.active a, .nav li.active a {
+    border-bottom: inherit; }
+ }
+
+.btn-primary {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: #e62b1e;
+  border: none; }
+
+.btn-primary:hover {
+  background-color: #000;
+  -moz-transition: background-color 0.2s ease-in;
+  -o-transition: background-color 0.2s ease-in;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in; }
+
+.btn-right, .float-container {
+  float: right; }
+  .btn-right p, .btn-right btn-primary, .float-container p, .float-container btn-primary {
+    float: left;
+    margin-right: 15px; }
