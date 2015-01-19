@@ -2,6 +2,7 @@ $helvetica: 'Open Sans',sans-serif;
 $droid: 'Droid Serif',serif;
 $red: #e62b1e;
 $gray-light: #cccccc;
+$gray-lighter: #eeeeee;
 $gray-dark: #808080;
 
 
@@ -64,15 +65,40 @@ $gray-dark: #808080;
 .icon-youtube:before { content: '\e802'; } /* '' */
 
 
+//---------------------------------------------------|
+//--- HEADERS AND PARAGRAPHS                         |
+//---------------------------------------------------|
+
+h2{
+    font-family:$helvetica;
+    font-size:72px;
+    color:$red;
+}
+h3{
+    font-family: $helvetica;
+    font-size:24px;
+    color:#000;
+}
+h4{
+    font-family:$helvetica;
+    font-size:16px;
+    color:$red; 
+}
+p{
+    font-family:$droid;
+    font-size:16px;
+    color:#000;   
+}
 
 //---------------------------------------------------|
-//--- Miscellaneous                                  |
+//--- Templating                                     |
 //---------------------------------------------------|
 
 body{
     padding-top:150px;
 }
 
+//-----HEADER----------------------------------------
 #header{
     height:150px;
     padding-top:25px;
@@ -89,11 +115,19 @@ body{
     }
     .navbar-header{
         float:none;
+        .navbar-collapse{
+            padding-left:0px;
+            padding-right:0px;
+        }
     }
 }
 
+.navbar{
+    border:none;
+}
+
 .navbar-nav, .nav{    
-    li{ 
+    li{
         a{
             margin-right: 50px;
             padding:7px 0px 8px 0px;
@@ -106,18 +140,30 @@ body{
             background-color: inherit;
             border-bottom: 3px solid #000;
             color:inherit;
+            padding-bottom: 9px;
+            @media (max-width: 767px) {  //Extra small devices only
+                padding-bottom: 8px;
+            }
         }
         a:focus{
             border-bottom:inherit;
             background-color: inherit;
             color:inherit;
         }
+        
+        @media (max-width: 767px) {  //Extra small devices only
+            padding:15px 15px 0 15px;
+        }
     }
     li.active a{
         border-bottom: 3px solid #000;
+        padding-bottom: 9px;
+        @media (max-width: 767px) {  //Extra small devices only
+            padding-bottom: 8px;
+        }
     }
     li.icon{
-        pad-right:5px;
+        padding-right:5px;
         a{
             margin:0;
             font-size:120%;
@@ -152,12 +198,20 @@ body{
     background-color:none;   
 }
 
+//-----FOOTER----------------------------------------
 #footer {
 	margin-top: 30px;
 	border-top: 1px solid $gray-lighter;
-	padding-top: 30px;
 	color: $gray-light;
+    background-color:#000;
+    border:none;
+    padding-top:25px;
+    padding-bottom:25px;
+    .container p{
+        margin-left:-15px;
+    }
 }
+
 
 .gallery-image img{
     display: block;
@@ -165,7 +219,7 @@ body{
     height: auto;
 }
 
-p.tag{
+p.tag, #footer{
     font-family:$droid;
     font-size:12px;
     color:$gray-dark;
@@ -174,7 +228,7 @@ p.tag{
 
 
 
-@media (max-width: 767px) { 
+@media (max-width: 767px) {  //Extra small devices only
     body {
        padding-top:40px; 
     }
@@ -214,6 +268,81 @@ p.tag{
 }
 
 
+//---------------------------------------------------|
+//--- Sections                                       |
+//---------------------------------------------------|
+.standard, .blog{
+    padding-top:25px;
+    padding-bottom:25px;
+}
+
+.focus{
+    padding-top:150px;
+    padding-bottom:150px;
+    background-color:black;
+    
+    
+    .separator{
+        border-left:1px solid $gray-light;
+    }
+
+    
+    p{
+        color:white;
+    }
+    
+    @media (max-width: 991px) { //Smaller than medium devices
+        .separator{
+            padding-top:25px;
+            padding-bottom:25px;
+            border-left:none;
+        }
+    }
+    
+    @media (max-width: 767px) {  //Extra small devices only
+        padding-top:75px;
+        padding-bottom:75px;
+    }
+}
+
+.panorama{
+    width:100%;
+    background-size:cover;
+    position:relative;
+    z-index:1;
+    
+    img {
+        width:100%;
+        position:relative;
+        z-index: 2;
+    }
+    
+    .container{
+        position:relative;
+    }
+    
+    .panorama-text{
+        position:absolute;
+        z-index: 3;
+        background-color:#000;
+        bottom:25px;
+        color:#fff;
+        padding-top:15px;
+        padding-bottom:15px;
+    }
+    
+    @media (max-width: 767px) {  //Extra small devices only
+        .container{
+            background-color:#000;
+            position:initial;
+        }
+        .panorama-text{
+            position:inherit;
+            z-index: inherit;
+            padding:15px 0 15px 0;
+        }
+    }
+}
 
 
 //---------------------------------------------------|
