@@ -7,10 +7,10 @@ exports = module.exports = function(req, res) {
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-
-    	locals.panoramaText = '<h4>Jovan Jovancevic</h4>My talk is about raising awareness of and teach training methods connected to playing blindfold chess.';
+	locals.section = 'event';
+	locals.panoramaText = '<h4>Conference Center</h4>The TEDx event will take place in the modern Conference Center at the new campus of New York University Abu Dhabi.';
     
 	// Render the view
-	view.render('index');
+	view.render('event');
 	
 };

@@ -26,16 +26,16 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [
-		{ label: 'Home',		key: 'home',		href: '/' },
-		{ label: 'Blog',		key: 'blog',		href: '/blog' },
-		{ label: 'Gallery',		key: 'gallery',		href: '/gallery' },
-		{ label: 'Contact',		key: 'contact',		href: '/contact' }
+		{ label: 'Event',	    	key: 'event',		href: '/event' },
+		{ label: 'Speakers',		key: 'speakers',    href: '/speakers' },
+		{ label: 'Blog',	 	    key: 'blog',		href: '/blog' },
+		{ label: 'About',	      	key: 'about',		href: '/about' }
 	];
 	
     //Information for the right side
     locals.navRight = [
-        { label: 'Contact Us',  key:'contactUs',    href: '/contact-us' },
-        { setting: 'Twitter',   href: 'http://twitter.com' },
+        { label:   'Contact Us', key:'contact',    href: '/contact' },
+        { setting: 'Twitter',    href: 'http://twitter.com' },
         { setting: 'Facebook',   href: 'http://facebook.com' }
     ];
     

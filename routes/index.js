@@ -37,9 +37,11 @@ exports = module.exports = function(app) {
 	
 	// Views
 	app.get('/', routes.views.index);
-	app.get('/blog/:category?', routes.views.blog);
-	app.get('/blog/post/:post', routes.views.post);
+    app.get('/blog', routes.views.blog);
+	//app.get('/blog/:category?', routes.views.blog); //Old
+	//app.get('/blog/post/:post', routes.views.post); //Old
 	app.get('/gallery', routes.views.gallery);
+    app.get('/event', routes.views["event"]); //We need to escape "event" here, since .event is reserved?
 	app.all('/contact', routes.views.contact);
 	
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

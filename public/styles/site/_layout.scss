@@ -325,7 +325,6 @@ p.tag, #footer{
         position:absolute;
         z-index: 3;
         background-color:#000;
-        bottom:25px;
         color:#fff;
         padding-top:15px;
         padding-bottom:15px;
@@ -368,4 +367,7 @@ p.tag, #footer{
         float:left;
         margin-right:15px;
     }
+}
+.border-right{
+    border-right:1px solid $gray-light;
 }

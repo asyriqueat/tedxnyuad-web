@@ -1,13 +1,18 @@
 {% extends "templates/layouts/default.html" %}
+ 
 
 {% block content %}
 
     {# Adds the section styled to call upon attention #}
 
-    {% include "templates/layouts/section-focus.html" %}
-    
-    {% include "templates/layouts/section-panorama.html" %}
+    {% import "templates/layouts/section-panorama.html" as panorama %}
+
+    {{ panorama.panorama('speakers/Jovan.jpg',content=panoramaText, right='15px') }}
+
 
     {% include "templates/layouts/section-blog.html" %}
+
+    {% include "templates/layouts/section-standard.html" %}
+
 
 {% endblock %}

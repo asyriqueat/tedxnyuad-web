@@ -5054,7 +5054,6 @@ p.tag, #footer {
     position: absolute;
     z-index: 3;
     background-color: #000;
-    bottom: 25px;
     color: #fff;
     padding-top: 15px;
     padding-bottom: 15px; }
@@ -5088,3 +5087,6 @@ p.tag, #footer {
   .btn-right p, .btn-right btn-primary, .float-container p, .float-container btn-primary {
     float: left;
     margin-right: 15px; }
+
+.border-right {
+  border-right: 1px solid #cccccc; }

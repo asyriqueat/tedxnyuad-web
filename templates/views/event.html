@@ -1,0 +1,11 @@
+{% extends "templates/layouts/default.html" %}
+
+{% block content %}
+
+    {% import "templates/layouts/section-focus.html" as focus %}
+    {{ focus.focus() }}
+
+    {% import "templates/layouts/section-panorama.html" as panorama %}
+    {{ panorama.panorama('venue.jpg',content=panoramaText) }}
+
+{% endblock %}
