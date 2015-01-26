@@ -4,8 +4,9 @@ $( document ).ready(function() {
     $('a[id^="speaker-"]').click( function (e){
         if(!speaker){
             $("#speakers-overview").fadeOut(200);
-            $("speakers-menu").removeClass("hidden");
+            $("#speakers-menu").removeClass("hidden");
             $("#speakers-menu").slideDown(300);
+            $("#speakers-presentation").removeClass("hidden");
             $("#speakers-presentation").fadeIn(200);
         }else{
             //Load new background image and change content
