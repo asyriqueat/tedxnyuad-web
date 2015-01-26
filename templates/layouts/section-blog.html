@@ -1,72 +1,70 @@
-<div class="container blog">
-    <div class="row">
-        <div class="col-xs-12">
-            <h3>Latest from the Organizers</h3>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>Speaker List Composed</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <img width="100%" src="http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <p class="tag">4 Comments</p>
-                </div>
-                <div class="col-xs-6">
-                    <p class="tag text-right">12/21/15</p>
-                </div>
-            </div>
-        </div>
+{# This is the section which calls upon attention from the user. 
+   @Frederik 25/01/15 #}
+
+{# The standard macro requires the following attributes to be set:
+
+   content.posts        The attribute which holds an array of posts in t
+                        the format [{post-1}, {post-2}, ..., {post-N}].
+   content.posts.post   The post information which is required with
+                        more than one post present.
+        post.title      The post title.
+        post.comments   The number of comments.
+        post.published  The publish date of the post.
+        post.src        The link to the thumbnail. 
+
+   content.posts.post   The post information required with one post
+                        only.
+        post.title      The post title.
+        post.text       The post text. This text will be cut off at 
+                        a word near the 900th character. #}
+
+{% macro standard(content) %}
+    <div class="container blog">
         
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>Speaker List Composed</h4>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <img width="100%" src="http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg"/>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <p class="tag">4 Comments</p>
-                </div>
-                <div class="col-xs-6">
-                    <p class="tag text-right">12/21/15</p>
-                </div>
-            </div>
-        </div>
+        {# If there is only one post, then do not display an overview,
+           but some of the post instead. #}
         
-        <div class="col-sm-4">
+        {% if content.posts | length > 1 %}
             <div class="row">
                 <div class="col-xs-12">
-                    <h4>Speaker List Composed</h4>
+                    <h3>Latest from the Organizers</h3>
+                </div>
+            </div>
+            <div class="row">
+                {% for post in content.posts %}
+                <div class="col-sm-4">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h4>{{ post.title }}</h4>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <img width="100%" src=" {{ post.src }}"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <p class="tag">{{ post.comments }}</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <p class="tag text-right">{{ post.published }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>{{ content.posts[0].title }}</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <img width="100%" src="http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg"/>
+                    {{ content.posts[0].text|truncate(900,True) }} <a href=''>Read more &rarr;</a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-6">
-                    <p class="tag">4 Comments</p>
-                </div>
-                <div class="col-xs-6">
-                    <p class="tag text-right">12/21/15</p>
-                </div>
-            </div>
-        </div>
+        {% endif %}
     </div>
-</div>
-            
+{% endmacro %}

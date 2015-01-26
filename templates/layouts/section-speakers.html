@@ -1,0 +1,69 @@
+{# This is the standard section.
+   @Frederik 25/01/15 #}
+
+{# Include the js requirement #}
+
+
+{# The standard macro requires the following attributes to be set:
+
+   content.title    The title.
+   content.text     The text to be displayed. Takes html-formatting. #}
+
+{# Data Model
+––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    arguments: { speakers:[{name:'Frederik Jensen',
+                            id:1,
+                            srcScreen:'screen_image.jpg',
+                            srcThumb:'thumb_image.jpg',
+                            topic:'Teaching the Nation',
+                            text:'<p>Most of us have heard of ‘TED Talks’, these awe-inspiring, sheer ingenuous and empowering talks that revolve around the theme of innovation, change and, simply said, thinking a little differently. TED has become a global phenomenon because it provides a platform for people to share their ideas and stories. What is truly resonating about TED itself, is the fact that anyone could be a TED speaker. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi.</p>'
+                          }]
+               }
+#}
+
+{% macro standard(content) %}
+    <div class="container-fluid speakers">
+        <img src="" id="speakers-image" class="hidden">
+        
+        <div class="container">
+            <div id="speakers-menu" class="hidden">
+                {% for speaker in content.speakers %}
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a id="speaker-{{id}}" href="#{{ speaker.id }}"><img src="{{ speaker.srcThumb }}" class="img-circle" width="150px" height="150px"></a><span class="thumb-info-{{ speaker.id }}">{{ speaker.topic }}</span>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <div id="speakers-overview">
+                {% for speaker in content.speakers %}
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <a id="speaker-{{id}}" href="#{{ speaker.id }}"><img src="{{ speaker.srcThumb }}" class="img-circle" width="150px" height="150px"></a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    {{ speaker.name }} &mdash; {{ speaker.topic }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            
+            <div id="speakers-presentation" class="hidden">
+                <div class="row">
+                    <div id="speakers-presentation-content" class="col-md-offset-6 col-md-6">
+                        <h3>{{ content.speakers[0].topic }}</h3>
+                        {{ content.speakers[0].text }}
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endmacro %}

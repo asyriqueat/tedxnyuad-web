@@ -1,15 +1,27 @@
-{# This is the which displays a full width image.
-   It is implemented by including "templates/layouts/section-panorama.html"
-   as seen currently in the index.html view. 
-   
-   @Frederik 04/01/15 #}
+{# This is the section which displays a full-width image
+   and some overlay text.
+   @Frederik 25/01/15 #}
 
-{% macro panorama(src, content='',right='initial', bottom='25px', left='initial') %}
+
+{# The standard macro requires the following attributes to be set:
+
+   content.src      The link to the background image of minimum 1920 width
+                    given. The image should be placed in the 
+                    public/images folder.
+   content.text     The text to be displayed. Takes html-formatting.
+   
+   The rest of the fields, content.bottom, content.right, content.left,
+   are optional in the format '15px'. #}
+
+{% macro standard(content) %}
     <div class="panorama">
-        <img src="images/{{src}}"></img>
+        <img src="images/{{content.src}}"></img>
         <div class="container">
-            <div class="col-xs-12 col-sm-6 col-md-4  panorama-text" style="bottom:{{bottom}}; left:{{left}}; right:{{right}};">{{ content }}</div>
-                </div>
+            <div class="col-xs-12 col-sm-6 col-md-4  panorama-text" style="{{ 'bottom:'+content.bottom+';' if content.bottom else 'bottom:25px;' }} 
+                                                                           {{ 'right:'+content.right+';' if content.right else '' }} 
+                                                                           {{ 'left:'+content.left+';' if content.left else '' }}">
+                {{ content.text }}</div>
+            </div>
         </div>
     </div>
 {% endmacro %}
