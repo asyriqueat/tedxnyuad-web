@@ -347,17 +347,16 @@ p.tag, #footer{
     padding-left:0;
     padding-right:0;
     background-color:$gray-lighter;
-    
-    img{
-        position:absolute;
-        width:100%;
-    }
-        
-    .speakers-menu{
-        position:absolute;
-        top:25px;
-        z-index:100;
-    }
+}
+
+#speakers-image{
+    position:absolute;
+    width:100%;
+}
+#speakers-menu{
+    position:absolute;
+    padding-top:25px;
+    z-index:100;
 }
 
 

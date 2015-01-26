@@ -5068,6 +5068,20 @@ p.tag, #footer {
       padding: 15px 0 15px 0; }
  }
 
+.speakers {
+  padding-left: 0;
+  padding-right: 0;
+  background-color: #eeeeee; }
+
+#speakers-image {
+  position: absolute;
+  width: 100%; }
+
+#speakers-menu {
+  position: absolute;
+  padding-top: 25px;
+  z-index: 100; }
+
 .btn-primary {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
