@@ -5071,9 +5071,13 @@ p.tag, #footer {
 .speakers {
   padding-left: 0;
   padding-right: 0;
-  background-color: #eeeeee; }
+  background-color: #eeeeee;
+  min-height: 400px; }
 
-#speakers-image {
+#speakers-image, #speakers-presentation {
+  display: none; }
+
+#speakers-image img {
   position: absolute;
   width: 100%; }
 
@@ -5081,6 +5085,8 @@ p.tag, #footer {
   position: absolute;
   padding-top: 25px;
   z-index: 100; }
+  #speakers-menu img {
+    margin-bottom: 2px; }
 
 .btn-primary {
   font-family: 'Open Sans', sans-serif;
