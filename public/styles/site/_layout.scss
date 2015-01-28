@@ -198,6 +198,52 @@ body{
     background-color:none;   
 }
 
+//-----BLOG------------------------------------------
+hr{
+    border-top:1px solid $gray-light;
+    margin-top:25px;
+}
+
+.post-date{
+    margin-top:24px;
+    width:85px;
+    text-align:center;
+    text-transform:uppercase;
+    display:inline-block;
+    background-color:$red;
+}
+.date{
+    padding:15px;
+    
+    .day{
+        color:#fff;
+        font-family: $helvetica;
+        font-size:28px;
+        font-weight: bold; 
+        margin-bottom:10px;
+    }
+    
+    .month{
+        color:#fff;
+        font-family: $helvetica;
+        font-size:12px;
+        margin-top:10px;
+    }
+}
+
+.post-wrapper-left{
+    float:left;
+    width:12%;
+}
+.post-wrapper-right{
+    float:right;
+    width:88%;
+}
+
+.post-last{
+    margin-bottom:25px;
+}
+
 //-----FOOTER----------------------------------------
 #footer {
 	margin-top: 30px;
@@ -398,3 +444,5 @@ p.tag, #footer{
 .border-right{
     border-right:1px solid $gray-light;
 }
+
+   

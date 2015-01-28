@@ -24,15 +24,15 @@ $( document ).ready(function() {
         //Load new content
         $("#speakers-presentation").fadeOut(200, function(e){
                                                     console.log("complete");
-                                                            $("#speakers-presentation-content").html("<h3>Header Text</h3>CONTENT");
-                                                            $(this).fadeIn(200);
-            
-                                                            //Show the speaker's background image
-                                                            $('#speakers-image').show();
+                                                    $("#speakers-presentation-content").html("<h3>Header Text</h3>CONTENT");
+                                                    $(this).fadeIn(200);
 
-                                                            //Add the image to the HTML, i.e. lazy-load the image
-                                                            //http://stackoverflow.com/questions/12206443/click-thumbnail-and-load-image-into-empty-div
-                                                            $('#speakers-image').html('<img src='+"http://www.beach-backgrounds.com/wallpapers/kuramathi-island-maldives-wallpaper-1920x600-417.jpg"+'>');
+                                                    //Show the speaker's background image
+                                                    $('#speakers-image').show();
+
+                                                    //Add the image to the HTML, i.e. lazy-load the image
+                                                    //http://stackoverflow.com/questions/12206443/click-thumbnail-and-load-image-into-empty-div
+                                                    $('#speakers-image').html('<img src='+"http://www.beach-backgrounds.com/wallpapers/kuramathi-island-maldives-wallpaper-1920x600-417.jpg"+'>');
                                                 });
             
             

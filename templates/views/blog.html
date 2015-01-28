@@ -1,23 +1,55 @@
 {% extends "templates/layouts/default.html" %}
 
-{% block content %}
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-9 border-right">
-                <div class="row">
-                    <div class="col-xs-12">
-                         2                
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12">
-                          3               
-                    </div>
+{% macro blogPost(post,last=0) %}
+
+    <div class="post clearfix {{'post-last' if last else ''}}">
+        <div class="post-wrapper-left">
+            <div class="post-date">
+                <div class="date">
+                    <div class="day">{{post.published.day}}</div>
+                    <div class="month">{{post.published.month}} {{post.published.year}}</div>
                 </div>
             </div>
+        </div>
+        
+        <div class="post-wrapper-right">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h3>{{post.title}}</h3>
+
+                    {# Sharing of post #}
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    {{post.text|truncate(900,True) }} <a href="/blog/post/{{ post.slug }}">Read more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endmacro %}
+
+
+{% block content %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-xs-12 border-right">
+                {% for post in content.posts %}
+                    {% if not loop.last %}
+                        {{ blogPost(post) }}
+                        <hr/>
+                    {% else %}
+                        {{ blogPost(post,1) }}
+                    {% endif %}
+                {% endfor %}
+            </div>
             <div class="col-sm-3 hidden-xs">
-                Hehe
+                {% for post in content.posts %}
+                    <h5><a href="/blog/post/{{post.slug}}">{{post.title}}</a></h5>
+                {% endfor %}
             </div>
         </div>
     </div>

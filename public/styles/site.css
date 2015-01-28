@@ -4962,6 +4962,36 @@ body {
 .nav > li > a:hover, .nav > li > a:focus {
   background-color: none; }
 
+.post-date {
+  margin-top: 24px;
+  width: 85px;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #e62b1e; }
+
+.date {
+  padding: 15px; }
+  .date .day {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  .date .month {
+    color: #fff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    margin-top: 10px; }
+
+.post-wrapper-left {
+  float: left;
+  width: 12%; }
+
+.post-wrapper-right {
+  float: right;
+  width: 88%; }
+
 #footer {
   margin-top: 30px;
   border-top: 1px solid #eeeeee;
