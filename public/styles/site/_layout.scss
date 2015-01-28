@@ -91,6 +91,46 @@ p{
 }
 
 //---------------------------------------------------|
+//--- LINKS                                          |
+//---------------------------------------------------|
+p{
+    a,a:visited,a:focus{
+        color:#000;
+        font-weight: bold;
+        border-bottom:1px dashed $red;
+    }
+    a:hover{
+        text-decoration: none;
+        color:#000;
+        border-bottom:1px solid $red;
+    }   
+    
+}
+
+.blog-sidebar{
+    ul{
+        padding-left:0;
+        margin-left:0;
+        li{
+            list-style-type: none;
+            margin-bottom:8px;
+            
+            a,a:visited,a:focus{
+                color:#000;
+                font-weight: bold;
+                border-bottom:1px dashed $red;
+            }
+            a:hover{
+                text-decoration: none;
+                color:#000;
+                border-bottom:1px solid $red;
+            }  
+        }
+    }
+}
+
+
+//---------------------------------------------------|
 //--- Templating                                     |
 //---------------------------------------------------|
 
@@ -204,6 +244,10 @@ hr{
     margin-top:25px;
 }
 
+.blog-sidebar{
+    position:fixed;
+}
+
 .post-date{
     margin-top:24px;
     width:85px;
@@ -238,6 +282,31 @@ hr{
 .post-wrapper-right{
     float:right;
     width:88%;
+}
+
+@media (max-width: 1199px) { //Smaller than medium devices
+    .post-wrapper-left{
+        width:14%;
+    }
+    .post-wrapper-right{
+        width:86%;
+    }
+}
+
+
+@media (max-width: 991px) { //Smaller than medium devices
+    .post-wrapper-left{
+        width:19%;
+    }
+    .post-wrapper-right{
+        width:81%;
+    }
+}
+
+@media (max-width: 767px) {  //Extra small devices only
+    .post-wrapper-right{
+        width:100%;
+    }
 }
 
 .post-last{

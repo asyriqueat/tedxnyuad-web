@@ -3,7 +3,7 @@
 {% macro blogPost(post,last=0) %}
 
     <div class="post clearfix {{'post-last' if last else ''}}">
-        <div class="post-wrapper-left">
+        <div class="post-wrapper-left hidden-xs">
             <div class="post-date">
                 <div class="date">
                     <div class="day">{{post.published.day}}</div>
@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <h3>{{post.title}}</h3>
-
+                    <p class="visible-xs tag">Published: {{post.published.day}} {{post.published.month}} {{post.published.year}}</p>
                     {# Sharing of post #}
                 </div>
             </div>
@@ -47,9 +47,14 @@
                 {% endfor %}
             </div>
             <div class="col-sm-3 hidden-xs">
-                {% for post in content.posts %}
-                    <h5><a href="/blog/post/{{post.slug}}">{{post.title}}</a></h5>
-                {% endfor %}
+                <div class="blog-sidebar">
+                    <h3>Blog Updates</h3>
+                    <ul>
+                    {% for post in content.posts %}
+                        <li><a href="/blog/post/{{post.slug}}">{{post.title}}</a></li>
+                    {% endfor %}
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
