@@ -41,6 +41,8 @@ exports = module.exports = function(app) {
     app.get('/speakers', routes.views.speakers);
     app.get('/blog', routes.views.blog);
     app.get('/blog/:post', routes.views.post);
+    app.get('/about', routes.views.about);
+    
 	//app.get('/blog/:category?', routes.views.blog); //Old
 	//app.get('/blog/post/:post', routes.views.post); //Old
 	app.get('/gallery', routes.views.gallery);

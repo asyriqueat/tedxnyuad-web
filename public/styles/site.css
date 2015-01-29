@@ -5105,6 +5105,11 @@ p.tag, #footer {
   padding-top: 25px;
   padding-bottom: 25px; }
 
+.signature-name {
+  border-top: 1px solid #000;
+  margin-top: -30px;
+  margin-left: 0px; }
+
 .focus {
   padding-top: 150px;
   padding-bottom: 150px;
