@@ -36,7 +36,7 @@ var routes = {
 exports = module.exports = function(app) {
 	
 	// Views
-	app.get('/', routes.views.index);
+	app.all('/', routes.views.index);
     app.get('/event', routes.views["event"]); //We need to escape "event" here, since .event is reserved?
     app.get('/speakers', routes.views.speakers);
     app.get('/blog', routes.views.blog);

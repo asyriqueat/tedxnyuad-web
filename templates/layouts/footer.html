@@ -4,6 +4,22 @@
                     <div class="col-sm-4 col-md-3">
                         <p class="tag">This independently organized TEDx is brought to you by students from New York University Abu Dhabi</p>
                     </div>
+                    
+                    <div class="pull-right newsletter text-right">
+                        {# Add check for duplicates #}
+                        <form method="post">
+                            <input type="hidden" name="action" value="newsletter">
+                            <div class="form-group">
+                                <input type="text" name="email" value="{{formData.email}}" class="form-control" placeholder="Add your email to our newsletter" {{ 'disabled' if newsletterSignup else '' }}></input>
+                                {% if newsletterSignup %}
+                                    <button type="submit" class="btn btn-primary btn-primary-green" disabled>Thanks</button>
+                                {% else %}
+                                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                                {% endif %}
+                            </div>
+                        </form>
+                        
+                    </div>
                 </div>
             </div>
 		</div>
