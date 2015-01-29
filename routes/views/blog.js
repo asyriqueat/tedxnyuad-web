@@ -5,6 +5,8 @@ exports = module.exports = function(req, res){
     var view = new keystone.View(req, res);
 		locals = res.locals;
     
+    locals.section = 'blog';
+    
     locals.content = {posts:[{title:'Website Online!!',
                                             src:'http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg',
                                             comments:'Wuhu',
