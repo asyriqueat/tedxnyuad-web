@@ -66,7 +66,8 @@ exports = module.exports = function(req, res) {
     
 	// Render the view
 	view.render('speakers');
-
+  
+};
 /*
 // Takes in number of speakers.
 //
@@ -75,7 +76,7 @@ exports = module.exports = function(req, res) {
 */
 function rowSetup(numOfSpeakers){
   var returnArray = [];
-  while (numOfSpeakers => 4){
+  while (numOfSpeakers >= 4){
     switch (returnArray[returnArray.length - 1]) {
       case 4:
         returnArray.push(3);
@@ -86,7 +87,7 @@ function rowSetup(numOfSpeakers){
         numOfSpeakers -= 4;
         break;
       default:
-        console.log "Error";
+        console.log("Error");
     }
   }
   switch (numOfSpeakers){
