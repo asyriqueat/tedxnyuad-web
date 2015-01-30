@@ -39,8 +39,8 @@
             </div>
             
             <div id="speakers-overview">
-                {% for speaker in content.speakers %}
-                    <div class="row">
+                <div class="row">
+                    {% for speaker in content.speakers %}
                         <div class="col-xs-4">
                             <div class="row">
                                 <div class="col-xs-12">
@@ -53,8 +53,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                {% endfor %}
+                    {% endfor %}
+                </div>
             </div>
             
             <div id="speakers-presentation">

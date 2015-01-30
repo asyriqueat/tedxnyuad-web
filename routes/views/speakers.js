@@ -1,13 +1,13 @@
 var keystone = require('keystone');
 
 exports = module.exports = function(req, res) {
-	
-	var view = new keystone.View(req, res),
-		locals = res.locals;
-	
-	// locals.section is used to set the currently selected
-	// item in the header navigation.
-	locals.section = 'speakers';
+    
+    var view = new keystone.View(req, res),
+        locals = res.locals;
+    
+    // locals.section is used to set the currently selected
+    // item in the header navigation.
+    locals.section = 'speakers';
     
     locals.content = [{ template:'speakers',
                         macro:'standard',
@@ -42,7 +42,58 @@ exports = module.exports = function(req, res) {
                                   }
                       }];
     
-	// Render the view
-	view.render('speakers');
-	
+    // Render the view
+    view.render('speakers');
 };
+
+/*
+// Takes in number of speakers.
+//
+// Returns Array [x,y,z] where x, y and z are the number of speakers per line and the Array.length + 1 is the number of rows. 
+//
+*/
+function rowSetup(numOfSpeakers){
+  var returnArray = [];
+  while (numOfSpeakers => 4){
+    switch (returnArray[returnArray.length - 1]) {
+      case 4:
+        returnArray.push(3);
+        numOfSpeakers -= 3;
+        break;
+      case 3:
+        returnArray.push(4);
+        numOfSpeakers -= 4;
+        break;
+      default:
+        console.log "Error";
+    }
+  }
+  switch (numOfSpeakers){
+    case 0:
+      break;
+    case 1:
+      if (returnArray[returnArray.length - 1] === 4){
+        returnArray[returnArray.length - 1] = 3;
+        returnArray.push(2);
+      }
+      else{
+        returnArray.push(numOfSpeakers);
+      }
+      break;
+    case 2:
+      returnArray.push(numOfSpeakers);
+      break;
+    case 3:
+      if (returnArray[returnArray.length - 1] === 4){
+        returnArray.push(numOfSpeakers);
+      }
+      if (returnArray[returnArray.length - 1] === 3){
+        returnArray[returnArray.length - 1] = 4;
+        returnArray.push(2);
+      }
+      break;
+    default:
+      console.log("Failed at second condition");
+  }
+  return returnArray;
+}
