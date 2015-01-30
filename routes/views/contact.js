@@ -1,5 +1,6 @@
 var keystone = require('keystone'),
 	Enquiry = keystone.list('Enquiry');
+    Newsletter = keystone.list('Newsletter'); //Required for newsletter signup
 
 exports = module.exports = function(req, res) {
 	
@@ -34,6 +35,28 @@ exports = module.exports = function(req, res) {
 		
 	});
 	
+    
+    //Required for newsletter signup
+    locals.formData = req.body || {};
+    view.on('post', { action: 'newsletter' }, function(next) {
+		var newNewsletter = new Newsletter.model(),
+			updater = newNewsletter.getUpdateHandler(req);
+
+        updater.process(req.body, {
+			flashErrors: true,
+			fields: 'email',
+			errorMessage: 'There was a problem submitting your enquiry:'
+		}, function(err) {
+			if (err) {
+				locals.validationErrors = err.errors;
+			} else {
+				locals.newsletterSignup = true;
+			}
+			next();
+		});
+	});
+    //--------------
+    
 	view.render('contact');
 	
 };

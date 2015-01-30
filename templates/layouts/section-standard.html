@@ -1,5 +1,5 @@
 {# This is the standard section.
-   @Frederik 25/01/15 #}
+   @Frederik 29/01/15 #}
 
 {# The standard macro requires the following attributes to be set:
 
@@ -19,4 +19,58 @@
             </div>
         </div>
     </div>
+{% endmacro %}
+
+
+{# The ethos macro requires the following attributes to be set:
+
+   content.title        The title.
+   content.text         The text to be displayed. Takes html-formatting.
+   content.names        An array of the signing names.
+        .name           The name.
+        .signature      An array of the signatures corresponding 
+                        to the position in content.names 
+        .height         The height of the signature, typically range
+                        60-90px.
+        .margin-left    Left margin for signature.
+
+   -----LIMITATION-----
+   Currently max 2 signatures can be displayed 
+   at once. #}
+
+
+{% macro ethos(content) %}
+    <div class="container standard">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>{{ content.title }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{ content.text }}
+            </div>
+        </div>
+        <div class="row">
+            {% for name in content.names %}
+                <div class="col-xs-6 col-xs-offset-1 col-sm-offset-0 col-sm-3 col-md-2 col-lg-2">
+                    <div class="row">
+                        <div class="col-xs-12 signature">
+                            <img src="{{ name.signature }}" height="{{ name.height if name.height else '70px'}}" {{'style="margin-left:'+name.marginLeft+'";' if name.marginLeft else ''}}/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="row signature-name">
+                                <p>{{ name.name }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden-xs col-sm-3 col-md-2 col-lg-1"></div>
+            {% endfor %}
+        </div>
+    </div>
+
+
 {% endmacro %}

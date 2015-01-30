@@ -1,0 +1,14 @@
+{% extends "templates/layouts/default.html" %}
+
+{% block content %}
+
+    {# Iterate over content #}
+    {% for section in content %} 
+
+        {% import "templates/layouts/section-" + section.template + ".html" as template %} 
+        {{ template[section.macro](section.arguments) }}
+
+    {% endfor %}
+
+
+{% endblock %}

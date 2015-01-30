@@ -341,6 +341,25 @@ p.tag, #footer{
     margin:0;
 }
 
+.newsletter{
+    margin-top:13px;
+    width:350px;
+}
+.newsletter h4{
+    margin:0 0 5px 0;   
+}
+.newsletter input{
+    display:inline;   
+    height:36px;
+    width:250px;
+}
+.newsletter .btn-primary{
+    font-size:18px;   
+}
+.newsletter .btn-primary-green{
+    background-color:#17C400;
+}
+
 
 
 @media (max-width: 767px) {  //Extra small devices only
@@ -389,6 +408,12 @@ p.tag, #footer{
 .standard, .blog{
     padding-top:25px;
     padding-bottom:25px;
+}
+
+.signature-name{
+    border-top:1px solid #000;
+    margin-top:-30px;
+    margin-left:0px;
 }
 
 .focus{
@@ -513,5 +538,6 @@ p.tag, #footer{
 .border-right{
     border-right:1px solid $gray-light;
 }
+
 
    
