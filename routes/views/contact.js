@@ -21,7 +21,7 @@ exports = module.exports = function(req, res) {
 			updater = newEnquiry.getUpdateHandler(req);
 		
 		updater.process(req.body, {
-			flashErrors: true,
+			flashErrors: false,
 			fields: 'name, email, phone, enquiryType, message',
 			errorMessage: 'There was a problem submitting your enquiry:'
 		}, function(err) {

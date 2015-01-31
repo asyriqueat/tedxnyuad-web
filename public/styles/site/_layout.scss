@@ -353,7 +353,8 @@ p.tag, #footer{
     height:36px;
     width:250px;
 }
-.newsletter .btn-primary{
+.newsletter .btn-primary,
+.contact .btn-primary{
     font-size:18px;   
 }
 .newsletter .btn-primary-green{
@@ -494,6 +495,11 @@ p.tag, #footer{
     }
 }
 
+.contact{
+    input{
+       
+    }
+}
 
 
 #speakers-presentation{
