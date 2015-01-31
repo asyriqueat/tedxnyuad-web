@@ -13,26 +13,32 @@ exports = module.exports = function(req, res) {
     locals.content = [{ template:'speakers',
                         macro:'standard',
                         arguments:{ 
-                            speakers:[{ name:'Frederik Jensen',
+                            speakers:[{ name:'Mohit Mandal',
                                         id:1,
-                                        srcScreen:'http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg',
-                                        srcThumb:'http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg',
-                                        topic:'Teaching the Nation',
-                                        text:'<p>Most of us have heard of ‘TED Talks’, these awe-inspiring, sheer ingenuous and empowering talks that revolve around the theme of innovation, change and, simply said, thinking a little differently. TED has become a global phenomenon because it provides a platform for people to share their ideas and stories. What is truly resonating about TED itself, is the fact that anyone could be a TED speaker. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi.</p>'    
+                                        year:'Senior',
+                                        origin:'India/Bangladesh',
+                                        srcScreen:'/images/speakers/module/mohed.jpg',
+                                        srcThumb:'/images/speakers/module/mohed-thumb.jpg',
+                                        topic:'Street-cricket with Strangers',
+                                        text:'<p>In spring of sophomore year, I played street-cricket with a group of Pakistani, Indian and Bangladeshi hairdressers in the abandoned parking lot of a mall in Abu Dhabi. They are only a few of the several millions of migrant workers in the Gulf whose rich stories, sadly, go untold.</p>'    
                                       },
-                                      { name:'Frederik Jensen',
+                                      { name:'Vasily Rudchenko',
                                         id:2,
+                                        year:'Sophomore',
+                                        origin:'Ukraine',
                                         srcScreen:'http://hinhnenx.com/download/4639/1920x600_my-ipad-retina-wallpaper-landscapes-91_hinhnenx-wallpaperhd.jpg',
                                         srcThumb:'http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg',
-                                        topic:'Teaching the Nation',
-                                        text:'<p>Most of us have heard of ‘TED Talks’, these awe-inspiring, sheer ingenuous and empowering talks that revolve around the theme of innovation, change and, simply said, thinking a little differently. TED has become a global phenomenon because it provides a platform for people to share their ideas and stories. What is truly resonating about TED itself, is the fact that anyone could be a TED speaker. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi.</p>'    
+                                        topic:'Human-centred Engineering',
+                                        text:'<p>Most of us have heard of ‘TED Talks’, these awe-inspiring, sheer ingenuous and empowering talks that revolve around the theme of innovation, change and, simply said, thinking a little differently. TED has become a global phenomenon because it provides a platform for people to share their ideas and stories. What is truly resonating about TED itself, is the fact that anyone could be a TED speaker. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi.bring these</p>'    
                                       },
-                                      { name:'Frederik Jensen',
+                                      { name:'Nikolai Kozak',
                                         id:3,
+                                        year:'Senior',
+                                        origin:'Chile/Argentina',
                                         srcScreen:'http://www.beach-backgrounds.com/wallpapers/kuramathi-island-maldives-wallpaper-1920x600-417.jpg',
                                         srcThumb:'http://demo.duotive.org/duotive-5ive/wp-content/uploads/2012/06/slideshow_full-width_01.jpg',
-                                        topic:'Teaching the Nation',
-                                        text:'<p>Most of us have heard of ‘TED Talks’, these awe-inspiring, sheer ingenuous and empowering talks that revolve around the theme of innovation, change and, simply said, thinking a little differently. TED has become a global phenomenon because it provides a platform for people to share their ideas and stories. What is truly resonating about TED itself, is the fact that anyone could be a TED speaker. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi.</p>'    
+                                        topic:'Collective Mnemonics',
+                                        text:'<p>A story about my father, my country, art, family, human rights, the future of our generation, and how to fix pretty much every problem in the world by understanding collective mnemonics - the memory we share and create collectively.</p>'    
                                       }]
                                   }
                       },
@@ -68,6 +74,7 @@ exports = module.exports = function(req, res) {
 	view.render('speakers');
   
 };
+
 /*
 // Takes in number of speakers.
 //

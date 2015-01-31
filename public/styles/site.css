@@ -5181,8 +5181,10 @@ p.tag, #footer {
   padding-right: 0;
   background-color: #eeeeee;
   min-height: 400px; }
+  .speakers .container {
+    margin-top: 25px; }
 
-#speakers-image, #speakers-presentation {
+#speakers-presentation {
   display: none; }
 
 #speakers-image img {
@@ -5191,8 +5193,8 @@ p.tag, #footer {
 
 #speakers-menu {
   position: absolute;
-  padding-top: 25px;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
   #speakers-menu img {
     margin-bottom: 2px; }
 

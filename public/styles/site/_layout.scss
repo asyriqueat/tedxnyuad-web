@@ -488,11 +488,15 @@ p.tag, #footer{
     padding-right:0;
     background-color:$gray-lighter;
     min-height:400px;
+    
+    .container{
+        margin-top:25px;
+    }
 }
 
 
 
-#speakers-image, #speakers-presentation{
+#speakers-presentation{
     display:none;
 }
 
@@ -502,8 +506,8 @@ p.tag, #footer{
 }
 #speakers-menu{
     position:absolute;
-    padding-top:25px;
     z-index:100;
+    display:none;
     
     img{
        margin-bottom:2px; 
