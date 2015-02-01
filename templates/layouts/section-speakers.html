@@ -17,6 +17,7 @@
                             srcThumb:'thumb_image.jpg',
                             topic:'Teaching the Nation',
                             text:'<p>Most of us have heard of ‘TED Talks’, these awe-inspiring, sheer ingenuous and empowering talks that revolve around the theme of innovation, change and, simply said, thinking a little differently. TED has become a global phenomenon because it provides a platform for people to share their ideas and stories. What is truly resonating about TED itself, is the fact that anyone could be a TED speaker. Everyone has a story worth telling, and this year, NYUAD will bring these stories to Abu Dhabi.</p>'
+                            bsClass: "" // This key is added programatically on execute.
                           }]
                }
 #}
@@ -39,22 +40,24 @@
             </div>
             
             <div id="speakers-overview">
-                <div class="row">
-                    {% for speaker in content.speakers %}
-                        <div class="col-xs-4">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    <a id="speaker-{{speaker.id}}" href="#{{ speaker.id }}"><img src="{{ speaker.srcThumb }}" class="img-circle" width="150px" height="150px"></a>
+                {% for row in content.speakerRows %}
+                    <div class="row">
+                        {% for speaker in row %}
+                            <div class="col-xs-{{speaker.bsClass}}">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <a id="speaker-{{speaker.id}}" href="#{{ speaker.id }}"><img src="{{ speaker.srcThumb }}" class="img-circle" width="150px" height="150px"></a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        {{ speaker.name }} &mdash; {{ speaker.topic }}
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                    {{ speaker.name }} &mdash; {{ speaker.topic }}
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
             </div>
             
             <div id="speakers-presentation">
