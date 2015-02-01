@@ -353,7 +353,8 @@ p.tag, #footer{
     height:36px;
     width:250px;
 }
-.newsletter .btn-primary{
+.newsletter .btn-primary,
+.contact .btn-primary{
     font-size:18px;   
 }
 .newsletter .btn-primary-green{
@@ -488,11 +489,20 @@ p.tag, #footer{
     padding-right:0;
     background-color:$gray-lighter;
     min-height:400px;
+    
+    .container{
+        margin-top:25px;
+    }
+}
+
+.contact{
+    input{
+       
+    }
 }
 
 
-
-#speakers-image, #speakers-presentation{
+#speakers-presentation{
     display:none;
 }
 
@@ -500,10 +510,30 @@ p.tag, #footer{
     position:absolute;
     width:100%;
 }
+@media (max-width: 1280px) {  //Image special if statement
+    
+    #speakers-image{
+        text-align: center;
+    }
+    
+    #speakers-image img{
+        min-width:1280px;
+        margin-left:-640px;  
+    }
+    
+}
+
+@media (max-width: 991px) { //Smaller than medium devices
+    #speakers-image img{
+        margin-left:-560px;   
+    }
+}
+
+
 #speakers-menu{
     position:absolute;
-    padding-top:25px;
     z-index:100;
+    display:none;
     
     img{
        margin-bottom:2px; 
@@ -539,5 +569,6 @@ p.tag, #footer{
     border-right:1px solid $gray-light;
 }
 
-
-   
+.tooltip{
+    min-width:250px;
+}

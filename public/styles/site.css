@@ -5081,7 +5081,7 @@ p.tag, #footer {
   height: 36px;
   width: 250px; }
 
-.newsletter .btn-primary {
+.newsletter .btn-primary, .contact .btn-primary {
   font-size: 18px; }
 
 .newsletter .btn-primary-green {
@@ -5181,18 +5181,34 @@ p.tag, #footer {
   padding-right: 0;
   background-color: #eeeeee;
   min-height: 400px; }
+  .speakers .container {
+    margin-top: 25px; }
 
-#speakers-image, #speakers-presentation {
+#speakers-presentation {
   display: none; }
 
 #speakers-image img {
   position: absolute;
   width: 100%; }
 
+@media (max-width: 1280px) {
+  #speakers-image {
+    text-align: center; }
+
+  #speakers-image img {
+    min-width: 1280px;
+    margin-left: -640px; }
+ }
+
+@media (max-width: 991px) {
+  #speakers-image img {
+    margin-left: -560px; }
+ }
+
 #speakers-menu {
   position: absolute;
-  padding-top: 25px;
-  z-index: 100; }
+  z-index: 100;
+  display: none; }
   #speakers-menu img {
     margin-bottom: 2px; }
 
@@ -5218,3 +5234,6 @@ p.tag, #footer {
 
 .border-right {
   border-right: 1px solid #cccccc; }
+
+.tooltip {
+  min-width: 250px; }
