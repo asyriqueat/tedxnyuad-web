@@ -51,7 +51,7 @@ Enquiry.schema.methods.sendNotificationEmail = function(callback) {
 			to: admins,
 			from: {
 				name: 'TEDxNYUAD',
-				email: 'contact@tedxnyuad.com'
+				email: 'fj414@nyu.edu'
 			},
 			subject: 'New Enquiry for TEDxNYUAD',
 			enquiry: enquiry
