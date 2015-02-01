@@ -4874,6 +4874,11 @@ h4 {
   font-size: 16px;
   color: #e62b1e; }
 
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 25px; }
+
 p {
   font-family: 'Droid Serif', serif;
   font-size: 16px;
@@ -5122,6 +5127,9 @@ p.tag, #footer {
 .standard, .blog {
   padding-top: 25px;
   padding-bottom: 25px; }
+  .standard ul, .blog ul {
+    list-style-image: none;
+    list-style-type: none; }
 
 .signature-name {
   border-top: 1px solid #000;

@@ -21,7 +21,15 @@ exports = module.exports = function(req, res) {
                         arguments:{src:'venue.jpg',
                                    text:'<h4>Venue</h4>The 2015 TEDxNYUAD will take place in the Conference Center, located in the A6 building on the east side of NYUAD\'s Saadiyat Island campus.  The Conference Center contains black leather chairs, ample lighting, and excellent acoustics, ensuring that those attending will have a comfortable and educational experience.'
                                   }
-                      }];
+                      },
+                      { template:'standard',
+                        macro:'image',
+                        arguments:{src:'images/location.jpg',
+                                   title:'Address',
+                                   text:'<p>The address of the campus at which the TEDxNYUAD will be held is: </p><ul><li><p>New York University Abu Dhabi (NYUAD)</p></li><li><p>Saadiyat Island</p></li><li><p>P.O. Box 129188</p></li><li><p>Abu Dhabi, UAE</p></li></ul><p>See the map for directions. Upon arrival look follow the signs to the Conference Center. In case you come by car, make sure to get a parking ticket.</p>'
+                                  }
+                      } 
+                     ];
     
     //Required for newsletter signup
     locals.formData = req.body || {};

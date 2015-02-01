@@ -84,6 +84,11 @@ h4{
     font-size:16px;
     color:$red; 
 }
+h5{
+    font-size:16px;
+    font-weight: bold;
+    margin-top:25px;
+}
 p{
     font-family:$droid;
     font-size:16px;
@@ -409,6 +414,10 @@ p.tag, #footer{
 .standard, .blog{
     padding-top:25px;
     padding-bottom:25px;
+    ul{
+        list-style-image: none;
+        list-style-type: none;
+    }
 }
 
 .signature-name{
