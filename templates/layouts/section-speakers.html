@@ -29,11 +29,11 @@
 
         <div class="container">
             <div class="row">
-                <div id="speakers-menu" class="col-lg-4">
+                <div id="speakers-menu" class="col-lg-1">
                     {% for speaker in content.speakers %}
                         <div class="row">
                             <div class="col-lg-12">
-                                <a id="speaker-{{speaker.id}}" href="#{{ speaker.id }}" data-toggle="tooltip" title="{{speaker.name + '  – '+speaker.topic}}"><img src="{{ speaker.srcThumb }}" class="img-circle" width="35px" height="35px"></a>
+                                <a id="speaker-{{speaker.id}}" href="#{{ speaker.id }}" data-toggle="tooltip" title="{{speaker.name + ': '+speaker.topic}}"><img src="{{ speaker.srcThumb }}" class="img-circle" width="35px" height="35px"></a>
                             </div>
                         </div>
                     {% endfor %}

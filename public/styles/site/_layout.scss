@@ -510,6 +510,26 @@ p.tag, #footer{
     position:absolute;
     width:100%;
 }
+@media (max-width: 1280px) {  //Image special if statement
+    
+    #speakers-image{
+        text-align: center;
+    }
+    
+    #speakers-image img{
+        min-width:1280px;
+        margin-left:-640px;  
+    }
+    
+}
+
+@media (max-width: 991px) { //Smaller than medium devices
+    #speakers-image img{
+        margin-left:-560px;   
+    }
+}
+
+
 #speakers-menu{
     position:absolute;
     z-index:100;
@@ -549,5 +569,6 @@ p.tag, #footer{
     border-right:1px solid $gray-light;
 }
 
-
-   
+.tooltip{
+    min-width:250px;
+}

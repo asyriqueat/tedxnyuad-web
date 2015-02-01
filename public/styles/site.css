@@ -5191,6 +5191,20 @@ p.tag, #footer {
   position: absolute;
   width: 100%; }
 
+@media (max-width: 1280px) {
+  #speakers-image {
+    text-align: center; }
+
+  #speakers-image img {
+    min-width: 1280px;
+    margin-left: -640px; }
+ }
+
+@media (max-width: 991px) {
+  #speakers-image img {
+    margin-left: -560px; }
+ }
+
 #speakers-menu {
   position: absolute;
   z-index: 100;
@@ -5220,3 +5234,6 @@ p.tag, #footer {
 
 .border-right {
   border-right: 1px solid #cccccc; }
+
+.tooltip {
+  min-width: 250px; }
