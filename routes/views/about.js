@@ -23,6 +23,7 @@ exports = module.exports = function(req, res) {
                                     text:'<p>TEDxNYUAD aspires to create a platform for members of the NYU Abu Dhabi student body to share their innovative ideas, achievements, and challenges. NYU Abu Dhabi, as a world-class research university with a worldly community, is home to stories that can shape our future. We see it as our mission to share these stories with the world and aim to inspire Abu Dhabi and, in particular, its youth, and show them that making an impact in the world is not an unimaginable task.</p>'
                                   }
                       },
+                      
                       { template:'standard',
                        macro:'standard',
                        arguments:{ title:'About TEDx, x = independently organized event',

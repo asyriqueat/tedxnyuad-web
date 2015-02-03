@@ -47,7 +47,7 @@
                                 {% if newsletterSignup %}
                                     <button type="submit" class="btn btn-primary btn-primary-green" disabled>Thanks</button>
                                 {% else %}
-                                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                                    <button name="newsletterSubmit" type="submit" class="btn btn-primary">Subscribe</button>
                                 {% endif %}
                             </div>
                         </div>
@@ -66,6 +66,5 @@
         {{ template[section.macro](section.arguments) }}
 
     {% endfor %}
-
 
 {% endblock %}
