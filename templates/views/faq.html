@@ -1,0 +1,36 @@
+{% extends "templates/layouts/default.html" %}
+
+{% block content %}
+
+    <div class="container standard">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3>{{ content.title }}</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{content.text}}
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    {% for question in content.questions %}
+                        <div class="panel panel-default">
+                            <div class="panel-heading" role="tab" id="panel-{{ question.id }}">
+                              <h4>
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse-{{question.id}}" aria-expanded="false" aria-controls="collapse-{{question.id}}">
+                                  {{ question.title }}
+                                </a>
+                              </h4>
+                            </div>
+                            <div id="collapse-{{question.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                              <div class="panel-body">
+                                  {{ question.text }}
+                              </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+        
+{% endblock %}

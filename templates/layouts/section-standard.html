@@ -102,6 +102,59 @@
             {% endfor %}
         </div>
     </div>
+{% endmacro %}
 
 
+
+{# The standard macro requires the following attributes to be set:
+
+   content.title    The title.
+   content.text     The text to be displayed. Takes html-formatting.#}
+
+{% macro newsletter(content) %}
+    <div class="container standard">
+        <div class="row"> 
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3 class="no-margin-top">{{ content.title }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ content.text }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 newsletter">
+                <form method="post">
+                    <input type="hidden" name="action" value="newsletter">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" name="firstName" value="{{ content.formData.firstName }}" class="form-control" placeholder="First Name" {{ 'disabled' if newsletterSignup else '' }}></input>
+                            </div>
+                        </div>
+                    
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" name="lastName" value="{{ content.formData.lastName }}" class="form-control" placeholder="Last Name" {{ 'disabled' if newsletterSignup else '' }}></input>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" name="email" value="{{ content.formData.email }}" class="form-control" placeholder="Add your email to our newsletter" {{ 'disabled' if newsletterSignup else '' }}></input>
+                    </div>
+                    <div class="form-group">
+                        {% if newsletterSignup %}
+                            <button type="submit" class="btn btn-primary btn-primary-green" disabled>Thanks</button>
+                        {% else %}
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 {% endmacro %}

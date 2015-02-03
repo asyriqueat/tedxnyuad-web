@@ -4873,6 +4873,11 @@ h4 {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   color: #e62b1e; }
+  h4 a, h4 a:hover, h4 a:focus, h4 a:active, h4 a:visited {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #e62b1e;
+    text-decoration: none; }
 
 h5 {
   font-size: 16px;
@@ -5075,19 +5080,21 @@ p.tag, #footer {
   margin: 0; }
 
 .newsletter {
-  margin-top: 13px;
-  width: 350px; }
+  margin-top: 36px;
+  /* width:350px; */ }
 
 .newsletter h4 {
   margin: 0 0 5px 0; }
 
 .newsletter input {
-  display: inline;
-  height: 36px;
-  width: 250px; }
+  /* display:inline;   
+    height:36px;
+    width:250px; */
+  font-family: 'Droid Serif', serif; }
 
 .newsletter .btn-primary, .contact .btn-primary {
-  font-size: 18px; }
+  font-size: 18px;
+  padding: 5px 12px 4px; }
 
 .newsletter .btn-primary-green {
   background-color: #17C400; }
@@ -5123,6 +5130,12 @@ p.tag, #footer {
   .navbar-nav li.active a, .nav li.active a {
     border-bottom: inherit; }
  }
+
+.panel-group .panel {
+  margin-bottom: 20px; }
+
+.panel-heading {
+  padding: 1px 15px 1px 15px; }
 
 .standard, .blog {
   padding-top: 25px;
@@ -5242,6 +5255,9 @@ p.tag, #footer {
 
 .border-right {
   border-right: 1px solid #cccccc; }
+
+.no-margin-top {
+  margin-top: 0px; }
 
 .tooltip {
   min-width: 250px; }

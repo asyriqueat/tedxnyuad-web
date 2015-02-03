@@ -83,6 +83,16 @@ h4{
     font-family:$helvetica;
     font-size:16px;
     color:$red; 
+    a,
+    a:hover,
+    a:focus,
+    a:active,
+    a:visited{
+        font-family:$helvetica;
+        font-size:16px;
+        color:$red;
+        text-decoration: none;
+    }
 }
 h5{
     font-size:16px;
@@ -347,20 +357,22 @@ p.tag, #footer{
 }
 
 .newsletter{
-    margin-top:13px;
-    width:350px;
+    margin-top:36px;
+    /* width:350px; */
 }
 .newsletter h4{
     margin:0 0 5px 0;   
 }
 .newsletter input{
-    display:inline;   
+    /* display:inline;   
     height:36px;
-    width:250px;
+    width:250px; */
+    font-family:$droid;
 }
 .newsletter .btn-primary,
 .contact .btn-primary{
-    font-size:18px;   
+    font-size:18px;
+    padding:5px 12px 4px;
 }
 .newsletter .btn-primary-green{
     background-color:#17C400;
@@ -406,7 +418,12 @@ p.tag, #footer{
         }
     }
 }
-
+.panel-group .panel{
+    margin-bottom:20px;
+}
+.panel-heading{
+    padding:1px 15px 1px 15px;
+}
 
 //---------------------------------------------------|
 //--- Sections                                       |
@@ -576,6 +593,10 @@ p.tag, #footer{
 }
 .border-right{
     border-right:1px solid $gray-light;
+}
+
+.no-margin-top{
+    margin-top:0px;
 }
 
 .tooltip{

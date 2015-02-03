@@ -8,7 +8,7 @@ exports = module.exports = function(req, res) {
 	
 	// locals.section is used to set the currently selected
 	// item in the header navigation.
-    locals.content = [{ template:'panorama',
+    locals.content = [{template:'panorama',
                         macro:'standard',
                         arguments:{ right:'15px',
                                     text:'<h4>Jovan Jovancevic</h4>My talk is about raising awareness of and teach training methods connected to playing blindfold chess.',
@@ -35,8 +35,8 @@ exports = module.exports = function(req, res) {
 			updater = newNewsletter.getUpdateHandler(req);
 
         updater.process(req.body, {
-			flashErrors: true,
-			fields: 'email',
+			flashErrors: false,
+			fields: 'firstName, lastName, email',
 			errorMessage: 'There was a problem submitting your enquiry:'
 		}, function(err) {
 			if (err) {

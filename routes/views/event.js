@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
     
     locals.content = [{ template:'focus',
                         macro:'standard',
-                        arguments:{ text:'<p>At TEDxNYUAD we believe in opening new horizons and broadening our perspectives. As we dream to inspire people to make an impact, this year we have assembled a host of speakers who question how we view the world. We want to take our audience on a journey of the unconventional.</p><p>For TEDxNYUAD 2015 we will be exploring the theme <span style="color:red">Question.</span>Our speakers will be sharing their untold stories as they redefine the concepts of home and memory, provide a fresh look on traditions and videogaming, change the way we see – or don’t see – chess, and show the true power of youth.',
+                        arguments:{ text:'<p>At TEDxNYUAD we believe in opening new horizons and broadening our perspectives. As we dream to inspire people to make an impact, this year we have assembled a host of speakers who question how we view the world. We want to take our audience on a journey of the unconventional.</p><p>For TEDxNYUAD 2015 we will be exploring the theme <span style="color:red">Question.</span> Our speakers will be sharing their untold stories as they redefine the concepts of home and memory, provide a fresh look on traditions and videogaming, change the way we see – or don’t see – chess, and show the true power of youth.',
                                     theme:'Question.'
                         }
                       },

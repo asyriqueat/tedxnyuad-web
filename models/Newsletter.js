@@ -1,5 +1,5 @@
 var keystone = require('keystone');
-    Types = keystone.Field.types;
+    Types = keystone.Field.Types;
 
 var Newsletter = new keystone.List('Newsletter',{
     autokey:{from:'email',path:'key', unique:true},
@@ -7,11 +7,13 @@ var Newsletter = new keystone.List('Newsletter',{
 });
 
 Newsletter.add({
-    email: {type:String,required:true},
+    firstName: {type:String,required:true,initial:false},
+    lastName: {type:String,required:true,initial:false},
+    email: {type:Types.Email,required:true},
     signedUp: {type:Date, default:Date.now}
 });
 
 Newsletter.defaultSort = '-signedUp';
-Newsletter.defaultColumns = 'email, signedUp';
+Newsletter.defaultColumns = 'firstName, lastName, email, signedUp';
 
 Newsletter.register();
