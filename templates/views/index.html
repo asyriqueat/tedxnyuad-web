@@ -47,7 +47,17 @@
                                 {% if newsletterSignup %}
                                     <button type="submit" class="btn btn-primary btn-primary-green" disabled>Thanks</button>
                                 {% else %}
-                                    <button name="newsletterSubmit" type="submit" class="btn btn-primary">Subscribe</button>
+                                    <button name="newsletterSubmit" type="submit" class="btn btn-primary" data-toggle="tooltip" title="Some tooltip text!">Subscribe</button>
+                                    {% if validationErrors %}
+                                        <!-- HTML to write -->
+                                        <!-- Generated markup by the plugin -->
+                                        <div class="tooltip right fade in" role="tooltip" style="top: -2px; left: 140px; display: block; width:40px;">
+                                          <div class="tooltip-arrow"></div>
+                                          <div class="tooltip-inner">
+                                            Please fill out all fields correctly to subscribe.
+                                          </div>
+                                        </div>
+                                    {% endif %}
                                 {% endif %}
                             </div>
                         </div>
