@@ -4980,12 +4980,26 @@ body {
   -webkit-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in; }
 
+.navbar-right li a {
+  margin-right: 30px;
+  padding: 7px 0px 8px 0px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #000; }
+
 .half-border {
   margin-left: -20px;
   border-left: 1px solid #cccccc;
   position: absolute;
   top: 8px;
   bottom: 11px; }
+
+.half-border-standard {
+  margin-left: -15px;
+  border-left: 1px solid #cccccc;
+  position: absolute;
+  top: 25px;
+  bottom: 0px; }
 
 .navbar-nav.navbar-right {
   position: relative; }
@@ -5201,9 +5215,12 @@ p.tag, #footer {
   padding-left: 0;
   padding-right: 0;
   background-color: #eeeeee;
-  min-height: 400px; }
+  min-height: 450px; }
   .speakers .container {
     margin-top: 25px; }
+
+.contact {
+  margin-bottom: 25px; }
 
 #speakers-presentation {
   display: none; }
@@ -5217,13 +5234,13 @@ p.tag, #footer {
     text-align: center; }
 
   #speakers-image img {
-    min-width: 1280px;
-    margin-left: -640px; }
+    min-width: 1440px;
+    margin-left: -720px; }
  }
 
 @media (max-width: 991px) {
   #speakers-image img {
-    margin-left: -560px; }
+    margin-left: -650px; }
  }
 
 #speakers-menu {

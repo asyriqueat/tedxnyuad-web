@@ -48,7 +48,7 @@ locals.content = [{ template:'speakers',
                                     srcScreen:'/images/team/module/frederik.jpg',    
                                     srcThumb:'/images/team/module/frederik-thumb.jpg',
                                     topic:'',
-                                    text:'<p>Hello there, I am Frederik, a Danish geek and traveller by heart. I love to tinker with ' +
+                                    text:'<p>Hello there, I am Frederik, a Danish geek and traveler by heart. I love to tinker with ' +
                                     'systems and design which is one of the many reasons I am a part of the TEDxNYUAD! Hopefully, it ' +
                                     'will become a fantastic flagship project which students, immigrants and citizens of the Abu Dhabi ' +
                                     'community will gather around in the years to come! I love the sound of a crunchy cereal breakfast ' +
@@ -63,7 +63,7 @@ locals.content = [{ template:'speakers',
                                     srcThumb:'/images/team/module/harshini-thumb.jpg',
                                     topic:'',
                                     text:'<p>Hi there! I’m Harshini, an Asian-Latino with a passion for photography. Born and raised ' +
-                                    'in Sri Lanka, but I am also half Peruvian. I’m helping out TEDxNYUAD with marketing, logistical ' +
+                                    'in Sri Lanka, but I am also half Peruvian. I’m helping out TEDxNYUAD with marketing, logistics ' +
                                     'and photography stuff. I’m someone who’s nocturnal and so I go to sleep really late but at the ' +
                                     'same time there never seems to be enough hours in a day. Two things I really love is the sound ' +
                                     'of birds chirping in the morning, and being part of TEDxNYUAD!</p>'
@@ -135,34 +135,43 @@ locals.content = [{ template:'speakers',
                                     "journey that it has been so far, and promises to continue to do so. I’m really good at being " +
                                     "late to everything, but only by a couple of minutes. I love silence. </p>"
                                   },
-                                  {
-                                    name:'Sheba Vohra',
-                                    id:11,
-                                    year:'Sophomore',
-                                    origin:'India',
-                                    srcScreen:'/images/team/module/sheba.jpg',
-                                    srcThumb:'/images/team/module/sheba-thumb.jpg',
-                                    topic:'',
-                                    text:'<p>Hello! My name is Sheba and I am from India but currently live in Peru. My passion ' +
-                                    'lies in film and sociology which I am currently pursuing as a Sophomore at NYUAD. These interests ' +
-                                    'have made me aware that each individual has a unique story to tell and I joined TEDxNYUAD to ' +
-                                    'provide fellow students with a platform on which to be able to share their own. I am good at ' +
-                                    'baking pre-packaged cakes, and love the sound of hermetically-sealed beverages opening ' +
-                                    '(i.e. Snapple bottles when they pop). </p>'
-                                  },
-                                  {
-                                    name:'Stephen Kho',
-                                    id:12,
-                                    year:'Sophomore',
-                                    origin:'The Netherlands',
-                                    srcScreen:'/images/team/module/stephen.jpg',
-                                    srcThumb:'/images/team/module/stephen-thumb.jpg',
-                                    topic:'',
-                                    text:"<p>Hi there! My name is Stephen, I was born and raised in Amsterdam, the Netherlands. " +
-                                    "Being part of TEDxNYU's Global Ops team has shown me what an impact TEDx can have on our communities " +
-                                    "(and beyond), which is why I joined the TEDxNYUAD team! I'm particularly good at putting together IKEA " +
-                                    "furniture and love the sound of a tennis ball scratching the net. </p>"
-                                  }]
+                                  {name:'Ramina Sotoudeh',
+                                  id:11,
+                                  year:'Senior',
+                                  origin:'Iran',
+                                  srcScreen:'/images/team/module/ramina.jpg',
+                                  srcThumb:'/images/team/module/ramina-thumb.jpg',
+                                  topic:'',
+                                  text:'<p>My name is Ramina and I was born in the great metropolis of Tehran, Iran. My family and I moved to Dubai in 2001. I am part of the TEDxNYUAD organizing team because I believe in the power of ideas and TED talks have greatly influenced the way I see the world. I think there is no greater joy than hearing the sound of little pieces of junk going up the vacuum cleaner tube and I proudly admit that I\'m really good at pretending to flip tables.</p>'
+                                 },
+                              {
+                                name:'Sheba Vohra',
+                                id:12,
+                                year:'Sophomore',
+                                origin:'India',
+                                srcScreen:'/images/team/module/sheba.jpg',
+                                srcThumb:'/images/team/module/sheba-thumb.jpg',
+                                topic:'',
+                                text:'<p>Hello! My name is Sheba and I am from India but currently live in Peru. My passion ' +
+                                'lies in film and sociology which I am currently pursuing as a sophomore at NYUAD. These interests ' +
+                                'have made me aware that each individual has a unique story to tell and I joined TEDxNYUAD to ' +
+                                'provide fellow students with a platform on which to be able to share their own. I am good at ' +
+                                'baking pre-packaged cakes, and love the sound of hermetically-sealed beverages opening ' +
+                                '(i.e. Snapple bottles when they pop). </p>'
+                              },
+                              {
+                                name:'Stephen Kho',
+                                id:13,
+                                year:'Sophomore',
+                                origin:'The Netherlands',
+                                srcScreen:'/images/team/module/stephen.jpg',
+                                srcThumb:'/images/team/module/stephen-thumb.jpg',
+                                topic:'',
+                                text:"<p>Hi there! My name is Stephen, I was born and raised in Amsterdam, the Netherlands. " +
+                                "Being part of TEDxNYU's Global Ops team has shown me what an impact TEDx can have on our communities " +
+                                "(and beyond), which is why I joined the TEDxNYUAD team! I'm particularly good at putting together IKEA " +
+                                "furniture and love the sound of a tennis ball scratching the net. </p>"
+                              }]
                               }
                   },
                   { template:'panorama',

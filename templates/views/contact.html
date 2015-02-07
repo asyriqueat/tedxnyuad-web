@@ -2,37 +2,55 @@
 
 {% block content %}
 	<div class="container contact">
-        <h3>Contact Us</h3>
         <div class="row">
             <div class="col-sm-6">
-                <form method="post">
-                    <input type="hidden" name="action" value="contact">
+                <h3>Contact Us</h3>
+                <div class="row">
+                    <div class="col-xs-12">
+                    <p>If you have any questions or feedback, feel free to contact us below. Also, have a look at our <a href="/faq">FAQ</a> for a clear and quick answer.</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <form method="post">
+                            <input type="hidden" name="action" value="contact">
 
-                    <div class="row">
-                        <div class="col-sm-6">
-                            {% set class = ( "has-error" if validationErrors.name else "" ) %}
-                            <div class="form-group {{ class }}">
-                                <input type="text" name="name.full" value="{{ formData["name.full"] }}" placeholder="Name" class="form-control">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    {% set class = ( "has-error" if validationErrors.name else "" ) %}
+                                    <div class="form-group {{ class }}">
+                                        <input type="text" name="name.full" value="{{ formData["name.full"] }}" placeholder="Name" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    {% set class = ( "has-error" if validationErrors.email else "" ) %}
+                                    <div class="form-group {{ class }}">
+                                        <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="col-sm-6">
-                            {% set class = ( "has-error" if validationErrors.email else "" ) %}
-                            <div class="form-group {{ class }}">
-                                <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
-                            </div>
-                        </div>
-                    </div>
 
-                    {% set class = ( "has-error" if validationErrors.message else "" ) %}
-                    <div class="form-group {{ class }}">
-                        <textarea name="message" placeholder="Leave us a message..." rows="6" class="form-control">{{ formData.message }}</textarea>
+                            {% set class = ( "has-error" if validationErrors.message else "" ) %}
+                            <div class="form-group {{ class }}">
+                                <textarea name="message" placeholder="Leave us a message..." rows="6" class="form-control">{{ formData.message }}</textarea>
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary">Send</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-primary">Send</button>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="half-border-standard"></div>
+                <h3>Volunteer</h3>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p>We are currently looking  for volunteers to help out at the event day. If you want to have a lot of fun, give people a good experience, and do something in the name of TEDx, then sign-up <a href="https://docs.google.com/forms/d/1vRccRZgFZJhgUQC1fDNJhZKfFxBfyQNddImdbsKSaTc/viewform?usp=send_form">here</a> and we will contact you soon.</p>
                     </div>
-                </form>
             </div>
         </div>
+        
 	</div>
 
 {% endblock %}
