@@ -5292,3 +5292,6 @@ p.tag, #footer {
 
 .tooltip {
   min-width: 250px; }
+
+.red {
+  color: #e62b1e; }
