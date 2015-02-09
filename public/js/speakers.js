@@ -134,10 +134,8 @@ $( document ).ready(function() {
         }
         
         $("#speakers-presentation").fadeOut(200);
-        $('#speakers-image').fadeOut(200)
         
         $("#speakers-presentation-content").delay(200).queue(function(next){ 
-            console.log('cahnage');
             $(this).html("<h3>"+speakerData[0].topic+"</h3><h4>"+speakerData[0].name+", "+speakerData[0].origin+"</h4>"+speakerData[0].text);
             $("#speakers-presentation").fadeIn(200);
             next();
@@ -145,9 +143,8 @@ $( document ).ready(function() {
 
         //Add the image to the HTML, i.e. lazy-load the image
         //http://stackoverflow.com/questions/12206443/click-thumbnail-and-load-image-into-empty-div
-        $('#speakers-image').delay(200).queue(function(next){ 
-            $(this).html('<img src='+speakerData[0].srcScreen+'>'); 
-            $(this).fadeIn(200);
+        $('.speakers').delay(200).queue(function(next){ 
+            $(this).css('background-image','url('+speakerData[0].srcScreen+')'); 
             next();
         });
         

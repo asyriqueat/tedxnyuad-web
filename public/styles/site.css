@@ -5222,7 +5222,9 @@ p.tag, #footer {
   padding-left: 0;
   padding-right: 0;
   background-color: #eeeeee;
-  min-height: 450px; }
+  min-height: 450px;
+  background-position: 25% 0%;
+  background-size: cover; }
   .speakers .container {
     margin-top: 25px; }
 
@@ -5247,6 +5249,9 @@ p.tag, #footer {
  }
 
 @media (max-width: 991px) {
+  .speakers {
+    background-position: 38% 0%; }
+
   #speakers-image img {
     margin-left: -650px; }
  }
@@ -5254,7 +5259,8 @@ p.tag, #footer {
 #speakers-menu {
   position: absolute;
   z-index: 100;
-  display: none; }
+  display: none;
+  margin-top: 25px; }
   #speakers-menu img {
     margin-bottom: 2px; }
 

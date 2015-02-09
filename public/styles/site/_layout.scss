@@ -541,7 +541,8 @@ p.tag, #footer{
     padding-right:0;
     background-color:$gray-lighter;
     min-height:450px;
-    
+    background-position:25% 0%;
+    background-size:cover;
     .container{
         margin-top:25px;
     }
@@ -575,6 +576,9 @@ p.tag, #footer{
 }
 
 @media (max-width: 991px) { //Smaller than medium devices
+    .speakers{
+        background-position:38% 0%;
+    }
     #speakers-image img{
         margin-left:-650px;   
     }
@@ -585,7 +589,7 @@ p.tag, #footer{
     position:absolute;
     z-index:100;
     display:none;
-    
+    margin-top:25px;
     img{
        margin-bottom:2px; 
     }   
