@@ -158,3 +158,71 @@
         </div>
     </div>
 {% endmacro %}
+
+{# The partners macro requires the following attributes to be set:
+
+   content.title    The title.
+   content.text     The text to be displayed. Takes html-formatting. #}
+
+{% macro logodisplay(content) %}
+    <div class="container standard">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>{{ content.title }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ content.text}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-7">
+                <div class="row">
+                    <div class="col-xs-4">
+                        <img class="img-responsive" src="{{content.partners[0].logo}}" alt="{{content.partners[0].name}}" />
+                    </div>
+                    <div class="col-xs-4">
+                        <img class="img-responsive" src="{{content.partners[1].logo}}" alt="{{content.partners[1].name}}" style="margin-top:28%;"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {%if content.arrangement.length > 0 %}
+            {% for partnerrow in content.arrangement%}
+            <div class="row">
+                {% for partner in partnerrow %}
+                    <div class="col-sm-{{12 / partnerrow}}">
+                        <img src="{{content.partners[partner].logo}}" alt="{{content.partners[partner].name}}" />
+                    </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro maps(content) %}
+    <div class="container standard">
+        <div class="row"> 
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>{{ content.title }}</h3>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        {{ content.text }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <iframe width="600" height="450" frameborder="0" style="border:0;height: 350px;max-width: 100%;"
+    src="https://www.google.com/maps/embed/v1/place?q=NYU%20Abu%20Dhabi%20Saadiyat&key={{content.apiKey}}&zoom=13"></iframe>
+            </div>
+        </div>
+    </div>
+{% endmacro %}
