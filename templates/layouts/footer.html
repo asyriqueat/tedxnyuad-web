@@ -1,4 +1,9 @@
-        <div id="footer" class="container-fluid">
+        {# Remove this if statement which is an ugly solution #}
+        {% if section=='contact' or (section=='blog' and not subsection) %}
+            <div id="footer" class="container-fluid footer-fixed">
+        {% else %}
+            <div id="footer" class="container-fluid">
+        {% endif %}
             <div class="row">
                 <div class="container">
                     <div class="col-sm-4 col-md-3">

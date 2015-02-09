@@ -5113,6 +5113,13 @@ p.tag, #footer {
 .newsletter .btn-primary-green {
   background-color: #17C400; }
 
+@media (min-width: 992px) {
+  .footer-fixed {
+    position: fixed;
+    bottom: 0px;
+    width: 100%; }
+ }
+
 @media (max-width: 767px) {
   body {
     padding-top: 40px; }
@@ -5227,7 +5234,8 @@ p.tag, #footer {
 
 #speakers-image img {
   position: absolute;
-  width: 100%; }
+  width: 100%;
+  min-width: 1440px; }
 
 @media (max-width: 1280px) {
   #speakers-image {

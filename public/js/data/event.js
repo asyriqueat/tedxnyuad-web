@@ -11,20 +11,12 @@ exports.content = module.exports = {content:
                                    text:'<h4>Venue</h4>The 2015 TEDxNYUAD will take place in the New York University Abu Dhabi Conference Center, located in the A6 building on the east side of our campus on Saadiyat Island. The Conference Center contains black leather chairs, ample lighting, and excellent acoustics, ensuring that those attending will have a comfortable and educational experience.'
                                   }
                       },
-                      { template:'standard',
-                        macro:'maps',
-                        arguments:{map:{"lat":24.5227104,"long":54.434284},
-                                   apiKey:process.env.GOOGLE_API_KEY,
-                                   title:'Address',
-                                   text:'<p>The address of the campus at which the TEDxNYUAD will be held is: </p><ul><li><p>New York University Abu Dhabi (NYUAD)</p></li><li><p>Saadiyat Island</p></li><li><p>P.O. Box 129188</p></li><li><p>Abu Dhabi, UAE</p></li></ul><p>See the map for directions. Upon arrival look follow the signs to the Conference Center. In case you come by car, make sure to get a parking ticket.</p>'
-                                  }
-                      },
                       {
                         template:'standard',
                         macro: 'logodisplay',
                         arguments:{arrangement:[],
-                                   title:'Thank you!',
-                                   text: '<p>We would not be able to pull off this incredible event without the help and generous support of our wonderful partners:</p>',
+                                   title:'Thanks to our Partners',
+                                   text: '<p>We would not be able to pull off this incredible event without the help and generous support of our wonderful partners.</p>',
                                    partners:[{
                                               name: "NYUAD Institute",
                                               logo:"./images/partners/nyuad-institute.png",
@@ -34,5 +26,14 @@ exports.content = module.exports = {content:
                                               logo: "./images/partners/nyuad-office-student-activities.png"
                                              }]
                                   }
+                      },
+                      { template:'standard',
+                        macro:'maps',
+                        arguments:{map:{"lat":24.5227104,"long":54.434284},
+                                   apiKey:process.env.GOOGLE_API_KEY,
+                                   title:'Address',
+                                   text:'<p>The address of the campus at which the TEDxNYUAD will be held is: </p><ul><li><p>New York University Abu Dhabi (NYUAD)</p></li><li><p>Saadiyat Island</p></li><li><p>P.O. Box 129188</p></li><li><p>Abu Dhabi, UAE</p></li></ul><p>See the map for directions. Upon arrival follow the signs to the Conference Center. In case you come by car, make sure to get a parking ticket.</p>'
+                                  }
                       }
+                      
                      ]};

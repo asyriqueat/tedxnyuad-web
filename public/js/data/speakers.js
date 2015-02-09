@@ -113,7 +113,7 @@ exports = module.exports = {
                                   { template:'standard',
                                     macro:'standard',
                                     arguments:{title:'Speaker Selection and Training',
-                                               text:'<p><span class="red">What\'s your story</span> was the simple question posed to TEDxNYUAD applicants in the selection process that started in October 2014. Shortening the original list of 60 applicants to just 28, the remainder pitched their speeches to the organizing team, who had the difficult task of selecting only 12 of those extraordinary stories to be featured in this year’s TEDx event.</p><p>The final pool of 12 speakers must now prepare a TEDx talk, a process through which the TEDxNYUAD organizing team is guiding them by organizing several workshops designed to help them focus their themes, perfect their presentation skills, and speak publicly. In addition to that, several rehearsals are planned with the goal being perfect preparation for the live event on the 19th of April.</p>'
+                                               text:'<p><span class="red">What\'s your story</span> was the simple question posed to TEDxNYUAD applicants in the selection process that started in October 2014. Shortening the original list of 60 applicants to just 28, the remainder pitched their speeches to the organizing team, who had the difficult task of narrowing down these extraordinary stories to those featured in this year’s TEDx event.</p>'
                                               }
                                   }],
                         speakers: speakersArray};
