@@ -5,7 +5,7 @@ exports = module.exports = {content:
                       [{template:'panorama',
                         macro:'standard',
                         arguments:{ right:'15px',
-                                    text:'<h4>Charlotte Bekker</h4>With the help of IKEA furniture, Dutch flea markets, and the image of Dubai, I take a closer look at the irony of constructing authenticity.',
+                                    text:'<h4>Charlotte de Bekker</h4>With the help of IKEA furniture, Dutch flea markets, and the image of Dubai, I take a closer look at the irony of constructing authenticity.',
                                     src:'speakers/Charlotte.jpg'}
                       },
                       { template:'blog',
