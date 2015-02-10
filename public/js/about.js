@@ -82,7 +82,7 @@ locals.content = [{ template:'speakers',
                                     "(ahem…please see Alf’s bio above) and drive the team crazy with my OCD. </p>"
                                   },
                                   {
-                                    name:'Luka Vasilij',
+                                    name:'Luka Vasilj',
                                     id:7,
                                     year:'Senior',
                                     origin:'Bosnia and Herzegovina',
