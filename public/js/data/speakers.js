@@ -51,7 +51,7 @@ var speakersArray =  [{
                   srcScreen:'/images/speakers/module/maitha.jpg',
                   srcThumb:'/images/speakers/module/maitha-thumb.jpg',
                   topic:'De-stereotyping the \'Black Cloak\'',
-                  text:'<p>Why do you wear the same thing everyday? How come you are always in black? Don’t you get bored? What is it? What does it means? Why do you wear it on a daily basis? How can you express individuality when most Emiratis wear the same thing? My new community at NYUAD bombarded me with absurd questions about my abaya that have never occurred to me before. These questions have made me realize that the way I feel and perceive my abaya is different to how others do. Through my talk I aim to explain and dismiss the stereotype of abayas in the UAE context. Moreover, I aim to motivate people to ask questions and break the stereotypes that surround them with reality.</p>'
+                  text:'<p>Why do you wear the same thing everyday? How come you are always in black? Don’t you get bored? What is it? What does it mean? Why do you wear it on a daily basis? How can you express individuality when most Emiratis wear the same thing? My new community at NYUAD bombarded me with absurd questions about my abaya that have never occurred to me before. These questions have made me realize that the way I feel and perceive my abaya is different to how others do. Through my talk I aim to explain and dismiss the stereotype of abayas in the UAE context. Moreover, I aim to motivate people to ask questions and break the stereotypes that surround them with reality.</p>'
                   },
                   {name:'Meera Al Agroobi',
                   id:7,           
