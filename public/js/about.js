@@ -6,13 +6,13 @@ locals.content = [{ template:'speakers',
                                     name:'Adam Ladhani',                   
                                     id:1,
                                     year:'Freshman',
-                                    origin:'Canada',
+                                    origin:'United States/Canada',
                                     srcScreen:'/images/team/module/adam.jpg',
                                     srcThumb:'/images/team/module/adam-thumb.jpg',
                                     topic:'',
                                     text:'<p>Hi, my name is Adam Ladhani, and I was born in the city of Hamilton in Canada. ' +
                                     'I am part of the TEDxNYUAD team because I think that the ideas shared at these conferences ' +
-                                    'can have the power to positively impact that world.  I am helping out with the marketing and ' +
+                                    'can have the power to positively impact the world.  I am helping out with the marketing and ' +
                                     'logistics for the conference.  My favorite sound is a mandazi being dropped into the frying pan.</p>'
                                   },
                                   {
