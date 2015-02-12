@@ -327,6 +327,22 @@ exports = module.exports = function(req, res) {
                             speakerRows: speakerArrangement(teamArray, rowSetup(teamArray.length))
                                   }
                       },
+                      {
+                        template:'standard',
+                        macro: 'logodisplay',
+                        arguments:{arrangement:[],
+                                   title:'Thanks to our Partners',
+                                   text: '<p>We would not be able to pull off this incredible event without the help and generous support of our wonderful partners.</p>',
+                                   partners:[{
+                                              name: "NYUAD Institute",
+                                              logo:"./images/partners/nyuad-institute.png",
+                                             },
+                                             {
+                                              name: "NYUAD Office of Student Activities",
+                                              logo: "./images/partners/nyuad-office-student-activities.png"
+                                             }]
+                                  }
+                      },
                       { template:'standard',
                        macro:'standard',
                        arguments:{ title:'About TEDx, x = independently organized event',

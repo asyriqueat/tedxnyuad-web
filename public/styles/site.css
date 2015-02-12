@@ -5186,8 +5186,8 @@ p.tag, #footer {
  }
   @media (max-width: 767px) {
     .focus {
-      padding-top: 75px;
-      padding-bottom: 75px; } }
+      padding-top: 0px;
+      padding-bottom: 0px; } }
 
 .panorama {
   width: 100%;

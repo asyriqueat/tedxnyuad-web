@@ -1,5 +1,5 @@
         {# Remove this if statement which is an ugly solution #}
-        {% if section=='contact' or (section=='blog' and not subsection) %}
+        {% if (section=='blog' and not subsection) %}
             <div id="footer" class="container-fluid footer-fixed">
         {% else %}
             <div id="footer" class="container-fluid">
