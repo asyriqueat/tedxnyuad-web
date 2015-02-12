@@ -90,8 +90,8 @@ locals.content = [{ template:'speakers',
                               origin:'Qatar',
                               srcScreen:'/images/speakers/module/sara.jpg',
                               srcThumb:'/images/speakers/module/sara-thumb.jpg',
-                              topic:'Re-evaluating happiness',
-                              text:'<p>I have grown up with a desire and passion to help people around me. At a very young age I came to a great realization that has made me live each day happier and more appreciative of everything.  I realized that I had to reevaluate my take on happiness when I was exposed to a community that had nothing yet their hardship did not prevent them from being happy and thankful.</p>'
+                              topic:'Curiosity Saved the Cat',
+                              text:'<p>How the words of my mother led to a food donation drive, how the tug of an abaya became an educational support program, how a game of football in Mozambique created an overseas call to action, how the desire for a family portrait built a roof and a home. This is a story of how curiosity and unlikely interactions with those different from myself led me to reevaluate my life and find a passion worth pursuing.</p>'
                               },                              
                               {name:'Vasily Rudchenko',
                               id:12,           
