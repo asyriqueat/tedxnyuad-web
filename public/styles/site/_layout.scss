@@ -455,7 +455,6 @@ p.tag, #footer{
 //--- Sections                                       |
 //---------------------------------------------------|
 .standard, .blog{
-    padding-top:25px;
     padding-bottom:25px;
     ul{
         list-style-image: none;
@@ -593,6 +592,37 @@ p.tag, #footer{
     img{
        margin-bottom:2px; 
     }   
+}
+
+
+//---------Attend Form
+.nav-tabs li{
+    color:#000;
+    
+    a,
+    a:focus,
+    a:active,
+    a:visited{
+        border:none;
+        background-color:none;
+        color:#000;
+    }
+    a:hover{
+        color:#000;
+        border:none;
+        border-bottom:3px $red solid;
+    }
+}
+.nav-tabs{
+    border-bottom:$gray-light 1px solid;
+}
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:active,
+.nav-tabs>li.active>a:hover,
+.nav-tabs>li.active>a:focus{
+    border:none;
+    color:#000;
+    border-bottom:3px #000 solid;
 }
 
 

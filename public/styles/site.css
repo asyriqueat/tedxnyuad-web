@@ -5159,7 +5159,6 @@ p.tag, #footer {
   padding: 1px 15px 1px 15px; }
 
 .standard, .blog {
-  padding-top: 25px;
   padding-bottom: 25px; }
   .standard ul, .blog ul {
     list-style-image: none;
@@ -5263,6 +5262,25 @@ p.tag, #footer {
   margin-top: 25px; }
   #speakers-menu img {
     margin-bottom: 2px; }
+
+.nav-tabs li {
+  color: #000; }
+  .nav-tabs li a, .nav-tabs li a:focus, .nav-tabs li a:active, .nav-tabs li a:visited {
+    border: none;
+    background-color: none;
+    color: #000; }
+  .nav-tabs li a:hover {
+    color: #000;
+    border: none;
+    border-bottom: 3px #e62b1e solid; }
+
+.nav-tabs {
+  border-bottom: #cccccc 1px solid; }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:active, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+  border: none;
+  color: #000;
+  border-bottom: 3px #000 solid; }
 
 .btn-primary {
   font-family: 'Open Sans', sans-serif;

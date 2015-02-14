@@ -5,8 +5,8 @@ var speakersArray =  [{
                   origin:'Brazil',
                   srcScreen:'/images/speakers/module/amer.jpg',
                   srcThumb:'/images/speakers/module/amer-thumb.jpg', 
-                  topic:'Developing methods to empower students to have a voice.',
-                  text:'<p>Developing methods to empower students to have a voice.</p>'
+                  topic:'Ordem e Progresso: Student Voices and the Politics of Sweeping Corruption',
+                  text:'<p>Amer unravels his recent student history by inviting you to have a voice. Having experienced one of the effects of corruption and inequality, Amer shares the story of how he helped organize a student-led movement to fight corruption in Brazil. He offers insights on how students might feel their efforts to make a difference in the world are worthless, and how they believe their immediate actions for progress might not have any long-term effects. He then invites you to critique, how one voice could potentially speak for many, or even how many voices could speak for one. His journey to fight corruption will lead you and him to discover a world of solidarity. The goal of this talk is to demonstrate to students in a larger community that they have a voice; their goal should be to voice themselves louder.</p>'
                   },
                   {name:'Attilio Rigotti',
                   id:2,            

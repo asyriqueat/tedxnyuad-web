@@ -2,6 +2,30 @@
 
 {% block content %}
 
+    {# Iterate over content #}
+    {% for section in content %} 
 
+        {% import "templates/layouts/section-" + section.template + ".html" as template %} 
+        {{ template[section.macro](section.arguments) }}
 
+    {% endfor %}
+    <div class="container">
+        <div role="tabpanel">
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#invitation" aria-controls="home" role="tab" data-toggle="tab">By Invitation</a></li>
+                <li role="presentation"><a href="#raffle" aria-controls="profile" role="tab" data-toggle="tab">Ticket Raffle</a></li>
+                <li role="presentation"><a href="#streaming" aria-controls="messages" role="tab" data-toggle="tab">Streaming Event</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="invitation">...</div>
+                <div role="tabpanel" class="tab-pane" id="raffle">...</div>
+                <div role="tabpanel" class="tab-pane" id="streaming">...</div>
+            </div>
+
+        </div>
+    </div>
 {% endblock %}
