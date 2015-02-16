@@ -9,7 +9,7 @@
         {{ template[section.macro](section.arguments) }}
 
     {% endfor %}
-    <div class="container">
+    <div class="container form">
         <div role="tabpanel">
 
             <!-- Nav tabs -->
@@ -22,10 +22,99 @@
             <!-- Tab panes -->
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="invitation">...</div>
-                <div role="tabpanel" class="tab-pane" id="raffle">...</div>
+                <div role="tabpanel" class="tab-pane" id="raffle">
+                    <div class="row">
+                        <div class="col-xs-8">
+                            <form method="post">
+                                <input type="hidden" name="action" value="contact">
+
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        {% set class = ( "has-error" if validationErrors.name.first else "" ) %}
+                                        <div class="form-group {{ class }}">
+                                            <input type="text" name="name.first" value="{{ formData["name.first"] }}" placeholder="First Name" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        {% set class = ( "has-error" if validationErrors.name.last else "" ) %}
+                                        <div class="form-group {{ class }}">
+                                            <input type="text" name="name.last" value="{{ formData["name.last"] }}" placeholder="Last Name" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-5">
+                                        {% set class = ( "has-error" if validationErrors.email else "" ) %}
+                                        <div class="form-group {{ class }}">
+                                            <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">    
+                                    <div class="col-sm-5">
+                                        {% set class = ( "has-error" if validationErrors.phone else "" ) %}
+                                        <div class="form-group {{ class }}">
+                                            <input type="email" name="phone" value="{{ formData.phone }}" placeholder="UAE Phone Number" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                  
+                                <p>Are you affiliated with New York University Abu Dhabi?</p>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="affiliation" id="affiliationRadio1" value="1">
+                                        <p>Yes</p>
+                                    </label>
+                                </div>
+                                <div class="radio-inline">
+                                    <label>
+                                        <input type="radio" name="affiliation" id="affiliationRadio2" value="0" checked>
+                                        <p>No</p>
+                                    </label>
+                                </div>
+                                
+                                <div class="row"> 
+                                    <div class="affiliation-specific col-sm-4">
+                                        <p>How are you affiliated?</p>
+                                        <select class="form-control" name="affiliationSpecific">
+                                            <option value="faculty">Faculty</option>
+                                            <option value="staff">Staff</option>
+                                            <option value="student">Student</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="1" name="multipleEvents">
+                                        <p>I would like to sign-up for the streaming event as well <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Tick this box in case you want a spot at the TEDxNYUAD streaming event should you not win a ticket in the raffle. The streaming event will take place the same time as the original event on campus. For more information, see the FAQ." aria-hidden="true"></span></p>
+                                    </label>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="1" name="terms">
+                                        <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
+                                    </label>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-primary">Send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
                 <div role="tabpanel" class="tab-pane" id="streaming">...</div>
             </div>
 
         </div>
     </div>
+{% endblock %}
+
+{% block js %}
+    <script src="/js/require.js"></script>
 {% endblock %}

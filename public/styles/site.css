@@ -5106,7 +5106,7 @@ p.tag, #footer {
     width:250px; */
   font-family: 'Droid Serif', serif; }
 
-.newsletter .btn-primary, .contact .btn-primary {
+.newsletter .btn-primary, .contact .btn-primary, .form .btn-primary {
   font-size: 18px;
   padding: 5px 12px 4px; }
 
