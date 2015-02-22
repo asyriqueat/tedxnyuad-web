@@ -5,8 +5,8 @@ exports = module.exports = {content:
                       [{template:'panorama',
                         macro:'standard',
                         arguments:{ right:'15px',
-                                    text:'<h4>Meera Al Agroobi</h4>Having been a bully myself, I will disclose how a bully\'s mind operates and show you how to fix it.',
-                                    src:'speakers/Meera.jpg'}
+                                    text:'<h4>Mohit Mandal</h4>I played street-cricket with a group of "migrant workers" in an abandoned car park in Abu Dhabi, and learned to challenge my assumptions',
+                                    src:'speakers/Mohit.jpg'}
                       },
                       { template:'blog',
                         macro:'standard',
