@@ -3,114 +3,232 @@
 {% block content %}
 
     {# Iterate over content #}
+    {% if not registrationSuccess %}
     {% for section in content %} 
 
         {% import "templates/layouts/section-" + section.template + ".html" as template %} 
         {{ template[section.macro](section.arguments) }}
 
     {% endfor %}
-    <div class="container form">
-        <div role="tabpanel">
+    {% endif %}
+    <div class="container-fluid form-special">
+        <div class="container">
+            <div class="row">
+                {% set class = ( "form-special-success" if registrationSuccess else "" ) %}
+                <div class="col-sm-6 col-sm-offset-3 form-special-style {{class}}">
+                    {% if registrationSuccess %}
+                        <center><h2 class="has-success"><span class="glyphicon glyphicon-ok"></span></h2></center>
+                        <p>Dear {{ formData["name.first"] }},</p>
+                        <p>We are excited to have you signed up for the EVENT!</p>
+                    {% else %}
+                        <div role="tabpanel" class="attend-form">
 
-            <!-- Nav tabs -->
-            <ul class="nav nav-tabs" role="tablist">
-                <li role="presentation" class="active"><a href="#invitation" aria-controls="home" role="tab" data-toggle="tab">By Invitation</a></li>
-                <li role="presentation"><a href="#raffle" aria-controls="profile" role="tab" data-toggle="tab">Ticket Raffle</a></li>
-                <li role="presentation"><a href="#streaming" aria-controls="messages" role="tab" data-toggle="tab">Streaming Event</a></li>
-            </ul>
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#invitation" aria-controls="home" role="tab" data-toggle="tab">By Invitation</a></li>
+                                <li role="presentation"><a href="#raffle" aria-controls="profile" role="tab" data-toggle="tab">Ticket Raffle</a></li>
+                                <li role="presentation"><a href="#streaming" aria-controls="messages" role="tab" data-toggle="tab">Streaming Event</a></li>
+                            </ul>
 
-            <!-- Tab panes -->
-            <div class="tab-content">
-                <div role="tabpanel" class="tab-pane active" id="invitation">...</div>
-                <div role="tabpanel" class="tab-pane" id="raffle">
-                    <div class="row">
-                        <div class="col-xs-8">
-                            <form method="post">
-                                <input type="hidden" name="action" value="contact">
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="invitation">...</div>
+                                <div role="tabpanel" class="tab-pane" id="raffle">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <form method="post">
+                                                <input type="hidden" name="action" value="register">
+                                                <input type="hidden" name="raffle" value="true">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <p>Please enter your personal details below.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.name else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="text" name="name.first" value="{{ formData["name.first"] }}" placeholder="First Name" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.name else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="text" name="name.last" value="{{ formData["name.last"] }}" placeholder="Last Name" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.email else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">    
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.phone else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="email" name="phone" value="{{ formData.phone }}" placeholder="UAE Phone Number" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        {% set class = ( "has-error" if validationErrors.name.first else "" ) %}
-                                        <div class="form-group {{ class }}">
-                                            <input type="text" name="name.first" value="{{ formData["name.first"] }}" placeholder="First Name" class="form-control">
+                                                <br/>
+
+                                                <div class="row"> 
+                                                    <div class="affiliation-specific col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+
+                                                                <p>Please let us know if you are affiliated with New York University Abu Dhabi.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                            <select class="form-control" name="affiliation">
+                                                                <option value="public">I'm not affiliated</option>
+                                                                <option value="faculty">Faculty</option>
+                                                                <option value="staff">Staff</option>
+                                                                <option value="student">Student</option>
+                                                            </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br/>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="true" name="streaming">
+                                                        <p>I would like to sign-up for the streaming event as well <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Tick this box in case you want a spot at the TEDxNYUAD streaming event should you not win a ticket in the raffle. The streaming event will take place the same time as the original event on campus. For more information, see the FAQ." aria-hidden="true"></span></p>
+                                                    </label>
+                                                </div>
+
+                                                {% set class = ( "has-error-checkbox" if validationErrors.terms else "" ) %}
+                                                <div class="checkbox {{class}}">
+                                                    <label>
+                                                        <input type="checkbox" value="true" name="terms">
+                                                        <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Send</button>
+                                                    {% if validationErrors.flag %}
+                                                        <p class="has-error-message">Please fill in all the fields correctly.</p>
+                                                    {% endif %}
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        {% set class = ( "has-error" if validationErrors.name.last else "" ) %}
-                                        <div class="form-group {{ class }}">
-                                            <input type="text" name="name.last" value="{{ formData["name.last"] }}" placeholder="Last Name" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-sm-5">
-                                        {% set class = ( "has-error" if validationErrors.email else "" ) %}
-                                        <div class="form-group {{ class }}">
-                                            <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">    
-                                    <div class="col-sm-5">
-                                        {% set class = ( "has-error" if validationErrors.phone else "" ) %}
-                                        <div class="form-group {{ class }}">
-                                            <input type="email" name="phone" value="{{ formData.phone }}" placeholder="UAE Phone Number" class="form-control">
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                                  
-                                <p>Are you affiliated with New York University Abu Dhabi?</p>
-                                <div class="radio-inline">
-                                    <label>
-                                        <input type="radio" name="affiliation" id="affiliationRadio1" value="1">
-                                        <p>Yes</p>
-                                    </label>
-                                </div>
-                                <div class="radio-inline">
-                                    <label>
-                                        <input type="radio" name="affiliation" id="affiliationRadio2" value="0" checked>
-                                        <p>No</p>
-                                    </label>
-                                </div>
-                                
-                                <div class="row"> 
-                                    <div class="affiliation-specific col-sm-4">
-                                        <p>How are you affiliated?</p>
-                                        <select class="form-control" name="affiliationSpecific">
-                                            <option value="faculty">Faculty</option>
-                                            <option value="staff">Staff</option>
-                                            <option value="student">Student</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="1" name="multipleEvents">
-                                        <p>I would like to sign-up for the streaming event as well <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Tick this box in case you want a spot at the TEDxNYUAD streaming event should you not win a ticket in the raffle. The streaming event will take place the same time as the original event on campus. For more information, see the FAQ." aria-hidden="true"></span></p>
-                                    </label>
-                                </div>
+                                <div role="tabpanel" class="tab-pane" id="streaming">
+                                    <br/>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <form method="post">
+                                                <input type="hidden" name="action" value="sregister">
+                                                <input type="hidden" name="streaming" value="true">
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        <p>Please enter your personal details below.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.sname else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="text" name="name.first" value="{{ formData["name.first"] }}" placeholder="First Name" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.sname else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="text" name="name.last" value="{{ formData["name.last"] }}" placeholder="Last Name" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.semail else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">    
+                                                    <div class="col-sm-12">
+                                                        {% set class = ( "has-error" if validationErrors.sphone else "" ) %}
+                                                        <div class="form-group {{ class }}">
+                                                            <input type="email" name="phone" value="{{ formData.phone }}" placeholder="UAE Phone Number" class="form-control">
+                                                        </div>
+                                                    </div>
+                                                </div>
 
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" value="1" name="terms">
-                                        <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
-                                    </label>
+                                                <br/>
+
+                                                <div class="row"> 
+                                                    <div class="affiliation-specific col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+
+                                                                <p>Please let us know if you are affiliated with New York University Abu Dhabi.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                            <select class="form-control" name="affiliation">
+                                                                <option value="public">I'm not affiliated</option>
+                                                                <option value="faculty">Faculty</option>
+                                                                <option value="staff">Staff</option>
+                                                                <option value="student">Student</option>
+                                                            </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <br/>
+
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input type="checkbox" value="true" name="raffle">
+                                                        <p>I would like to sign-up for the ticket raffle as well <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="Tick this box in case you want to put your name in the ticket raffle which gives you the possibility to win a ticket for the live event. The streaming event itself does not give you access to the live event, but allows you to follow the talks on big screens. For more information, see the FAQ." aria-hidden="true"></span></p>
+                                                    </label>
+                                                </div>
+
+                                                {% set class = ( "has-error-checkbox" if validationErrors.sterms else "" ) %}
+                                                <div class="checkbox {{class}}">
+                                                    <label>
+                                                        <input type="checkbox" value="true" name="terms">
+                                                        <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Send</button>
+                                                    {% if validationErrors.sflag %}
+                                                        <p class="has-error-message">Please fill in all the fields correctly.</p>
+                                                    {% endif %}
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
-                                
-                                <div class="form-actions">
-                                    <button type="submit" class="btn btn-primary">Send</button>
-                                </div>
-                            </form>
+                            </div>
+
                         </div>
-                    </div>
+                    {% endif %}
                 </div>
-                <div role="tabpanel" class="tab-pane" id="streaming">...</div>
             </div>
-
         </div>
     </div>
 {% endblock %}

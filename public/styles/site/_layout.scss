@@ -66,7 +66,7 @@ $gray-dark: #808080;
 
 
 //---------------------------------------------------|
-//--- HEADERS AND PARAGRAPHS                         |
+//--- HEADERS, PARAGRAPHS, AND INPUTS                |
 //---------------------------------------------------|
 
 h2{
@@ -103,6 +103,14 @@ p{
     font-family:$droid;
     font-size:16px;
     color:#000;   
+}
+
+label{
+    font-weight: normal;
+}
+
+input,select{
+    font-family:$droid;
 }
 
 //---------------------------------------------------|
@@ -391,7 +399,7 @@ p.tag, #footer{
 }
 .newsletter .btn-primary,
 .contact .btn-primary,
-.form .btn-primary{
+.form .btn-primary,.form-special .btn-primary{
     font-size:18px;
     padding:5px 12px 4px;
 }
@@ -626,6 +634,57 @@ p.tag, #footer{
     border-bottom:3px #000 solid;
 }
 
+.form-special{
+    background-color:#eeeeee;
+    background-image:url('../images/team.jpg');
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size:100% auto;
+}
+.form-special-style{
+    margin-top:25px;
+    margin-bottom:25px;
+    background-color:#ffffff;
+    border:$red solid 1px;
+    padding:25px;
+}
+
+.attend-form ul li,.nav-tabs > li.active,.nav-tabs > li.active > a {
+    a,a:hover,a:focus,a:active,a:visited{
+        border:none;
+        margin-right:12px;
+        margin-left:12px;
+        background-color: #000;
+        color: white;
+        padding: 5px 12px 4px;
+        border-radius: 4px; 
+    }
+    
+    a:hover{
+        background-color:$red;
+        -moz-transition: background-color .2s ease-in;
+        -o-transition: background-color .2s ease-in;
+        -webkit-transition: background-color .2s ease-in;
+        transition: background-color .2s ease-in;
+    }
+}
+
+.nav-tabs > li.active > a{
+    background-color:$red;
+}
+.form-special{
+    .nav{
+        text-align:center;
+    }
+    .nav-tabs{
+        border-bottom:none;
+    }
+    
+    .nav-tabs > li{
+        float: none;
+        display: inline-block;       
+    }
+}
 
 //---------------------------------------------------|
 //--- Miscellaneous                                  |
@@ -662,6 +721,15 @@ p.tag, #footer{
 .tooltip{
     min-width:250px;
 }
-.red{
+.red,.has-error-checkbox label p,.has-error-checkbox p a{
     color:$red;
+}
+.has-error-message{
+    display: inline;
+    padding: 6px 12px 10px;
+    background-color: #ffcccc;
+    border-radius: 4px;
+}
+.has-success{
+    color:#3c763d;
 }

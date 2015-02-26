@@ -5,7 +5,7 @@ $( document ).ready(function() {
     });
     
     //Attend dropdown
-    $(".affiliation-specific").hide();
+    /*$(".affiliation-specific").hide();
     $('input[name="affiliation"]').click(function(){
         if($(this).attr("value")=="1"){
             $(".affiliation-specific").show();
@@ -13,5 +13,5 @@ $( document ).ready(function() {
         if($(this).attr("value")=="0"){
             $(".affiliation-specific").hide();
         }
-    });
+    });*/
 });

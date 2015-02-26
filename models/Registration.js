@@ -1,17 +1,19 @@
-/*var keystone = require('keystone'),
+var keystone = require('keystone'),
     Types = keystone.Field.Types;
     
-var attend = new keystone.List('Registration',{
-    autokey:{path:'attendee',from:'email',unique:true},
-    map:{name:'email'}
+var Registration = new keystone.List('Registration',{
+    autokey:{path:'attendee',from:'email',unique:true}
 });
 
-attend.add({
-    firstName:{type:String,required:true},
-    lastName:{type:String,required:true},
-    email:{type:Types.Email,required:true},
-    phone:{type:String},
-    affiliation:{type:Types.
-});*/
+Registration.add({
+    name:{type:Types.Name,required:true,initial:true},
+    email:{type:Types.Email,required:true,initial:true},
+    phone:{type:String,initial:true},
+    affiliation:{type:Types.Select,options:'public,faculty,staff,student',required:true,initial:true},
+    raffle:{type:Types.Boolean,initial:true,default:false},
+    streaming:{type:Types.Boolean,initial:true,default:false}
+});
 
-    
+Registration.defaultSort = '-name';
+Registration.defaultColumns = 'name, email, phone, affiliation, raffle, streaming';
+Registration.register();
