@@ -4889,6 +4889,12 @@ p {
   font-size: 16px;
   color: #000; }
 
+label {
+  font-weight: normal; }
+
+input, select {
+  font-family: 'Droid Serif', serif; }
+
 p a, p a:visited, p a:focus {
   color: #000;
   font-weight: bold;
@@ -5106,7 +5112,7 @@ p.tag, #footer {
     width:250px; */
   font-family: 'Droid Serif', serif; }
 
-.newsletter .btn-primary, .contact .btn-primary, .form .btn-primary {
+.newsletter .btn-primary, .contact .btn-primary, .form .btn-primary, .form-special .btn-primary {
   font-size: 18px;
   padding: 5px 12px 4px; }
 
@@ -5282,6 +5288,46 @@ p.tag, #footer {
   color: #000;
   border-bottom: 3px #000 solid; }
 
+.form-special {
+  background-color: #eeeeee;
+  background-image: url('../images/team.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto; }
+
+.form-special-style {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  background-color: #ffffff;
+  border: #e62b1e solid 1px;
+  padding: 25px; }
+
+.attend-form ul li a, .attend-form ul li a:hover, .attend-form ul li a:focus, .attend-form ul li a:active, .attend-form ul li a:visited, .nav-tabs > li.active a, .nav-tabs > li.active a:hover, .nav-tabs > li.active a:focus, .nav-tabs > li.active a:active, .nav-tabs > li.active a:visited, .nav-tabs > li.active > a a, .nav-tabs > li.active > a a:hover, .nav-tabs > li.active > a a:focus, .nav-tabs > li.active > a a:active, .nav-tabs > li.active > a a:visited {
+  border: none;
+  margin-right: 12px;
+  margin-left: 12px;
+  background-color: #000;
+  color: white;
+  padding: 5px 12px 4px;
+  border-radius: 4px; }
+.attend-form ul li a:hover, .nav-tabs > li.active a:hover, .nav-tabs > li.active > a a:hover {
+  background-color: #e62b1e;
+  -moz-transition: background-color 0.2s ease-in;
+  -o-transition: background-color 0.2s ease-in;
+  -webkit-transition: background-color 0.2s ease-in;
+  transition: background-color 0.2s ease-in; }
+
+.nav-tabs > li.active > a {
+  background-color: #e62b1e; }
+
+.form-special .nav {
+  text-align: center; }
+.form-special .nav-tabs {
+  border-bottom: none; }
+.form-special .nav-tabs > li {
+  float: none;
+  display: inline-block; }
+
 .btn-primary {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
@@ -5311,5 +5357,14 @@ p.tag, #footer {
 .tooltip {
   min-width: 250px; }
 
-.red {
+.red, .has-error-checkbox label p, .has-error-checkbox p a {
   color: #e62b1e; }
+
+.has-error-message {
+  display: inline;
+  padding: 6px 12px 10px;
+  background-color: #ffcccc;
+  border-radius: 4px; }
+
+.has-success {
+  color: #3c763d; }
