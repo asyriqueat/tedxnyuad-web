@@ -95,7 +95,7 @@ var speakersArray =  [{
                   origin:'Ukraine',
                   srcScreen:'/images/speakers/module/vasily.jpg',                   
                   srcThumb:'/images/speakers/module/vasily-thumb.jpg',
-                  topic:'Helping engineers tackle real problems to create useful technological solutions',
+                  topic:'What happens when engineers stop caring about technology?',
                   text:'<p>Engineers are known for creating cool technology without a problem that would justify its existence. I am working on a team of NYUAD engineers, who are solving an existing problem in a national park in the UAE by tackling it through a human-centered approach, rather than a strictly technological mindset.</p>'
                 }];
 
