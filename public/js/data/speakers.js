@@ -113,7 +113,7 @@ exports = module.exports = {
                                   { template:'standard',
                                     macro:'standard',
                                     arguments:{title:'Speaker Selection and Training',
-                                               text:'<p><span class="red">What\'s your story</span> was the simple question posed to TEDxNYUAD applicants in the selection process that started in October 2014. Shortening the original list of 60 applicants to just 28, the remainder pitched their speeches to the organizing team, who had the difficult task of narrowing down these extraordinary stories to those featured in this year’s TEDx event.</p>'
+                                               text:'<p>What\'s your story was the simple question posed to TEDxNYUAD applicants in the selection process that started in October 2014. Shortening the original list of 60 applicants to just 28, the remainder pitched their speeches to the organizing team, who had the difficult task of narrowing down these extraordinary stories to those featured in this year’s TEDx event.</p>'
                                               }
                                   }],
                         speakers: speakersArray};
