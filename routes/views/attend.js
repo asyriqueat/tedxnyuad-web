@@ -74,7 +74,7 @@ exports = module.exports = function(req, res) {
             updater = newGuest.getUpdateHandler(req);
         
         //Check for match
-        Invitation.model.find().where('guestName',locals.formData.guestName).exec(function(err, posts){
+        Invitation.model.find().where('guestName',locals.formData.guestName).where('invitationCode',locals.formData.invitationCode).exec(function(err, posts){
             if(err){
                 locals.validationErrors.queryError=1;
             }else{
