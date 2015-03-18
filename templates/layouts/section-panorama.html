@@ -17,11 +17,14 @@
     <div class="panorama">
         <img src="images/{{content.src}}"></img>
         <div class="container">
-            <div class="col-xs-12 col-sm-6 col-md-4  panorama-text" style="{{ 'bottom:'+content.bottom+';' if content.bottom else 'bottom:25px;' }} 
-                                                                           {{ 'right:'+content.right+';' if content.right else '' }} 
-                                                                           {{ 'left:'+content.left+';' if content.left else '' }}">
-                {{ content.text }}</div>
-            </div>
+            
+            {% for box in content.boxes %}   
+                <div class="col-xs-12 col-sm-6 col-md-4  panorama-text" style="{{ 'bottom:'+box.bottom+';' if box.bottom else 'bottom:25px;' }} 
+                                                                               {{ 'right:'+box.right+';' if box.right else '' }} 
+                                                                               {{ 'left:'+box.left+';' if box.left else '' }}">
+                    {{ box.text }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endmacro %}

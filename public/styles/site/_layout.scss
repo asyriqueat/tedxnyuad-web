@@ -640,6 +640,7 @@ p.tag, #footer{
     background-repeat:no-repeat;
     background-position: center center;
     background-size:100% auto;
+    min-height: 750px;
 }
 .form-special-style{
     margin-top:25px;
@@ -669,9 +670,6 @@ p.tag, #footer{
     }
 }
 
-.nav-tabs > li.active > a{
-    background-color:$red;
-}
 .form-special{
     .nav{
         text-align:center;
@@ -684,24 +682,40 @@ p.tag, #footer{
         float: none;
         display: inline-block;       
     }
+    .nav-tabs > li[class="active"] a{
+        background-color:$red;
+    }
 }
 
 //---------------------------------------------------|
 //--- Miscellaneous                                  |
 //---------------------------------------------------|
-.btn-primary{
+.btn-primary,.btn-primary:active{
     font-family:$helvetica;
     font-size:24px;
     text-transform: uppercase;
     background-color:$red;
     border:none;
 }
-.btn-primary:hover{
+.btn-primary:hover,btn-black:hover{
     background-color:#000;
+    color:#fff;
     -moz-transition: background-color .2s ease-in;
     -o-transition: background-color .2s ease-in;
     -webkit-transition: background-color .2s ease-in;
     transition: background-color .2s ease-in;
+}
+.btn-black{
+    font-family:$helvetica;
+    font-size:24px;
+    text-transform: uppercase;
+    background-color:#000;
+    border:none;
+    color:#fff;
+    margin-bottom:25px;
+}
+a .btn-black:hover{
+    color:#fff;
 }
 .btn-right, .float-container{
     float:right;

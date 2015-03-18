@@ -7,8 +7,14 @@ exports.content = module.exports = {content:
                       },
                       { template:'panorama',
                         macro:'standard',
-                        arguments:{src:'venue.jpg',
-                                   text:'<h4>Venue</h4>The 2015 TEDxNYUAD will take place in the New York University Abu Dhabi Conference Center, located in the A6 building on the east side of our campus on Saadiyat Island. The Conference Center contains black leather chairs, ample lighting, and excellent acoustics, ensuring that those attending will have a comfortable and educational experience.'
+                        arguments:{ src:'venue.jpg',
+                                    boxes:[{
+                                        text:'<h4>Live Event</h4>The 2015 TEDxNYUAD will take place in the New York University Abu Dhabi Conference Center, located in the A6 building on the east side of our campus on Saadiyat Island. The Conference Center contains black leather chairs, ample lighting, and excellent acoustics, ensuring that those attending will have a comfortable and educational experience.'
+                                        },
+                                        {text:'<h4>Streaming Event</h4>Concurrently with the Live Event we will be hosting live video streaming events in the East and West Forum at New York University Abu Dhabi. These events will be informal, laid-back and a chance for the community to get together in a TEDx-esque fashion.',
+                                         bottom:'65px',
+                                         right:'25px'
+                                         }]
                                   }
                       }
                       

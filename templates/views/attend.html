@@ -11,21 +11,43 @@
 
     {% endfor %}
     {% endif %}
+    
     <div class="container-fluid form-special">
         <div class="container">
             <div class="row">
                 {% set class = ( "form-special-success" if registrationSuccess else "" ) %}
                 <div class="col-sm-6 col-sm-offset-3 form-special-style {{class}}">
                     {% if registrationSuccess %}
-                        <center><h2 class="has-success"><span class="glyphicon glyphicon-ok"></span></h2></center>
-                        <p>Dear {{ formData["name.first"] }},</p>
-                        <p>We are excited to have you signed up for the EVENT!</p>
+                        <div style="" id="socialMessage">
+                            <p>To finalise your registration, please help us spread the word of TEDxNYUAD on your social media sites! We would greatly appreciate your help in promoting our event.</p>
+
+                            <p><a href="" id="facebook"><input type="button" class="btn btn-primary" style="width:100%" value="Share on Facebook"></a></p>
+
+                            <p><a class="twitter"
+                              href="https://twitter.com/share?text=I%20am%20attending%20TEDxNYUAD%202015!%20Are%20you%3F%20%40tedxnyuad&hashtags=TEDxNYUAD,NYUAD,AbuDhabi">
+                                <input type="button" class="btn btn-primary" style="width:100%" value="Tweet your Registration">
+                            </a></p>
+
+                            <p>
+                                <input type="button" class="no btn btn-primary" style="width:100%;background-color:#000000;color:#FFFFFF;" value="No thanks!">
+                            </p>
+                        </div>
+                        <div style="" id="finalMessage">
+                            <center><h2 class="has-success"><span class="glyphicon glyphicon-ok"></span></h2></center>
+                            <p>Dear {{ guest }},</p>
+                            <p>Thank you for registering your attendance to TEDxNYUAD’s {{ event }}! We're excited to receive you on the 19th of April 2015.</p>
+                            <p>We are currently processing your registration and will send you your ticket shortly. Please bring it with you to the event either in digital form or as a paper copy</p>
+                            <p>We look forward to having you!</p>
+                            <p>Best,</p>
+                            <p>TEDxNYUAD</p>
+                        </div>
                     {% else %}
                         <div role="tabpanel" class="attend-form">
 
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist">
-                                <li role="presentation" class="active"><a href="#invitation" aria-controls="home" role="tab" data-toggle="tab">Live Event</a></li>                                <li role="presentation"><a href="#streaming" aria-controls="messages" role="tab" data-toggle="tab">Streaming Event</a></li>
+                            <ul id="attend-tabs" class="nav nav-tabs" role="tablist">
+                                <li><a href="#invitation" role="tab" data-toggle="tab">Live Event</a></li>                           
+                                <li><a href="#streaming" role="tab" data-toggle="tab">Streaming Event</a></li>
                             </ul>
 
                             <!-- Tab panes -->
@@ -39,7 +61,7 @@
                                             <input type="hidden" name="going" value="true">
                                             <div class="row">
                                                 <div class="col-sm-12">
-                                                    <p>Text about not giving access to main event...</p>
+                                                    <p><b>Note:</b> The live event is by invitation only.</p>
                                                 </div>
                                             </div>
                                                 
@@ -65,17 +87,19 @@
                                                 </div>
                                             </div>
                                                 
-                                            {% set class = ( "has-error-checkbox" if validationErrors.terms else "" ) %}
+                                            {% set class = ( "has-error-checkbox" if validationErrors.termsInvitation else "" ) %}
                                             <div class="checkbox {{class}}">
                                                 <label>
-                                                    <input type="checkbox" value="true" name="terms" {{ 'checked' if formData["terms"] else '' }}>
+                                                    <input type="checkbox" value="true" name="termsInvitation" {{ 'checked' if formData["termsInvitation"] else '' }}>
                                                     <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
                                                 </label>
                                             </div>    
                                                 
                                             <div class="form-actions">
-                                                <button type="submit" class="btn btn-primary">Accept</button>
-                                                {% if validationErrors.flag and formData["action"] == "registerInvitation" %}
+                                                <button type="submit" class="btn btn-primary">Next</button>
+                                                {% if validationErrors.invitationAccepted and formData["action"] == "registerInvitation" %}
+                                                    <p class="has-error-message">You have already accepted the invitation.</p>
+                                                {% elif validationErrors.flagInvitation and formData["action"] == "registerInvitation" %}
                                                     <p class="has-error-message">The entered name and/or code is invalid.</p>
                                                 {% endif %}
                                             </div>
@@ -92,7 +116,7 @@
                                                 <input type="hidden" name="streaming" value="true">
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <p>Please enter your personal details below.</p>
+                                                        <p><b>Note: </b>The streaming event is not the same as the live event.</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
@@ -141,10 +165,10 @@
                                                         <div class="row">
                                                             <div class="col-sm-6">
                                                             <select class="form-control" name="affiliation">
-                                                                <option value="public">I'm not affiliated</option>
-                                                                <option value="faculty">Faculty</option>
-                                                                <option value="staff">Staff</option>
-                                                                <option value="student">Student</option>
+                                                                <option value="public" {{ 'selected' if public else '' }}>I'm not affiliated</option>
+                                                                <option value="faculty" {{ 'selected' if faculty else '' }}>Faculty</option>
+                                                                <option value="staff" {{ 'selected' if staff else '' }}>Staff</option>
+                                                                <option value="student" {{ 'selected' if student else '' }}>Student</option>
                                                             </select>
                                                             </div>
                                                         </div>
@@ -160,18 +184,24 @@
                                                     </label>
                                                 </div>
 
-                                                {% set class = ( "has-error-checkbox" if validationErrors.terms else "" ) %}
+                                                {% set class = ( "has-error-checkbox" if validationErrors.termsRegister else "" ) %}
                                                 <div class="checkbox {{class}}">
                                                     <label>
-                                                        <input type="checkbox" value="true" name="terms" {{ 'checked' if formData["terms"] else '' }}>
+                                                        <input type="checkbox" value="true" name="termsRegister" {{ 'checked' if formData["termsRegister"] else '' }}>
                                                         <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
                                                     </label>
                                                 </div>
 
                                                 <div class="form-actions">
-                                                    <button type="submit" class="btn btn-primary">Send</button>
-                                                    {% if validationErrors.flag %}
-                                                        <p class="has-error-message">Please fill in all the fields correctly.</p>
+                                                    <button type="submit" class="btn btn-primary">Next</button>
+                                                    {% if validationErrors.flagRegister %}
+                                                        {% if validationErrors.emailExists %}
+                                                            <p class="has-error-message">You have already signed up.</p>
+                                                        {% elif validationErrors.emailNYU %}
+                                                            <p class="has-error-message">As an NYU affiliated, please enter your NYU email.</p>
+                                                        {% else %}
+                                                            <p class="has-error-message">Please fill in all the fields correctly.</p>
+                                                        {% endif %}
                                                     {% endif %}
                                                 </div>
                                             </form>
@@ -190,4 +220,39 @@
 
 {% block js %}
     <script src="/js/require.js"></script>
+    <script>
+      $('.twitter').click(function(event) {
+        var width  = 575,
+            height = 400,
+            left   = ($(window).width()  - width)  / 2,
+            top    = ($(window).height() - height) / 2,
+            url    = this.href,
+            opts   = 'status=1' +
+                     ',width='  + width  +
+                     ',height=' + height +
+                     ',top='    + top    +
+                     ',left='   + left;
+
+        window.open(url, 'twitter', opts);
+
+        return false;
+      });
+</script>
+<script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '851815751558723',
+          xfbml      : true,
+          version    : 'v2.1'
+        });
+      };
+
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
 {% endblock %}

@@ -5293,7 +5293,8 @@ p.tag, #footer {
   background-image: url('../images/team.jpg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: 100% auto; }
+  background-size: 100% auto;
+  min-height: 750px; }
 
 .form-special-style {
   margin-top: 25px;
@@ -5317,9 +5318,6 @@ p.tag, #footer {
   -webkit-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in; }
 
-.nav-tabs > li.active > a {
-  background-color: #e62b1e; }
-
 .form-special .nav {
   text-align: center; }
 .form-special .nav-tabs {
@@ -5327,20 +5325,35 @@ p.tag, #footer {
 .form-special .nav-tabs > li {
   float: none;
   display: inline-block; }
+.form-special .nav-tabs > li[class="active"] a {
+  background-color: #e62b1e; }
 
-.btn-primary {
+.btn-primary, .btn-primary:active {
   font-family: 'Open Sans', sans-serif;
   font-size: 24px;
   text-transform: uppercase;
   background-color: #e62b1e;
   border: none; }
 
-.btn-primary:hover {
+.btn-primary:hover, btn-black:hover {
   background-color: #000;
+  color: #fff;
   -moz-transition: background-color 0.2s ease-in;
   -o-transition: background-color 0.2s ease-in;
   -webkit-transition: background-color 0.2s ease-in;
   transition: background-color 0.2s ease-in; }
+
+.btn-black {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  margin-bottom: 25px; }
+
+a .btn-black:hover {
+  color: #fff; }
 
 .btn-right, .float-container {
   float: right; }
