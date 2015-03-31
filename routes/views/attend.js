@@ -44,7 +44,7 @@ exports = module.exports = function(req, res) {
     locals.content = [{template:'standard',
                        macro:'standard',
                        arguments:{title:'Attend the Event',
-                                  text:'<p>If you are interested in attending the event, sign up below. Because of TEDx regulations, please note that the live event has limited seats and invitation is required. If you are still interested in attending the live event but haven\t gotten an invitation, you can sign for the streaming event and tick the box to put your name in the raffle for a limited amount of live event seats. You are guaranteed a spot at the streaming event, but this is not the same as a spot at the live event.</p>'
+                                  text:'<p>If you are interested in attending the event, sign up below. Because of TEDx regulations, please note that the live event has limited seats and an invitation is required. If you are still interested in attending the live event but haven\t gotten an invitation, you can sign for the streaming event and tick the box to put your name in the raffle for a limited amount of live event seats. You are guaranteed a spot at the streaming event, but this is not the same as a spot at the live event.</p>'
                                  }
                       }];
     

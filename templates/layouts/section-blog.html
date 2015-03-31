@@ -35,7 +35,7 @@
                 <div class="col-sm-4">
                     <div class="row">
                         <div class="col-xs-12">
-                            <h4><a href="/blog/post/{{post.slug}}">{{ post.title }}</a></h4>
+                            <h4><a href="/blog/{{post.slug}}">{{ post.title }}</a></h4>
                         </div>
                     </div>
                     <div class="row">
@@ -45,10 +45,9 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-6">
-                            <p class="tag">{{ post.comments }}</p>
                         </div>
                         <div class="col-xs-6">
-                            <p class="tag text-right">{{ post.published }}</p>
+                            <p class="tag text-right">{{ post.published.day }}-{{ post.published.month }}-{{ post.published.year }}</p>
                         </div>
                     </div>
                 </div>

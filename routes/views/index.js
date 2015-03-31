@@ -1,5 +1,8 @@
 var keystone = require('keystone');
     Newsletter = keystone.list('Newsletter'); //Required for newsletter signup
+var Parser = require('csv-parse');
+var fs = require('fs')
+var Invitation = keystone.list('Invitation');
 
 exports = module.exports = function(req, res) {
 	
@@ -35,6 +38,33 @@ exports = module.exports = function(req, res) {
     //--------------
     
     
+/*
+    var source = fs.createReadStream('invitations.csv');
+
+    var linesRead = 0;
+
+    var parser = Parser({
+        delimiter: ';', 
+    });
+
+    parser.on("readable", function(){
+        var record;
+        while (record = parser.read()) {
+            linesRead++;
+            Invitation.model.create({guestName:record[0],invitationCode:record[1]});
+        }
+    });
+
+    parser.on("error", function(error){
+        console.log(error);
+    });
+
+    parser.on("end", function(){
+        console.log(linesRead);
+    });
+
+    source.pipe(parser);
+    */
     
 	// Render the view
 	view.render('index');
