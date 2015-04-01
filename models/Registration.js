@@ -11,9 +11,10 @@ Registration.add({
     phone:{type:String,initial:true},
     affiliation:{type:Types.Select,options:'public,faculty,staff,student',required:true,initial:true},
     raffle:{type:Types.Boolean,initial:true,default:false},
-    streaming:{type:Types.Boolean,initial:true,default:false}
+    streaming:{type:Types.Boolean,initial:true,default:false},
+    waitlist:{type:Types.Boolean,initial:true,default:false}
 });
 
 Registration.defaultSort = '-name';
-Registration.defaultColumns = 'name, email, phone, affiliation, raffle, streaming';
+Registration.defaultColumns = 'name, email, phone, affiliation, raffle, streaming, waitlist';
 Registration.register();

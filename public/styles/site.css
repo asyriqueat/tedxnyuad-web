@@ -4895,6 +4895,14 @@ label {
 input, select {
   font-family: 'Droid Serif', serif; }
 
+.standard ul[class="numbered"] {
+  list-style: decimal;
+  list-style-type: decimal;
+  font-family: 'Droid Serif', serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: black; }
+
 p a, p a:visited, p a:focus {
   color: #000;
   font-weight: bold;
@@ -5381,3 +5389,6 @@ a .btn-black:hover {
 
 .has-success {
   color: #3c763d; }
+
+.has-warning {
+  color: #eea236; }

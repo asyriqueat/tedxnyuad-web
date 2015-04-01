@@ -44,7 +44,7 @@ exports = module.exports = function(req, res) {
     locals.content = [{template:'standard',
                        macro:'standard',
                        arguments:{title:'Attend the Event',
-                                  text:'<p>If you are interested in attending the event, sign up below. Because of TEDx regulations, please note that the live event has limited seats and an invitation is required. If you are still interested in attending the live event but haven\t gotten an invitation, you can sign for the streaming event and tick the box to put your name in the raffle for a limited amount of live event seats. You are guaranteed a spot at the streaming event, but this is not the same as a spot at the live event.</p>'
+                                  text:'<p>If you are interested in attending the event, sign up below. Because of TEDx regulations, please note that the live event has limited seats and an invitation is required. If you are still interested in attending the live event but haven\'t gotten an invitation, you can sign for the streaming event and tick the box to put your name in the raffle for a limited amount of live event seats. You are guaranteed a spot at the streaming event, but this is not the same as a spot at the live event.</p>'
                                  }
                       }];
     
@@ -126,27 +126,43 @@ exports = module.exports = function(req, res) {
                 }else{
                     var newAttendee = new Registration.model(),
                         updater = newAttendee.getUpdateHandler(req);
+                    
+                    Registration.model.find().exec(function(err,registrations){
+                        req.body.waitlist=false;
+                        if(registrations.length>200)
+                            req.body.waitlist=true;
+                        
+                        updater.process(req.body, {
+                            flashErrors: false,
+                            fields: 'name, email, phone, affiliation, streaming, raffle, waitlist'
+                        }, function(err) {
+                            if (err) {
+                                locals.validationErrors.flagRegister = 1;
+                                for(key in err.errors)
+                                    locals.validationErrors[key] = err.errors[key];
+                                console.log(JSON.stringify(locals.validationErrors));
+                            } else {
+                                locals.registrationSuccess = true;
+                                console.log(JSON.stringify(locals.formData, null, 2));
+                                locals.guest=locals.formData["name.first"];
+                                locals.event="Streaming Event";
+                                if(req.body.waitlist){
+                                    locals.waitlist=true;
+                                    sendMail({subject:"TEDxNYUAD 2015 Waitlist Receipt",
+                                              plain:"You have now been waitlisted.",
+                                              html:"<div style='border-bottom:#e62b1e 3px solid;width:100%'><img src='http://www.tedxnyuad.org/images/logo.png' width='200px'/></div><h2 style='color:#e62b1e'>Waitlist Receipt</h2><p>Dear "+locals.formData["name.first"]+" "+locals.formData["name.last"]+",</p><p>We hereby confirm that you have been waitlisted for the Streaming Event at the campus of New York University Abu Dhabi April 19th. Should a spot become availble on the day, we will take from the waitlist on a first come, first served basis. We will first try to reach you by phone and then by email.</p><p>Should you get a spot, the streaming event will take place from <b>06.00PM - 09.00PM Sunday April 19, 2015</b> at New York University Abu Dhabi Saadiyat Island, East and West Forum, C2 Building. Look out for the signs upon arrival.</p><p>Should you have any questions, don't hesitate to contact us on.</p><p>Best regards,<br/>The TEDxNYUAD Team</p>"},locals.formData.email);
+                                }else{
+                                    sendMail({subject:"TEDxNYUAD 2015 Ticket Receipt",
+                                              plain:"You have now registered.",
+                                              html:"<div style='border-bottom:#e62b1e 3px solid;width:100%'><img src='http://www.tedxnyuad.org/images/logo.png' width='200px'/></div><h2 style='color:#e62b1e'>Ticket Receipt</h2><p>Dear "+locals.formData["name.first"]+" "+locals.formData["name.last"]+",</p><p>We hereby confirm your spot at the Streaming Event at the campus of New York University Abu Dhabi April 19th. We are excited to host your for the evening and look much forward to sharing interesting ideas with you.</p><p>Please bring this ticket receipt either as a printout or in digital copy with you to the event to secure your spot.</p><p>The streaming event will take place from <b>06.00PM - 09.00PM Sunday April 19, 2015</b> at New York University Abu Dhabi Saadiyat Island, East and West Forum, C2 Building. Look out for the signs upon arrival.</p><p>Should you have any questions, don't hesitate to contact us on.</p><p>We look forward to seeing you!</p><p>Best regards,<br/>The TEDxNYUAD Team</p>"},locals.formData.email);
+                                }
 
-                    updater.process(req.body, {
-                        flashErrors: false,
-                        fields: 'name, email, phone, affiliation, streaming, raffle'
-                    }, function(err) {
-                        if (err) {
-                            locals.validationErrors.flagRegister = 1;
-                            for(key in err.errors)
-                                locals.validationErrors[key] = err.errors[key];
-                            console.log(JSON.stringify(locals.validationErrors));
-                        } else {
-                            locals.registrationSuccess = true;
-                            console.log(JSON.stringify(locals.formData, null, 2));
-                            locals.guest=locals.formData["name.first"];
-                            locals.event="Streaming Event";
-                            
-                            sendMail({subject:"TEDxNYUAD 2015 Ticket Receipt",plain:"You have now registered.",html:"<div style='border-bottom:#e62b1e 3px solid;width:100%'><img src='http://www.tedxnyuad.org/images/logo.png' width='200px'/></div><h2 style='color:#e62b1e'>Ticket Receipt</h2><p>Dear "+locals.formData["name.first"]+" "+locals.formData["name.last"]+",</p><p>We hereby confirm your spot at the Streaming Event at the campus of New York University Abu Dhabi April 19th. We are excited to host your for the evening and look much forward to sharing interesting ideas with you.</p><p>Please bring this ticket receipt either as a printout or in digital copy with you to the event to secure your spot.</p><p>The streaming event will take place from <b>06.00PM - 09.00PM Sunday April 19, 2015</b> at New York University Abu Dhabi Saadiyat Island, East and West Forum, C2 Building. Look out for the signs upon arrival.</p><p>Should you have any questions, don't hesitate to contact us on.</p><p>We look forward to seeing you!</p><p>Best regards,<br/>The TEDxNYUAD Team</p>"},locals.formData.email);
-                            
-                        }
-                        next();
+                            }
+                            next();
+                        });
                     });
+                    
+                    
                 }
             }else{
                 locals.validationErrors.emailExists=1;

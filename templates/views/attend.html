@@ -18,29 +18,41 @@
                 {% set class = ( "form-special-success" if registrationSuccess else "" ) %}
                 <div class="col-sm-6 col-sm-offset-3 form-special-style {{class}}">
                     {% if registrationSuccess %}
-                        <div style="" id="socialMessage">
-                            <p>To finalise your registration, please help us spread the word of TEDxNYUAD on your social media sites! We would greatly appreciate your help in promoting our event.</p>
+                        {% if waitlist %}
+                            <div id="finalWaitlistMessage">
+                                <center><h2 class="has-warning"><span class="glyphicon glyphicon-remove"></span></h2></center>
+                                <p>Dear {{ guest }},</p>
+                                <p>Unfortunately there are no more spots available at the TEDxNYUAD’s streaming event. Instead, we have signed you up for the event waitlist.</p>
+                                <p>We will contact you as much in advance as possible, first by phone and then by email, should a spot become available. Our waitlist works on a first come, first served basis.</p>
+                                <p>If you have any questions, don’t hesitate to contact us.</p>
+                                <p>Best,</p>
+                                <p>TEDxNYUAD</p>
+                            </div>
+                        {% else %}
+                            <div style="" id="socialMessage">
+                                    <p>To finalise your registration, please help us spread the word of TEDxNYUAD on your social media sites! We would greatly appreciate your help in promoting our event.</p>
 
-                            <p><a href="" id="facebook"><input type="button" class="btn btn-primary" style="width:100%" value="Share on Facebook"></a></p>
+                                    <p><a href="" id="facebook"><input type="button" class="btn btn-primary" style="width:100%" value="Share on Facebook"></a></p>
 
-                            <p><a class="twitter"
-                              href="https://twitter.com/share?text=I%20am%20attending%20TEDxNYUAD%202015!%20Are%20you%3F%20%40tedxnyuad&hashtags=TEDxNYUAD,NYUAD,AbuDhabi">
-                                <input type="button" class="btn btn-primary" style="width:100%" value="Tweet your Registration">
-                            </a></p>
+                                    <p><a class="twitter"
+                                      href="https://twitter.com/share?text=I%20am%20attending%20TEDxNYUAD%202015!%20Are%20you%3F%20%40tedxnyuad&hashtags=TEDxNYUAD,NYUAD,AbuDhabi">
+                                        <input type="button" class="btn btn-primary" style="width:100%" value="Tweet your Registration">
+                                    </a></p>
 
-                            <p>
-                                <input type="button" class="no btn btn-primary" style="width:100%;background-color:#000000;color:#FFFFFF;" value="No thanks!">
-                            </p>
-                        </div>
-                        <div style="" id="finalMessage">
-                            <center><h2 class="has-success"><span class="glyphicon glyphicon-ok"></span></h2></center>
-                            <p>Dear {{ guest }},</p>
-                            <p>Thank you for registering your attendance to TEDxNYUAD’s {{ event }}! We're excited to receive you on the 19th of April 2015.</p>
-                            <p>We are currently processing your registration and will send you your ticket shortly. Please bring it with you to the event either in digital form or as a paper copy</p>
-                            <p>We look forward to having you!</p>
-                            <p>Best,</p>
-                            <p>TEDxNYUAD</p>
-                        </div>
+                                    <p>
+                                        <input type="button" class="no btn btn-primary" style="width:100%;background-color:#000000;color:#FFFFFF;" value="No thanks!">
+                                    </p>
+                            </div>
+                            <div style="" id="finalMessage">
+                                <center><h2 class="has-success"><span class="glyphicon glyphicon-ok"></span></h2></center>
+                                <p>Dear {{ guest }},</p>
+                                <p>Thank you for registering your attendance to TEDxNYUAD’s {{ event }}! We're excited to receive you on the 19th of April 2015.</p>
+                                <p>We are currently processing your registration and will send you your ticket shortly. Please bring it with you to the event either in digital form or as a paper copy.</p>
+                                <p>We look forward to having you!</p>
+                                <p>Best,</p>
+                                <p>TEDxNYUAD</p>
+                            </div>
+                        {% endif %}
                     {% else %}
                         <div role="tabpanel" class="attend-form">
 
@@ -238,21 +250,23 @@
         return false;
       });
 </script>
+{% endblock %}
+{% block facebook %}
 <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '851815751558723',
-          xfbml      : true,
-          version    : 'v2.1'
-        });
-      };
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '851815751558723',
+      xfbml      : true,
+      version    : 'v2.3'
+    });
+  };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-    </script>
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 {% endblock %}

@@ -33,9 +33,9 @@ $( document ).ready(function() {
     $('#facebook').click(function(e){
         e.preventDefault();
         FB.ui({
-          method: 'feed',
+          method: 'share',
           name: 'Attending TEDxNYUAD2015',
-          href: 'https://tedxnyuad.org/',   
+          href: 'http://tedxnyuad.org/',   
           caption: 'Share on facebook!',
           description: 'Please help us promote the event by sharing the fact that you have signed up!',
           message: 'I am attending TEDxNYUAD2015! Are you?'
