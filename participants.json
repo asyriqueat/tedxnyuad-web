@@ -1,0 +1,691 @@
+[
+{
+    "attendee": "rth256-nyuedu",
+    "affiliation": "student",
+    "phone": "0501064509",
+    "email": "rth256@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Halaby",
+        "first": "Razan"
+	}
+},
+{
+    "attendee": "ay696-nyuedu",
+    "affiliation": "student",
+    "phone": "0501064617",
+    "email": "ay696@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Yagoub",
+        "first": "Amel"
+    }
+},
+{
+    "attendee": "sst312-nyuedu",
+    "affiliation": "student",
+    "phone": "0563052807",
+    "email": "sst312@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Sachintha ",
+        "first": "Sahan"
+    }
+},
+{
+    "attendee": "ssa375-nyuedu",
+    "affiliation": "student",
+    "phone": "+971501281333",
+    "email": "ssa375@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": false,
+    "name": {
+        "last": "Almehrzi",
+        "first": "Shereena"
+    }
+},
+{
+    "attendee": "fatima8476-yahoocom",
+    "affiliation": "public",
+    "phone": "0504111192",
+    "email": "fatima8476@yahoo.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "AlMemari",
+        "first": "Fatima"
+    }
+},
+{
+    "attendee": "ma3579-nyuedu",
+    "affiliation": "student",
+    "phone": "056 305 3135",
+    "email": "ma3579@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Sabanovic",
+        "first": "Merima"
+    }
+},
+{
+    "attendee": "coultermary-yahoocom",
+    "affiliation": "public",
+    "phone": "0508230659",
+    "email": "coultermary@yahoo.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Coulter",
+        "first": "Mary "
+    }
+},
+{
+    "attendee": "jamesgorham-yahoocom",
+    "affiliation": "public",
+    "phone": "0505165315",
+    "email": "jamesgorham@yahoo.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Gorham",
+        "first": "James"
+    }
+},
+{
+    "attendee": "nqw200-nyuedu",
+    "affiliation": "student",
+    "phone": "050 812 1997",
+    "email": "nqw200@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Wilson",
+        "first": "Nia"
+    }
+},
+{
+    "attendee": "ahmadsaber18-yahoocom",
+    "affiliation": "public",
+    "phone": "00971562154770",
+    "email": "ahmad.saber18@yahoo.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Abdulgahni",
+        "first": "Ahmad"
+    }
+},
+{
+    "attendee": "wb41-nyuedu",
+    "affiliation": "faculty",
+    "phone": "0564544393",
+    "email": "wb41@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Bednarz",
+        "first": "Wendy"
+    }
+},
+{
+    "attendee": "sebchab-yahoofr",
+    "affiliation": "public",
+    "phone": "0563802563",
+    "email": "sebchab@yahoo.fr",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Chabaud",
+        "first": "Sebastian"
+    }
+},
+{
+    "attendee": "tarazlincoln-gmailcom",
+    "affiliation": "public",
+    "phone": "0507110936",
+    "email": "taraz.lincoln@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": false,
+    "name": {
+        "last": "lincoln",
+        "first": "taraz"
+    }
+},
+{
+    "attendee": "daniel_lincoln-hotmailcom",
+    "affiliation": "public",
+    "phone": "0507110936",
+    "email": "daniel_lincoln@hotmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": false,
+    "name": {
+        "last": "lincoln",
+        "first": "daniel"
+    }
+},
+{
+    "attendee": "gotama555-gmailcom",
+    "affiliation": "public",
+    "phone": "050-1253772",
+    "email": "gotama555@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Tanaka",
+        "first": "Hiromi"
+    }
+},
+{
+    "attendee": "nam441-nyuedu",
+    "affiliation": "student",
+    "phone": "0567445290",
+    "email": "nam441@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Al-Mahruqi",
+        "first": "Noor"
+    }
+},
+{
+    "attendee": "kenlingkok-gmailcom",
+    "affiliation": "public",
+    "phone": "0561608793",
+    "email": "kenlingkok@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Kok",
+        "first": "Ken Ling"
+    }
+},
+{
+    "attendee": "oa17-nyuedu",
+    "affiliation": "staff",
+    "phone": "0503114098",
+    "email": "oa17@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Ahmed",
+        "first": "Omer"
+    }
+},
+{
+    "attendee": "loganthurnauer-nyuedu",
+    "affiliation": "staff",
+    "phone": "",
+    "email": "logan.thurnauer@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Thurnauer",
+        "first": "Logan"
+    }
+},
+{
+    "attendee": "js52-nyuedu",
+    "affiliation": "faculty",
+    "phone": "050 566 7950",
+    "email": "js52@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": false,
+    "name": {
+        "last": "savio",
+        "first": "joanne"
+    }
+},
+{
+    "attendee": "ar189-nyuedu",
+    "affiliation": "staff",
+    "phone": "00971562369603",
+    "email": "ar189@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Rafi ",
+        "first": "Ashique "
+    }
+},
+{
+    "attendee": "praveenkumar-nyuedu",
+    "affiliation": "staff",
+    "phone": "0504420295",
+    "email": "praveen.kumar@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Chitradurga",
+        "first": "Praveenkumar"
+    }
+},
+{
+    "attendee": "sal568-nyuedu",
+    "affiliation": "student",
+    "phone": "563053237",
+    "email": "sal568@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Lau",
+        "first": "Sue-Ann "
+    }
+},
+{
+    "attendee": "by560-nyuedu",
+    "affiliation": "student",
+    "phone": "0563052906",
+    "email": "by560@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Yoo",
+        "first": "Byunghoon"
+    }
+},
+{
+    "attendee": "alb747-nyuedu",
+    "affiliation": "student",
+    "phone": "",
+    "email": "alb747@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Bauer",
+        "first": "Annie"
+    }
+},
+{
+    "attendee": "faq1-nyuedu",
+    "affiliation": "staff",
+    "phone": "00971507220337",
+    "email": "faq1@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "AlQaydi",
+        "first": "Fatima"
+    }
+},
+{
+    "attendee": "ab6161-nyuedu",
+    "affiliation": "staff",
+    "phone": "+971564172967",
+    "email": "ab6161@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Beaumont",
+        "first": "Anthony"
+    }
+},
+{
+    "attendee": "mma467-nyuedu",
+    "affiliation": "student",
+    "phone": "+971507170649",
+    "email": "mma467@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Adams",
+        "first": "Maya"
+    }
+},
+{
+    "attendee": "mha296-nyuedu",
+    "affiliation": "staff",
+    "phone": "056 746 4534",
+    "email": "mha296@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": false,
+    "name": {
+        "last": "Al Shamsi",
+        "first": "Mahra"
+    }
+},
+{
+    "attendee": "ld75-nyuedu",
+    "affiliation": "staff",
+    "phone": "+97150 825 4117",
+    "email": "ld75@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Doiron",
+        "first": "Lynn"
+    }
+},
+{
+    "attendee": "cb149-nyuedu",
+    "affiliation": "staff",
+    "phone": "97150 621 5754",
+    "email": "cb149@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Brandt",
+        "first": "Carol"
+    }
+},
+{
+    "attendee": "nicolestillwell-gmailcom",
+    "affiliation": "public",
+    "phone": "",
+    "email": "nicolestillwell@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Stillwell",
+        "first": "Nicole"
+    }
+},
+{
+    "attendee": "ys1150-nyuedu",
+    "affiliation": "student",
+    "phone": "0563374786",
+    "email": "ys1150@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Sun",
+        "first": "Yuqi"
+    }
+},
+{
+    "attendee": "rkc268-nyuedu",
+    "affiliation": "student",
+    "phone": "0563052747",
+    "email": "rkc268@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Cierlica",
+        "first": "Rafal"
+    }
+},
+{
+    "attendee": "fha221-nyuedu",
+    "affiliation": "staff",
+    "phone": "0564175188",
+    "email": "fha221@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Al Hammadi",
+        "first": "Fatima "
+    }
+},
+{
+    "attendee": "pa1038-nyuedu",
+    "affiliation": "student",
+    "phone": "0563052968",
+    "email": "pa1038@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Adhikari",
+        "first": "Prasant"
+    }
+},
+{
+    "attendee": "correat-clevelandclinicabudhabiae",
+    "affiliation": "public",
+    "phone": "",
+    "email": "correat@clevelandclinicabudhabi.ae",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Correa",
+        "first": "Talicia"
+    }
+},
+{
+    "attendee": "lamya9831-gmailcom",
+    "affiliation": "public",
+    "phone": "0566203520",
+    "email": "Lamya.9831@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Bukhashim",
+        "first": "Lamya"
+    }
+},
+{
+    "attendee": "contactjonty-gmailcom",
+    "affiliation": "public",
+    "phone": "",
+    "email": "contact.jonty@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Fernandes",
+        "first": "Jonathan"
+    }
+},
+{
+    "attendee": "mh4047-nyuedu",
+    "affiliation": "staff",
+    "phone": "0555651396",
+    "email": "mh4047@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Hanafi",
+        "first": "Maeda"
+    }
+},
+{
+    "attendee": "mam1333-nyuedu",
+    "affiliation": "student",
+    "phone": "0556212022",
+    "email": "mam1333@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Al Mubarak",
+        "first": "mohamed "
+    }
+},
+{
+    "attendee": "adamashraf97-nyuedu",
+    "affiliation": "student",
+    "phone": "",
+    "email": "adamashraf97@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Ashraf",
+        "first": "Adam "
+    }
+},
+{
+    "attendee": "ykg206-nyuedu",
+    "affiliation": "student",
+    "phone": "056 305 3205",
+    "email": "ykg206@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Gambrill",
+        "first": "Yumi"
+    }
+},
+{
+    "attendee": "aa4229-nyuedu",
+    "affiliation": "student",
+    "phone": "",
+    "email": "aa4229@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Alnaqbj",
+        "first": "Alreem"
+    }
+},
+{
+    "attendee": "eranditrevino-gmailcom",
+    "affiliation": "public",
+    "phone": "052 566 4109",
+    "email": "eranditrevino@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Trevino",
+        "first": "Erandi"
+    }
+},
+{
+    "attendee": "aisha_nuaimi-hotmailcom",
+    "affiliation": "public",
+    "phone": "0569088898",
+    "email": "aisha_nuaimi@hotmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Al Nuaimi",
+        "first": "Aisha "
+    }
+},
+{
+    "attendee": "janellelewis1-gmailcom",
+    "affiliation": "public",
+    "phone": "971508498917",
+    "email": "janellelewis1@gmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Lewis",
+        "first": "Janelle"
+    }
+},
+{
+    "attendee": "its_hbk-hotmailcom",
+    "affiliation": "public",
+    "phone": "0566713213",
+    "email": "its_hbk@hotmail.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Al Ali",
+        "first": "Hind"
+    }
+},
+{
+    "attendee": "njw275-nyuedu",
+    "affiliation": "student",
+    "phone": "0563052715",
+    "email": "njw275@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "White",
+        "first": "Nick"
+    }
+},
+{
+    "attendee": "ss8315-nyuedu",
+    "affiliation": "student",
+    "phone": "+971506772207",
+    "email": "ss8315@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Siddique",
+        "first": "Siba"
+    }
+},
+{
+    "attendee": "91sarah-livecom",
+    "affiliation": "public",
+    "phone": "0561962011",
+    "email": "91sarah@live.com",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Bawazir",
+        "first": "Sarah"
+    }
+},
+{
+    "attendee": "eds319-nyuedu",
+    "affiliation": "student",
+    "phone": "0501064586",
+    "email": "eds319@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Safonova",
+        "first": "Elena"
+    }
+},
+{
+    "attendee": "ok448-nyuedu",
+    "affiliation": "student",
+    "phone": "+971501064528",
+    "email": "ok448@nyu.edu",
+    "waitlist": false,
+    "streaming": true,
+    "raffle": true,
+    "name": {
+        "last": "Karpova",
+        "first": "Olga"
+    }
+}
+]

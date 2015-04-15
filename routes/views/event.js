@@ -1,5 +1,6 @@
 var keystone = require('keystone');
     Newsletter = keystone.list('Newsletter'); //Required for newsletter signup
+    registration = keystone.list('Registration');
 
 exports = module.exports = function(req, res) {
 	
@@ -33,6 +34,9 @@ exports = module.exports = function(req, res) {
 		});
 	});
     //--------------
+    
+    
+    
     
 	// Render the view
 	view.render('event');

@@ -3,6 +3,7 @@ var keystone = require('keystone');
 var Parser = require('csv-parse');
 var fs = require('fs')
 var Invitation = keystone.list('Invitation');
+var registration = keystone.list('Registration');
 
 exports = module.exports = function(req, res) {
 	
@@ -37,9 +38,15 @@ exports = module.exports = function(req, res) {
 	});
     //--------------
     
+    /*registration.model.find({},function(err,docs){
+        docs.forEach(function(doc){
+            doc.waitlist=false;
+            doc.save();
+        });
+    });*/
     
 /*
-    var source = fs.createReadStream('invitations.csv');
+    var source = fs.createReadStream('movedpeople.csv');
 
     var linesRead = 0;
 
@@ -51,7 +58,10 @@ exports = module.exports = function(req, res) {
         var record;
         while (record = parser.read()) {
             linesRead++;
-            Invitation.model.create({guestName:record[0],invitationCode:record[1]});
+            
+            
+            //registration.model.remove({email:record[1]}).exec();
+            Invitation.model.create({guestName:record[0],invitationCode:makeid()});
         }
     });
 
@@ -70,3 +80,13 @@ exports = module.exports = function(req, res) {
 	view.render('index');
 	
 };
+function makeid()
+{
+    var text = "";
+    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+    for( var i=0; i < 5; i++ )
+        text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return text;
+}

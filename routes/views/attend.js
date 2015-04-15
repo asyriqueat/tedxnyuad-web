@@ -129,7 +129,7 @@ exports = module.exports = function(req, res) {
                     
                     Registration.model.find().exec(function(err,registrations){
                         req.body.waitlist=false;
-                        if(registrations.length>200)
+                        if(registrations.length>239)
                             req.body.waitlist=true;
                         
                         updater.process(req.body, {
