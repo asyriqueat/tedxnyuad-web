@@ -12,7 +12,7 @@ exports = module.exports = function(req, res) {
             service: 'Gmail',
             auth: {
                 user: 'admin@tedxnyuad.org',
-                pass: 'tedxnyuadsaadiyat'
+                pass: process.env.EMAIL_PASS
             }
         });
 
