@@ -5,8 +5,8 @@ exports = module.exports = {content:
                       [{template:'panorama',
                         macro:'standard',
                         arguments:{ boxes:[{right:'15px',
-                                    text:'<h4>Samuel Ridgeway</h4>What is home and how do you find it? I will explore this and other questions about what makes a place "home", how you can have multiple homes, and the role memory plays in making a place home.'}],
-                                    src:'speakers/Samuel.jpg'}
+                                    text:'<h4>The Speakers Team</h4>Thanks for a great TEDxNYUAD2015! We hope that you enjoyed the talks. The videos will be up shortly.'}],
+                                    src:'speakers.jpg'}
                       },
                       { template:'blog',
                         macro:'standard',
