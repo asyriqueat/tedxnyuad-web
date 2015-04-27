@@ -3,72 +3,69 @@
 {% block content %}
     <div class="panorama" style="background-color:#000">
         <div class="container">
-            <div class="row"> 
-                <div class="col-sm-12">
-                    <center><h3 style="color:#ffffff;margin-bottom:20px;">Stay tuned for the video talks coming up mid May!</h3></center>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
             <div class="row">
-                <div class="col-xs-12">
-                    <h3>Subscribe to the Newsletter</h3>
+                <div class="col-sm-6" style="margin-bottom:20px;">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3 style="color:#ffffff;">Get More Event Information</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12" style="">
+                            <p style="color:#ffffff;">Stay tuned for the video talks coming up mid May by signing up for our newsletter!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 newsletter">
+                    <form method="post">
+                        <input type="hidden" name="action" value="newsletter">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {% set class = ( "has-error" if validationErrors.firstName else "" ) %}
+                                <div class="form-group {{class}}">
+                                    <input type="text" name="firstName" value="{{ formData.firstName }}" class="form-control" placeholder="First Name" {{ 'disabled' if newsletterSignup else '' }}></input>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                {% set class = ( "has-error" if validationErrors.lastName else "" ) %}
+                                <div class="form-group {{class}}">
+                                    <input type="text" name="lastName" value="{{ formData.lastName }}" class="form-control " placeholder="Last Name" {{ 'disabled' if newsletterSignup else '' }}></input>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                {% set class = ( "has-error" if validationErrors.email else "" ) %}                    
+                                <div class="form-group {{class}}">
+                                    <input type="email" name="email" value="{{ formData.email }}" class="form-control " placeholder="Add your email to our newsletter" {{ 'disabled' if newsletterSignup else '' }}></input>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    {% if newsletterSignup %}
+                                        <button type="submit" class="btn btn-primary btn-primary-green" disabled>Thanks</button>
+                                    {% else %}
+                                        <button name="newsletterSubmit" type="submit" class="btn btn-primary" data-toggle="tooltip" title="Sign up for our newsletter">Subscribe</button>
+                                        {% if validationErrors %}
+                                            <!-- HTML to write -->
+                                            <!-- Generated markup by the plugin -->
+                                            <div class="tooltip right fade in" role="tooltip" style="top: -2px; left: 140px; display: block; min-width:40px;">
+                                              <div class="tooltip-arrow"></div>
+                                              <div class="tooltip-inner">
+                                                Please fill out all fields correctly to subscribe.
+                                              </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>Can't get enough of TEDxNYUAD? Going through withdrawal? Subscribe to our mailing list to stay abreast of the latest updates on when the talks will be released and when they will be viewable on this site and on TED.com. Keep QUESTION-ing!</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 newsletter">
-            <form method="post">
-                <input type="hidden" name="action" value="newsletter">
-                <div class="row">
-                    <div class="col-sm-6">
-                        {% set class = ( "has-error" if validationErrors.firstName else "" ) %}
-                        <div class="form-group {{class}}">
-                            <input type="text" name="firstName" value="{{ formData.firstName }}" class="form-control" placeholder="First Name" {{ 'disabled' if newsletterSignup else '' }}></input>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        {% set class = ( "has-error" if validationErrors.lastName else "" ) %}
-                        <div class="form-group {{class}}">
-                            <input type="text" name="lastName" value="{{ formData.lastName }}" class="form-control " placeholder="Last Name" {{ 'disabled' if newsletterSignup else '' }}></input>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        {% set class = ( "has-error" if validationErrors.email else "" ) %}                    
-                        <div class="form-group {{class}}">
-                            <input type="email" name="email" value="{{ formData.email }}" class="form-control " placeholder="Add your email to our newsletter" {{ 'disabled' if newsletterSignup else '' }}></input>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            {% if newsletterSignup %}
-                                <button type="submit" class="btn btn-primary btn-primary-green" disabled>Thanks</button>
-                            {% else %}
-                                <button name="newsletterSubmit" type="submit" class="btn btn-primary" data-toggle="tooltip" title="Sign up for our newsletter">Subscribe</button>
-                                {% if validationErrors %}
-                                    <!-- HTML to write -->
-                                    <!-- Generated markup by the plugin -->
-                                    <div class="tooltip right fade in" role="tooltip" style="top: -2px; left: 140px; display: block; min-width:40px;">
-                                      <div class="tooltip-arrow"></div>
-                                      <div class="tooltip-inner">
-                                        Please fill out all fields correctly to subscribe.
-                                      </div>
-                                    </div>
-                                {% endif %}
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </form>
         </div>
     </div>
 
