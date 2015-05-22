@@ -39,6 +39,7 @@ exports = module.exports = function(app) {
 	app.all('/', routes.views.index);
     app.all('/event', routes.views["event"]); //We need to escape "event" here, since .event is reserved?
     app.all('/speakers', routes.views.speakers);
+    app.get('/talks',routes.views.talks);
     app.all('/blog', routes.views.blog);
     app.all('/blog/:post', routes.views.post);
     app.all('/about', routes.views.about);
