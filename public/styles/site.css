@@ -4994,6 +4994,11 @@ body {
   -webkit-transition: color 0.2s ease-in;
   transition: color 0.2s ease-in; }
 
+@media (max-width: 991px) {
+  .navbar-nav li a, .nav li a {
+    margin-right: 30px; }
+ }
+
 .navbar-right li a {
   margin-right: 30px;
   padding: 7px 0px 8px 0px;

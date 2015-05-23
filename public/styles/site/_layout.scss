@@ -253,6 +253,12 @@ body{
     }
 }
 
+@media (max-width: 991px) {  //Extra small devices only
+    .navbar-nav li a, .nav li a {
+        margin-right: 30px;
+    }
+}
+
 
 .navbar-right{    
     li{
