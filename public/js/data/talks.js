@@ -51,7 +51,7 @@ exports.content = module.exports = {content:
                       { template:'standard',
                         macro:'video',
                         arguments:{ text:'<p>Mohit is an Indian writer and storyteller who has lived in Abu Dhabi for the past four years. Through his interactions with the immigrant community in the city, Mohit will recount the many stories he\'s stumbled upon... while playing street cricket.</p><p> A research assignment and a chance encounter in a barbershop provided Mohit with the spark for a 14-week long journey into the hidden world of Abu Dhabi\'s "migrant workers”. He found himself confronted, continually, with the conundrum: How does one begin to capture the rich, complex - and, often invisible - lives of the "migrant workers" in a way that is neither condescending nor patronizing?</p>',
-                                    title:'Mohit Mandel – What cricket taught me about compassion',
+                                    title:'Mohit Mandal – What cricket taught me about compassion',
                                     src:'https://www.youtube.com/embed/33c1bLFtHm0'
                         }
                       },
