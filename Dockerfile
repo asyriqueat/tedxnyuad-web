@@ -15,6 +15,10 @@ COPY . /src
 
 RUN cd /src; npm install
 
+RUN echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+RUN npm dedupe
+
 EXPOSE 3000
 
 WORKDIR /src
