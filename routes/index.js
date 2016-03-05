@@ -37,7 +37,7 @@ exports = module.exports = function(app) {
 	
 	// Views
 	app.all('/', routes.views.index);
-    app.all('/event', routes.views["event"]); //We need to escape "event" here, since .event is reserved?
+    app.get('/event', routes.views.event); //We need to escape "event" here, since .event is reserved?
     app.all('/speakers', routes.views.speakers);
     app.get('/talks',routes.views.talks);
     app.all('/blog', routes.views.blog);
@@ -50,7 +50,7 @@ exports = module.exports = function(app) {
 	//app.get('/blog/post/:post', routes.views.post); //Old
 	app.all('/contact', routes.views.contact);
     
-    //app.all('/attend',routes.views.attend);
+    app.all('/attend',routes.views.attend);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
 	// app.get('/protected', middleware.requireUser, routes.views.protected);
 	

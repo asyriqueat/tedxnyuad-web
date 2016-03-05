@@ -22,7 +22,7 @@ exports = module.exports = {
                                {id:'8',
                                 title:'How did you select the speakers?',
                                 text:'<p>We requested stories and ideas from the NYUAD community from which we received about 60 amazing stories. Of those we invited 28 speakers to a “Pitch session” where each speaker presented their talks for 3 minutes.</p><p>Of the 28 speakers at the Pitch session, a committee of TEDxNYUAD organizers and NYUAD staff selected a composition of 9 speakers that makes up the 2016 speakers team.</p>'},
-                               {id:'11',
+                               {id:'9',
                                 title:'What is the theme for this year\'s event?',
                                 text:'<p>For TEDxNYUAD 2016 we will be exploring the theme <span style="color:red">Perception.</span></p><p>At TEDxNYUAD we believe in seeking new horizons and broadening  perspectives. As we dream to inspire people to make an impact, last year we assembled a host of speakers who QUESTIONed how we view the world. We took our audience on a journey of the unconventional.</p><p>For TEDxNYUAD 2016 we will explore the theme <span style="color:red">Perception.</span> Our speakers challenge our perception of being successful, dealing with hardships, giving back to the community and many other issues.'}
                                 ]
