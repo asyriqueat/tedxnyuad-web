@@ -3,7 +3,7 @@ locals.content = [{ template:'speakers',
                     macro:'standard',
                     arguments:{ 
                         speakers:[{
-                                    name:'Adam Ladhani',                   
+                                    name:'Jovan',                   
                                     id:1,
                                     year:'Freshman',
                                     origin:'United States/Canada',

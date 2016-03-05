@@ -1,5 +1,14 @@
 exports.content = module.exports = {content:
-                     [{ template:'standard',
+                     [ 
+                     {
+                        template:'standard',
+                        macro:'standard',
+                        arguments:{ 
+                          title: '<b>Check out the talks from last year!</b>',
+                          text: '<p> Last year, we witnessed some incredible and inspiring talks. While we wait for the event this year, lets throwback to the talks from last year. </p>'
+                      }
+                     },
+                     { template:'standard',
                         macro:'video',
                         arguments:{ text:'<p>Amer led one of Brazil’s largest peaceful campaigns against corruption in 2012. With the support of over 25,000 students, Amer and his team changed laws in Brazil to promote political transparency.</p><p>Having experienced one of the effects of corruption and inequality, Amer offers insights on how students might feel their efforts to make a difference in the world are worthless, and how they believe their immediate actions for progress might not have any long-term effects. The goal of this talk is to demonstrate to students in a larger community that they have a voice; their goal should be to make their voices louder.</p>',
                                     title:'Amer Nasr – Ordem e Progresso: Student Voices and the Politics of Sweeping Corruption',

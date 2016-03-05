@@ -1,6 +1,6 @@
 exports = module.exports = {content:
                             {posts:[{title:'Behind the Scenes: TEDxNYUAD\'s Green Room',
-                                    src:'images/blog/greenroom-thumb.png',
+                                    src:'images/blog/greenroom-thumb.png', 
                                     comments:'',
                                     slug:'Behind-the-Scenes-TEDxNYUADs-Green-Room',
                                     published:{day:'06',month:'May',year:'2015'},
