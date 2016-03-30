@@ -18,24 +18,13 @@
                 {% set class = ( "form-special-success" if registrationSuccess else "" ) %}
                 <div class="col-sm-6 col-sm-offset-3 form-special-style {{class}}">
                     {% if registrationSuccess %}
-                        {% if waitlist %}
-                            <div id="finalWaitlistMessage">
-                                <center><h2 class="has-warning"><span class="glyphicon glyphicon-remove"></span></h2></center>
-                                <p>Dear {{ guest }},</p>
-                                <p>Unfortunately there are no more spots available at the TEDxNYUAD’s streaming event. Instead, we have signed you up for the event waitlist.</p>
-                                <p>We will contact you as much in advance as possible, first by phone and then by email, should a spot become available. Our waitlist works on a first come, first served basis.</p>
-                                <p>If you have any questions, don’t hesitate to contact us.</p>
-                                <p>Best,</p>
-                                <p>TEDxNYUAD</p>
-                            </div>
-                        {% else %}
                             <div style="" id="socialMessage">
                                     <p>To finalise your registration, please help us spread the word of TEDxNYUAD on your social media sites! We would greatly appreciate your help in promoting our event.</p>
 
                                     <p><a href="" id="facebook"><input type="button" class="btn btn-primary" style="width:100%" value="Share on Facebook"></a></p>
 
                                     <p><a class="twitter"
-                                      href="https://twitter.com/share?text=I%20am%20attending%20TEDxNYUAD%202015!%20Are%20you%3F%20%40tedxnyuad&hashtags=TEDxNYUAD,NYUAD,AbuDhabi">
+                                      href="https://twitter.com/share?text=I%20am%20attending%20TEDxNYUAD%202016!%20Are%20you%3F%20%40tedxnyuad&hashtags=TEDxNYUAD,NYUAD,AbuDhabi">
                                         <input type="button" class="btn btn-primary" style="width:100%" value="Tweet your Registration">
                                     </a></p>
 
@@ -46,131 +35,50 @@
                             <div style="" id="finalMessage">
                                 <center><h2 class="has-success"><span class="glyphicon glyphicon-ok"></span></h2></center>
                                 <p>Dear {{ guest }},</p>
-                                <p>Thank you for registering your attendance to TEDxNYUAD’s {{ event }}! We're excited to receive you on the 19th of April 2015.</p>
+                                <p>Thank you for reserving {{ tickets }} tickets to TEDxNYUAD2016! We're excited to receive you on the 10th of April 2016.</p>
                                 <p>We are currently processing your registration and will send you your ticket shortly. Please bring it with you to the event either in digital form or as a paper copy.</p>
                                 <p>We look forward to having you!</p>
                                 <p>Best,</p>
                                 <p>TEDxNYUAD</p>
                             </div>
-                        {% endif %}
                     {% else %}
                         <div role="tabpanel" class="attend-form">
-
-                            <!-- Nav tabs -->
-                            <ul id="attend-tabs" class="nav nav-tabs" role="tablist">
-                                <li><a href="#invitation" role="tab" data-toggle="tab">Live Event</a></li>                           
-                                <li><a href="#streaming" role="tab" data-toggle="tab">Streaming Event</a></li>
-                            </ul>
-
                             <!-- Tab panes -->
                             <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="invitation">
-                                    <br/>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <form method="post">
-                                            <input type="hidden" name="action" value="registerInvitation">
-                                            <input type="hidden" name="going" value="true">
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <p><b>Note:</b> The live event is by invitation only.</p>
-                                                </div>
-                                            </div>
-                                                
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    <p>To accept your invitation, please fill in your name and the invitation code exactly as stated in your invitation letter. Note that both fields are case-sensitive.</p>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    {% set class = ( "has-error" if validationErrors.mismatch else "" ) %}
-                                                    <div class="form-group {{ class }}">
-                                                        <input type="text" name="guestName" value="{{ formData["guestName"] }}" placeholder="Guest Name" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-sm-12">
-                                                    {% set class = ( "has-error" if validationErrors.mismatch else "" ) %}
-                                                    <div class="form-group {{ class }}">
-                                                        <input type="text" name="invitationCode" value="{{ formData["invitationCode"] }}" placeholder="Invitation Code" class="form-control">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                                
-                                            {% set class = ( "has-error-checkbox" if validationErrors.termsInvitation else "" ) %}
-                                            <div class="checkbox {{class}}">
-                                                <label>
-                                                    <input type="checkbox" value="true" name="termsInvitation" {{ 'checked' if formData["termsInvitation"] else '' }}>
-                                                    <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
-                                                </label>
-                                            </div>    
-                                                
-                                            <div class="form-actions">
-                                                <button type="submit" class="btn btn-primary">Next</button>
-                                                {% if validationErrors.invitationAccepted and formData["action"] == "registerInvitation" %}
-                                                    <p class="has-error-message">You have already accepted the invitation.</p>
-                                                {% elif validationErrors.flagInvitation and formData["action"] == "registerInvitation" %}
-                                                    <p class="has-error-message">The entered name and/or code is invalid.</p>
-                                                {% endif %}
-                                            </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div role="tabpanel" class="tab-pane" id="streaming">
-                                    <br/>
+                                <div role="tabpanel" class="tab-pane active" id="attend">
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <form method="post">
                                                 <input type="hidden" name="action" value="register">
-                                                <input type="hidden" name="streaming" value="true">
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        <p><b>Note: </b>The streaming event is not the same as the live event.</p>
+                                                        <h3 style="margin-top:0px;">Register for the Event</h3>
+                                                        <p>Register for the live event below.</p>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        {% set class = ( "has-error" if validationErrors.name else "" ) %}
+                                                        {% set class = ( "has-error" if validationErrors.mismatch else "" ) %}
+                                                        {% set class = ( "has-error" if validationErrors.emptyName else "" ) %}
                                                         <div class="form-group {{ class }}">
-                                                            <input type="text" name="name.first" value="{{ formData["name.first"] }}" placeholder="First Name" class="form-control">
+                                                            <input type="text" name="fullName" value="{{ formData.fullName }}" placeholder="Name" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-sm-12">
-                                                        {% set class = ( "has-error" if validationErrors.name else "" ) %}
-                                                        <div class="form-group {{ class }}">
-                                                            <input type="text" name="name.last" value="{{ formData["name.last"] }}" placeholder="Last Name" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        {% set class = ( "has-error" if validationErrors.email else "" ) %}
+                                                        {% set class = ( "has-error" if validationErrors.email else "" ) %} 
+                                                        {% set class = ( "has-error" if validationErrors.emptyEmail else "" ) %}
                                                         <div class="form-group {{ class }}">
                                                             <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row">    
-                                                    <div class="col-sm-12">
-                                                        {% set class = ( "has-error" if validationErrors.phone else "" ) %}
-                                                        <div class="form-group {{ class }}">
-                                                            <input name="phone" value="{{ formData.phone }}" placeholder="UAE Phone Number" class="form-control">
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <br/>
 
                                                 <div class="row"> 
                                                     <div class="affiliation-specific col-sm-12">
                                                         <div class="row">
                                                             <div class="col-sm-12">
-
                                                                 <p>Please let us know if you are affiliated with New York University Abu Dhabi.</p>
                                                             </div>
                                                         </div>
@@ -178,22 +86,32 @@
                                                             <div class="col-sm-6">
                                                             <select class="form-control" name="affiliation">
                                                                 <option value="public" {{ 'selected' if public else '' }}>I'm not affiliated</option>
-                                                                <option value="faculty" {{ 'selected' if faculty else '' }}>Faculty</option>
-                                                                <option value="staff" {{ 'selected' if staff else '' }}>Staff</option>
+                                                                <option value="facultyStaff" {{ 'selected' if facultyStaff else '' }}>Faculty or Staff</option>
                                                                 <option value="student" {{ 'selected' if student else '' }}>Student</option>
                                                             </select>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-
-                                                <br/>
-
-                                                <div class="checkbox">
-                                                    <label>
-                                                        <input type="checkbox" value="true" name="raffle">
-                                                        <p>I would like to sign-up for the ticket raffle as well <span class="glyphicon glyphicon-info-sign" data-toggle="tooltip" title="The ticket raffle is your chance of securing a ticket for the live event. Tick this box in case you want to put your name in the raffle, winners will be contacted directly. For more information, see the FAQ." aria-hidden="true"></span></p>
-                                                    </label>
+                                                    
+                                                <div class="row"> 
+                                                    <div class="affiliation-specific col-sm-12">
+                                                        <div class="row">
+                                                            <div class="col-sm-12">
+                                                                <p></br>Select your number of tickets.</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-sm-6">
+                                                            <select class="form-control" name="tickets">
+                                                                <option value="1" {{ 'selected' if ticket == 1 else '' }}>1</option>
+                                                                <option value="2" {{ 'selected' if ticket == 2 else '' }}>2</option>
+                                                                <option value="3" {{ 'selected' if ticket == 3 else '' }}>3</option>
+                                                                <option value="4" {{ 'selected' if ticket == 4 else '' }}>4</option>
+                                                            </select>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
 
                                                 {% set class = ( "has-error-checkbox" if validationErrors.termsRegister else "" ) %}
@@ -202,18 +120,20 @@
                                                         <input type="checkbox" value="true" name="termsRegister" {{ 'checked' if formData["termsRegister"] else '' }}>
                                                         <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
                                                     </label>
-                                                </div>
-
+                                                </div>    
+                                                
                                                 <div class="form-actions">
                                                     <button type="submit" class="btn btn-primary">Next</button>
-                                                    {% if validationErrors.flagRegister %}
-                                                        {% if validationErrors.emailExists %}
-                                                            <p class="has-error-message">You have already signed up.</p>
-                                                        {% elif validationErrors.emailNYU %}
-                                                            <p class="has-error-message">As an NYU affiliated, please enter your NYU email.</p>
-                                                        {% else %}
-                                                            <p class="has-error-message">Please fill in all the fields correctly.</p>
-                                                        {% endif %}
+                                                    {% if validationErrors.empty %}
+                                                        <p class="has-error-message">Please fill in both name and email.</p>
+                                                    {% elif validationErrors.emailNYU %}
+                                                        <p class="has-error-message">Please use your NYU email.</p>
+                                                    {% elif validationErrors.termsRegister %}
+                                                        <p class="has-error-message">Please accept the terms.</p>
+                                                    {% elif validationErrors.registrationFull %}
+                                                        <p class="has-error-message">Registration is full.</p>
+                                                    {% elif validationErrors.emailExists %}
+                                                        <p class="has-error-message">This email has been registered already.</p>
                                                     {% endif %}
                                                 </div>
                                             </form>
@@ -221,7 +141,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                     {% endif %}
                 </div>
