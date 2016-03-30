@@ -26,12 +26,14 @@ exports.initLocals = function(req, res, next) {
 	var locals = res.locals;
 	
 	locals.navLinks = [
-		{ label: 'Event',	    	key: 'event',		href: '/event' },
+		{ label: 'Event',    	    key: 'event',		href: '/event' },
 		{ label: 'Speakers',        key: 'speakers',    href: '/speakers' },
-        { label: 'Talks',	      	key: 'talks',       href: '/talks' },
+		{ label: 'Attend',          key: 'attend',       href: '/attend' },
+        { label: 'Talks',	     	key: 'talks',       href: '/talks' },
 		{ label: 'Blog',	 	    key: 'blog',		href: '/blog' },
 		{ label: 'About',	      	key: 'about',		href: '/about' },
         { label: 'FAQ',             key: 'faq',         href: '/faq' }
+        
 	];
 	
     //Information for the right side

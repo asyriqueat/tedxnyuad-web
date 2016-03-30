@@ -16,7 +16,7 @@ $( document ).ready(function() {
 
         $(this).attr('data-original-title',value);
     });
-    
+    /* 
     console.log('getting json');
     $.ajax({
       dataType: "text",
@@ -95,7 +95,7 @@ $( document ).ready(function() {
                             }
                         }
                     );
-    }});
+    }});*/
         
     
     function getHash(){
