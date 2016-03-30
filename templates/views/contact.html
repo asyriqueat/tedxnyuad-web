@@ -1,10 +1,11 @@
 {% extends "templates/layouts/default.html" %}
 
 {% block content %}
-	<div class="container contact">
+    <div class="container-fluid form-special" style="padding-left:0px;padding-right:0px; padding-bottom:0px;">
+        <div class="container contact">
         <div class="row">
-            <div class="col-sm-6">
-                <h3>Contact Us</h3>
+            <div class=" col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 form-special-style {{class}}">
+                <h3 style="margin-top:0px">Contact Us</h3>
                 <div class="row">
                     <div class="col-xs-12">
                     <p>If you have any questions or feedback, feel free to contact us below. Also, have a look at our <a href="/faq">FAQ</a> for a clear and quick answer.</p>
@@ -41,6 +42,8 @@
                     </div>
                 </div>
             </div>
+            <!--
+            //commenting the Volunteer section
             <div class="col-sm-6">
                 <div class="half-border-standard"></div>
                 <h3>Volunteer</h3>
@@ -50,12 +53,14 @@
                     </div>
                 </div>
             </div>
+            -->
         </div>
-    </div>
-        
-    <div class="container standard">
+        </div>
+
+
+        <div class="container standard">
         <div class="row"> 
-            <div class="col-sm-6">
+            <!--<div class="col-sm-6">
                 <div class="row">
                     <div class="col-xs-12">
                         <h3>Location</h3>
@@ -66,11 +71,13 @@
                         <p>The address of the campus at which the TEDxNYUAD will be held is: </p><p>New York University Abu Dhabi (NYUAD)</p><p>Saadiyat Island</p><p>Abu Dhabi, UAE</p><p>See the map for directions. Upon arrival follow the signs to the Conference Center. In case you come by car, make sure to get a parking ticket.</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-6">
-                <iframe width="600" height="450" frameborder="0" style="border:0;height: 350px;max-width: 100%;"
-    src="https://www.google.com/maps/embed/v1/place?q=NYU%20Abu%20Dhabi%20Saadiyat&key={{apiKey}}&zoom=13"></iframe>
-            </div>
+            </div>-->
+            
+        </div>
+        </div>
+        <div class="panorama" style="padding-bottom:0px;">
+                <iframe width="100%" height="250" frameborder="0" style="border:0;height: 350px;max-width: 100%;margin-bottom:0px;"
+        src="https://www.google.com/maps/embed/v1/place?q=NYU%20Abu%20Dhabi%20Saadiyat&key={{apiKey}}&zoom=13"></iframe>
         </div>
     </div>
 {% endblock %}
