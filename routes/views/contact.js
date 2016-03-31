@@ -15,49 +15,61 @@ exports = module.exports = function(req, res) {
 	locals.enquirySubmitted = false;
     locals.apiKey=process.env.GOOGLE_API_KEY;
 	
-	// On POST requests, add the Enquiry item to the database
-	view.on('post', { action: 'contact' }, function(next) {
-		
-		var newEnquiry = new Enquiry.model(),
-			updater = newEnquiry.getUpdateHandler(req);
-		
-		updater.process(req.body, {
-			flashErrors: false,
-			fields: 'name, email, phone, enquiryType, message',
-			errorMessage: 'There was a problem submitting your enquiry:'
-		}, function(err) {
-			if (err) {
-				locals.validationErrors = err.errors;
-			} else {
-				locals.enquirySubmitted = true;
-			}
-			next();
-		});
-		
-	});
-	
-    
-    //Required for newsletter signup
-    locals.formData = req.body || {};
-    view.on('post', { action: 'newsletter' }, function(next) {
-		var newNewsletter = new Newsletter.model(),
-			updater = newNewsletter.getUpdateHandler(req);
 
-        updater.process(req.body, {
-			flashErrors: true,
-			fields: 'email',
-			errorMessage: 'There was a problem submitting your enquiry:'
-		}, function(err) {
-			if (err) {
-				locals.validationErrors = err.errors;
-			} else {
-				locals.newsletterSignup = true;
-			}
-			next();
-		});
-	});
-    //--------------
-    
-	view.render('contact');
+    function sendMail(data,to){
+        var nodemailer = require('nodemailer');
+
+        // create reusable transporter object using SMTP transport
+        var transporter = nodemailer.createTransport({
+            service: 'Gmail',
+            auth: {
+                user: 'admin@tedxnyuad.org',
+                pass: 'tedxnyuadrocks'
+            }
+        });
+
+        // NB! No need to recreate the transporter object. You can use
+        // the same transporter object for all e-mails
+
+        // setup e-mail data with unicode symbols
+        var mailOptions = {
+            from: 'TEDxNYUAD <info@tedxnyuad.org>', // sender address
+            to: to, // list of receivers
+            subject: data.subject, // Subject line
+            text: data.plain, // plaintext body
+            html: data.html // html body
+        };
+
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, function(error, info){
+            if(error){
+                console.log('Error sending message: '+error);
+            }else{
+                console.log('Message sent: ' + info.response);
+            }
+        });
+    }
+
+	// On POST requests, add the Enquiry item to the database
+	locals.formData = req.body || {};
+	view.on('post', { action: 'contact' }, function(next) {
 	
+		if(locals.formData.fullName == '' || locals.formData.fullName == undefined) {
+
+		} else if (locals.formData.email == '' || locals.formData.email == undefined) {
+
+		} else if (locals.formData.message == '' || locals.formData.message == undefined){
+
+		} else {
+			locals.enquirySubmitted = true;
+			sendMail({subject:"Inquery from "+locals.formData.fullName,
+	                  plain:"Message from "+locals.formData.fullName+", "+locals.formData.email+": "+ locals.formData.message,
+	                  html:"Message from "+locals.formData.fullName+", "+locals.formData.email+": "+ locals.formData.message
+	           }, 'admin@tedxnyuad.org');
+		}
+		
+		next();
+	});
+ 
+	view.render('contact');
 };

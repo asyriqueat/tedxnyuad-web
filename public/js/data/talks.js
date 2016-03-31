@@ -4,8 +4,8 @@ exports.content = module.exports = {content:
                         template:'standard',
                         macro:'standard',
                         arguments:{ 
-                          title: '<b>Check out the talks from last year!</b>',
-                          text: '<p> Last year, we witnessed some incredible and inspiring talks. While we wait for the event this year, lets throwback to the talks from last year. </p>'
+                          title: 'Check out the talks from last year!',
+                          text: '<p>Last year, we witnessed some incredible and inspiring talks. While we wait for the event this year, lets reminisce last year\'s outcome.</p>'
                       }
                      },
                      { template:'standard',

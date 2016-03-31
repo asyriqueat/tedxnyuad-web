@@ -4,13 +4,11 @@ var keystone = require('keystone'),
 
 exports = module.exports = function(req, res) {
         
-    Registration.model.find({},function(err,docs){
-        docs.forEach(function(doc){
-            console.log(doc);
-        });
-    });
-
-
+    // Registration.model.find({},function(err,docs){
+    //     docs.forEach(function(doc){
+    //         doc.remove();
+    //     });
+    // });
 
     function sendMail(data,to){
         var nodemailer = require('nodemailer');
@@ -46,6 +44,7 @@ exports = module.exports = function(req, res) {
         });
     }
     
+
     var view = new keystone.View(req, res);
 	locals = res.locals;   
     
@@ -106,10 +105,11 @@ exports = module.exports = function(req, res) {
                                 tickets+= parseInt(registration.tickets);
                             });
 
-                            console.log('Tickets: '+tickets);
+                            console.log('Tickets ('+locals.formData.affiliation+'): '+tickets);
 
-                            if(tickets>registrationLengths[locals.formData.affiliation]) {
+                            if(tickets>=registrationLengths[locals.formData.affiliation]) {
                                 // do something
+                                locals.guest = locals.formData.fullName;
                                 locals.registrationFull = true;
                                 return next();
                             }
@@ -133,9 +133,10 @@ exports = module.exports = function(req, res) {
                                     console.log(JSON.stringify(locals.formData, null, 2));
                                     locals.guest=locals.formData["fullName"];
                                     locals.tickets = locals.formData.tickets;
-                                    sendMail({subject:"TEDxNYUAD 2015 Ticket Receipt",
+                                    var msg_ticket = (locals.tickets == 1) ? "1 ticket" : locals.tickets +" tickets";
+                                    sendMail({subject:"TEDxNYUAD 2016 Ticket Receipt",
                                               plain:"You have now registered.",
-                                              html:"<div style='border-bottom:#e62b1e 3px solid;width:100%'><img src='http://www.tedxnyuad.org/images/logo.png' width='200px'/></div><h2 style='color:#e62b1e'>Ticket Receipt</h2><p>Dear "+locals.formData["fullName"]+",</p><p>We hereby confirm your spot at the TEDxNYUAD2016 at the campus of New York University Abu Dhabi April 10th. We are excited to host your for the evening and look much forward to sharing interesting ideas with you.</p><p>Please bring this ticket receipt either as a printout or in digital copy with you to the event to secure your spot.</p><p>The event will take place from <b>06.00PM - 09.00PM Sunday April 10, 2015</b> at New York University Abu Dhabi Saadiyat Island, The Institute, A6 Building. Look out for the signs upon arrival.</p><p>Should you have any questions, don't hesitate to contact us on.</p><p>We look forward to seeing you!</p><p>Best regards,<br/>The TEDxNYUAD Team</p>"},
+                                              html:"<div style='border-bottom:#e62b1e 3px solid;width:100%'><img src='http://www.tedxnyuad.org/images/logo.png' width='200px'/></div><h2 style='color:#e62b1e'>Ticket Receipt</h2><p>Dear "+locals.formData["fullName"]+",</p><p>We hereby confirm your reservation of "+msg_ticket+" at the TEDxNYUAD2016 at the campus of New York University Abu Dhabi April 10th. We are excited to host you for the evening and look forward to sharing interesting ideas with you.</p><p>Please bring this ticket receipt either as a printout or as a digital copy with you to the event to secure your spot.</p><p>The event will take place from <b>06.00PM - 09.00PM Sunday April 10, 2016</b> at New York University Abu Dhabi Saadiyat Island, The Institute, A6 Building. Look out for the signs upon arrival.</p><p>Doors open at 6PM and seats will be given on a first-come first-serve basis. The event will begin at 6.30PM. <b>Tickets only guarantee a seat up until 10 minutes before the event begins, i.e. at 6.20pm we will start allowing those in the standby-line to attend the event.</p>Should you have any questions, don't hesitate to contact us on.</p><p>We look forward to seeing you!</p><p>Best regards,<br/>The TEDxNYUAD Team</p>"},
                                               locals.formData.email);
                                 }
                                 next();

@@ -42,106 +42,118 @@
                                 <p>TEDxNYUAD</p>
                             </div>
                     {% else %}
-                        <div role="tabpanel" class="attend-form">
-                            <!-- Tab panes -->
-                            <div class="tab-content">
-                                <div role="tabpanel" class="tab-pane active" id="attend">
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <form method="post">
-                                                <input type="hidden" name="action" value="register">
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        <h3 style="margin-top:0px;">Register for the Event</h3>
-                                                        <p>Register for the live event below.</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        {% set class = ( "has-error" if validationErrors.mismatch else "" ) %}
-                                                        {% set class = ( "has-error" if validationErrors.emptyName else "" ) %}
-                                                        <div class="form-group {{ class }}">
-                                                            <input type="text" name="fullName" value="{{ formData.fullName }}" placeholder="Name" class="form-control">
+                        {% if registrationFull %}
+                            <div id="finalWaitlistMessage">
+                                <center><h2 class="has-warning"><span class="glyphicon glyphicon-remove"></span></h2></center>
+                                <p>Dear {{ guest }},</p>
+                                <p>Unfortunately there are no more spots available at the TEDxNYUAD2016. However, we suggest that you show up for the standby queue. We will admit guests from the queue on a first come, first serve basis starting from 6:20PM to fill the remaining slots in the conference hall.</p>
+                                <p>The event will be held at the campus of New York University Abu Dhabi, 6PM-9PM, Sunday, April 10th. Follow the signs upon arrival to get to the Institute in the A6 building.</p>
+                                <p>If you have any questions, don’t hesitate to contact us.</p>
+                                <p>Best,</p>
+                                <p>TEDxNYUAD</p>
+                            </div>
+                        {% else %}
+                            <div role="tabpanel" class="attend-form">
+                                <!-- Tab panes -->
+                                <div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active" id="attend">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <form method="post">
+                                                    <input type="hidden" name="action" value="register">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            <h3 style="margin-top:0px;">Register for the Event</h3>
+                                                            <p>Register for the live event below.</p>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-12">
-                                                        {% set class = ( "has-error" if validationErrors.email else "" ) %} 
-                                                        {% set class = ( "has-error" if validationErrors.emptyEmail else "" ) %}
-                                                        <div class="form-group {{ class }}">
-                                                            <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            {% set class = ( "has-error" if validationErrors.mismatch else "" ) %}
+                                                            {% set class = ( "has-error" if validationErrors.emptyName else "" ) %}
+                                                            <div class="form-group {{ class }}">
+                                                                <input type="text" name="fullName" value="{{ formData.fullName }}" placeholder="Name" class="form-control">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                    <div class="row">
+                                                        <div class="col-sm-12">
+                                                            {% set class = ( "has-error" if validationErrors.email else "" ) %} 
+                                                            {% set class = ( "has-error" if validationErrors.emptyEmail else "" ) %}
+                                                            <div class="form-group {{ class }}">
+                                                                <input type="email" name="email" value="{{ formData.email }}" placeholder="Email" class="form-control">
+                                                            </div>
+                                                        </div>
+                                                    </div>
 
-                                                <div class="row"> 
-                                                    <div class="affiliation-specific col-sm-12">
-                                                        <div class="row">
-                                                            <div class="col-sm-12">
-                                                                <p>Please let us know if you are affiliated with New York University Abu Dhabi.</p>
+                                                    <div class="row"> 
+                                                        <div class="affiliation-specific col-sm-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <p>Please let us know if you are affiliated with New York University Abu Dhabi.</p>
+                                                                </div>
                                                             </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                            <select class="form-control" name="affiliation">
-                                                                <option value="public" {{ 'selected' if public else '' }}>I'm not affiliated</option>
-                                                                <option value="facultyStaff" {{ 'selected' if facultyStaff else '' }}>Faculty or Staff</option>
-                                                                <option value="student" {{ 'selected' if student else '' }}>Student</option>
-                                                            </select>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                <select class="form-control" name="affiliation">
+                                                                    <option value="public" {{ 'selected' if public else '' }}>I'm not affiliated</option>
+                                                                    <option value="facultyStaff" {{ 'selected' if facultyStaff else '' }}>Faculty or Staff</option>
+                                                                    <option value="student" {{ 'selected' if student else '' }}>Student</option>
+                                                                </select>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                        
+                                                    <div class="row"> 
+                                                        <div class="affiliation-specific col-sm-12">
+                                                            <div class="row">
+                                                                <div class="col-sm-12">
+                                                                    <p></br>Select your number of tickets.</p>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-sm-6">
+                                                                <select class="form-control" name="tickets">
+                                                                    <option value="1" {{ 'selected' if ticket == 1 else '' }}>1</option>
+                                                                    <option value="2" {{ 'selected' if ticket == 2 else '' }}>2</option>
+                                                                    <option value="3" {{ 'selected' if ticket == 3 else '' }}>3</option>
+                                                                    <option value="4" {{ 'selected' if ticket == 4 else '' }}>4</option>
+                                                                </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    {% set class = ( "has-error-checkbox" if validationErrors.termsRegister else "" ) %}
+                                                    <div class="checkbox {{class}}">
+                                                        <label>
+                                                            <input type="checkbox" value="true" name="termsRegister" {{ 'checked' if formData["termsRegister"] else '' }}>
+                                                            <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
+                                                        </label>
+                                                    </div>    
                                                     
-                                                <div class="row"> 
-                                                    <div class="affiliation-specific col-sm-12">
-                                                        <div class="row">
-                                                            <div class="col-sm-12">
-                                                                <p></br>Select your number of tickets.</p>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-sm-6">
-                                                            <select class="form-control" name="tickets">
-                                                                <option value="1" {{ 'selected' if ticket == 1 else '' }}>1</option>
-                                                                <option value="2" {{ 'selected' if ticket == 2 else '' }}>2</option>
-                                                                <option value="3" {{ 'selected' if ticket == 3 else '' }}>3</option>
-                                                                <option value="4" {{ 'selected' if ticket == 4 else '' }}>4</option>
-                                                            </select>
-                                                            </div>
-                                                        </div>
+                                                    <div class="form-actions">
+                                                        <button type="submit" class="btn btn-primary">Next</button>
+                                                        {% if validationErrors.empty %}
+                                                            <p class="has-error-message">Please fill in both name and email.</p>
+                                                        {% elif validationErrors.emailNYU %}
+                                                            <p class="has-error-message">Please use your NYU email.</p>
+                                                        {% elif validationErrors.termsRegister %}
+                                                            <p class="has-error-message">Please accept the terms.</p>
+                                                        {% elif validationErrors.registrationFull %}
+                                                            <p class="has-error-message">Registration is full.</p>
+                                                        {% elif validationErrors.emailExists %}
+                                                            <p class="has-error-message">This email has been registered already.</p>
+                                                        {% endif %}
                                                     </div>
-                                                </div>
-
-                                                {% set class = ( "has-error-checkbox" if validationErrors.termsRegister else "" ) %}
-                                                <div class="checkbox {{class}}">
-                                                    <label>
-                                                        <input type="checkbox" value="true" name="termsRegister" {{ 'checked' if formData["termsRegister"] else '' }}>
-                                                        <p>I agree to the TEDxNYUAD <a href="/terms">terms and conditions</a></p>
-                                                    </label>
-                                                </div>    
-                                                
-                                                <div class="form-actions">
-                                                    <button type="submit" class="btn btn-primary">Next</button>
-                                                    {% if validationErrors.empty %}
-                                                        <p class="has-error-message">Please fill in both name and email.</p>
-                                                    {% elif validationErrors.emailNYU %}
-                                                        <p class="has-error-message">Please use your NYU email.</p>
-                                                    {% elif validationErrors.termsRegister %}
-                                                        <p class="has-error-message">Please accept the terms.</p>
-                                                    {% elif validationErrors.registrationFull %}
-                                                        <p class="has-error-message">Registration is full.</p>
-                                                    {% elif validationErrors.emailExists %}
-                                                        <p class="has-error-message">This email has been registered already.</p>
-                                                    {% endif %}
-                                                </div>
-                                            </form>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        {% endif %}
                     {% endif %}
                 </div>
             </div>
