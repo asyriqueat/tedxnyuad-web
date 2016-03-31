@@ -54,7 +54,7 @@ teamArray = [{
                   "year":"",
                   "origin":"Sri Lanka/Peru",
                   "srcScreen":"/images/team/module/empty.jpg",
-                  "srcThumb":"/images/team/module/X.jpg",
+                  "srcThumb":"/images/team/module/harshini-thumb.jpg",
                   "topic":"",
                   "text":"<p>Hi there! I’m Harshini, an Asian-Latino with a passion for photography. Born and raised in Sri Lanka, but I am also half Peruvian. Last year, I helped on marketing and logistics for the inaugral TEDxNYUAD. This year I am part of the Leadership team and coordingaing with speakers in New York! I’m someone who’s nocturnal and so I go to sleep really late but at the same time there never seems to be enough hours in a day. Two things I really love is the sound of birds chirping in the morning, and being part of TEDxNYUAD!</p>"
                 },
@@ -134,7 +134,7 @@ teamArray = [{
               "year":"Sophomore",
               "origin":"The Netherlands",
               "srcScreen":"/images/team/module/empty.jpg",
-              "srcThumb":"/images/team/module/X.jpg",
+              "srcThumb":"/images/team/module/stephen-thumb.jpg",
               "topic":"",
               "text":"<p>Hi there! My name is Stephen, I was born and raised in Amsterdam, the Netherlands. Being part of TEDxNYU's Global Ops team has shown me what an impact TEDx can have on our communities (and beyond), which is why I joined the TEDxNYUAD team! I'm particularly good at putting together IKEA furniture and love the sound of a tennis ball scratching the net. </p>"
             },
@@ -144,7 +144,7 @@ teamArray = [{
               "year":"Sophomore",
               "origin":"The Netherlands",
               "srcScreen":"/images/team/module/empty.jpg",
-              "srcThumb":"/images/team/module/X.jpg",
+              "srcThumb":"/images/team/module/neel-thumb.jpg",
               "topic":"",
               "text":"<p></p>"
             }];
