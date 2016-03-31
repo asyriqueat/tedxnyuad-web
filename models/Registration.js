@@ -6,15 +6,12 @@ var Registration = new keystone.List('Registration',{
 });
 
 Registration.add({
-    name:{type:Types.Name,required:true,initial:true},
+    fullName:{type:String,required:true,initial:true},
     email:{type:Types.Email,required:true,initial:true},
-    phone:{type:String,initial:true},
-    affiliation:{type:Types.Select,options:'public,faculty,staff,student',required:true,initial:true},
-    raffle:{type:Types.Boolean,initial:true,default:false},
-    streaming:{type:Types.Boolean,initial:true,default:false},
-    waitlist:{type:Types.Boolean,initial:true,default:false}
+    affiliation:{type:Types.Select,options:'public,facultyStaff,student',required:true,initial:true},
+    tickets:{type:Types.Select,options:'1,2,3,4',required:true,initial:true}
 });
 
-Registration.defaultSort = '-name';
-Registration.defaultColumns = 'name, email, phone, affiliation, raffle, streaming, waitlist';
+Registration.defaultSort = '-fullName';
+Registration.defaultColumns = 'fullName, email, affiliation, tickets';
 Registration.register();
