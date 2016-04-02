@@ -1,6 +1,13 @@
 exports = module.exports = {content:
     {
         posts:[{
+            title:'TEDxNYUAD 2016: Welcome to the show',
+            src:'images/blog/rememberX.jpg',
+            comments:'',
+            slug:'TEDxNYUAD-2016-Welcome-to-the-show',
+            published: {day:'02',month:'Apr',year:'2016'},
+            text:'<p><center><img src="/images/blog/rememberX.jpg" width="700px"></center></p><p>Hey there! So, let me take this opportunity to tell you how I have absolutely no motivation to work on anything else until the 10th of this month. With an event as awesome as TEDx right around the corner, who has the time for readings?! (Just kidding!  Please make time for them because that stuff is kind of important.)</p><p>Man, it’s been quite the ride! I can’t believe that it all started almost 6 months ago! I received an email saying that a group of us had been given the exciting opportunity of being part of the TEDx organizing team. And I being the extremely dedicated person that I am, missed the very first meeting, because I am so dedicated. Did I mention I am dedicated? Sorry, that was just to make up for how guilty I still feel about it. Moving on. TEDx has taught me a lot of things with regard to team work and team building and more than anything, the value of constantly working through a marketing slogan, no matter how long it takes. Trust me, experiences like that make you a better person (at least, that’s what I told myself after spending three hours on doing that instead of doing my response paper).</p><p>But all lame jokes aside, the reason why none of us cared about how much time we spent on it, was because there was always a bigger reason why we would do it anyway. TEDx is a real event. An event that brings out real life stories of people who make themselves so completely vulnerable in front of an audience, more than half whom they may not even know. And be it the organizing members or an audience, it gives us all a chance to witness the speakers take their own idiosyncratic experiences and turn them into these incredible narratives that soon become part of our own story that we will write someday.</p><p>So when you plan on attending the event this year, be sure to remember that you will come out feeling refreshed to tackle a new day and feeling grateful for everything you have. And if you plan on joining the team next year, I can assure you that you that you will have another new adventure up your sleeve and a response paper that you never got to complete. I’m kidding! I got an extension.</p>'
+    },{
             title:'Behind the Scenes: TEDxNYUAD\'s Green Room',
             src:'images/blog/greenroom-thumb.png',
             comments:'',
