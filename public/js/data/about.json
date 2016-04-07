@@ -152,7 +152,16 @@
               "srcThumb":"/images/team/module/X.jpg",
               "topic":"",
               "text":"<p></p>"
-            }]
+            },{
+                "name":"Amber Nomani",
+                "id":16,
+                "year":"Sophomore",
+                "origin":"?",
+                "srcScreen":"/images/team/module/amber.jpg",
+                "srcThumb":"/images/team/module/amber-thumb.jpg",
+                "topic":"",
+                "text":"<p>Hey there! I’m Yousra El Hassan and I’m from (now North) Sudan but was raised right here in Abu Dhabi. I’m part of the TEDxNYUAD team because I love seeing things come together and writing up emails, both of which I’m currently enjoying plenty of. I drink a whole lot of 7-UP even though it murdered my laptop, I eat my pizza with broccoli on the side, I have the spelling level of a 5th grader and I love the sound of scissors cutting through paper.</p>"
+              }]
         }
     },
     { "template":"panorama",

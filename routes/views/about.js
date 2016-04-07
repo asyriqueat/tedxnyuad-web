@@ -24,7 +24,7 @@ teamArray = [{
                   "year":"Senior",
                   "origin":"UK",
                   "srcScreen":"/images/team/module/empty.jpg",
-                  "srcThumb":"/images/team/module/X.jpg",
+                  "srcThumb":"/images/team/module/sam-thumb.jpg",
                   "topic":"",
                   "text":"<p>After the privilege of speaking at the inaugural TEDxNYUAD conference, Sam now has the pleasure of organising the 2016 conference. Sam loves that he gets to provide a platform for the NYUAD community to share their stories.For his biology research project, Sam works with falcons… and collects their poo! He also has a passion filmmaking and aspires to have a career in science communication. Sam hopes you enjoy the talks!</p>"
                 },
@@ -147,6 +147,25 @@ teamArray = [{
               "srcThumb":"/images/team/module/neel-thumb.jpg",
               "topic":"",
               "text":"<p></p>"
+            },{
+                "name":"Amber Nomani",
+                "id":16,
+                "year":"Sophomore",
+                "origin":"?",
+                "srcScreen":"/images/team/module/amber.jpg",
+                "srcThumb":"/images/team/module/amber-thumb.jpg",
+                "topic":"",
+                "text":"<p>Hey there! I’m Yousra El Hassan and I’m from (now North) Sudan but was raised right here in Abu Dhabi. I’m part of the TEDxNYUAD team because I love seeing things come together and writing up emails, both of which I’m currently enjoying plenty of. I drink a whole lot of 7-UP even though it murdered my laptop, I eat my pizza with broccoli on the side, I have the spelling level of a 5th grader and I love the sound of scissors cutting through paper.</p>"
+              },
+            {
+              "name":"Rabiya Imran",
+              "id":17,
+              "year":"Freshmen",
+              "origin":"Pakistan",
+              "srcScreen":"/images/team/module/rabiya.jpg",
+              "srcThumb":"/images/team/module/rabiya-thumb.jpg",
+              "topic":"",
+              "text":"<p>Hey there! I’m Yousra El Hassan and I’m from (now North) Sudan but was raised right here in Abu Dhabi. I’m part of the TEDxNYUAD team because I love seeing things come together and writing up emails, both of which I’m currently enjoying plenty of. I drink a whole lot of 7-UP even though it murdered my laptop, I eat my pizza with broccoli on the side, I have the spelling level of a 5th grader and I love the sound of scissors cutting through paper.</p>"
             }];
 
 /*
