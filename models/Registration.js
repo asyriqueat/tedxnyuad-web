@@ -14,4 +14,4 @@ Registration.add({
 
 Registration.defaultSort = '-fullName';
 Registration.defaultColumns = 'fullName, email, affiliation, tickets';
-Registration.register();
+Registration.register(); 

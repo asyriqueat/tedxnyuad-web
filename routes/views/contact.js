@@ -24,7 +24,7 @@ exports = module.exports = function(req, res) {
             service: 'Gmail',
             auth: {
                 user: 'admin@tedxnyuad.org',
-                pass: 'tedxnyuadrocks'
+                pass: process.env.EMAIL_PASS
             }
         });
 
@@ -53,22 +53,31 @@ exports = module.exports = function(req, res) {
 	// On POST requests, add the Enquiry item to the database
 	locals.formData = req.body || {};
 	view.on('post', { action: 'contact' }, function(next) {
-	
+        console.log("Sending email");
+	    locals.validationErrors.empty = false;
 		if(locals.formData.fullName == '' || locals.formData.fullName == undefined) {
-
-		} else if (locals.formData.email == '' || locals.formData.email == undefined) {
-
-		} else if (locals.formData.message == '' || locals.formData.message == undefined){
-
-		} else {
+            locals.validationErrors.empty = true;
+            locals.validationErrors.name = true;
+		}
+        if (locals.formData.email == '' || locals.formData.email == undefined) {
+            locals.validationErrors.empty = true;
+            locals.validationErrors.email = true;
+        }
+		if (locals.formData.message == '' || locals.formData.message == undefined){
+            locals.validationErrors.empty = true;
+            locals.validationErrors.message = true;
+        }
+		if (locals.validationErrors.empty == false) {
 			locals.enquirySubmitted = true;
 			sendMail({subject:"Inquery from "+locals.formData.fullName,
 	                  plain:"Message from "+locals.formData.fullName+", "+locals.formData.email+": "+ locals.formData.message,
 	                  html:"Message from "+locals.formData.fullName+", "+locals.formData.email+": "+ locals.formData.message
 	           }, 'admin@tedxnyuad.org');
-		}
-		
-		next();
+            next();
+		} else {
+            console.log('Erros?' + locals.validationErrors.empty);
+            next();
+        }
 	});
  
 	view.render('contact');

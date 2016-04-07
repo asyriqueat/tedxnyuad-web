@@ -36,7 +36,14 @@
                                 <textarea name="message" placeholder="Leave us a message..." rows="6" class="form-control">{{ formData.message }}</textarea>
                             </div>
                             <div class="form-actions">
+                                {% if not enquirySubmitted %}
                                 <button type="submit" class="btn btn-primary">Send</button>
+                                {% else %}
+                                    <p class="bg-success" style="display: inline; padding: 6px 12px 10px; border-radius: 4px;">Message sent!</p>
+                                {% endif%}
+                                {% if validationErrors.empty %}
+                                    <p class="has-error-message">Please fill in all fields.</p>
+                                {% endif %}
                             </div>
                         </form>
                     </div>

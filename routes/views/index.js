@@ -16,7 +16,6 @@ exports = module.exports = function(req, res) {
     locals.content = data.content;
     
     
-    
     //Required for newsletter signup
     locals.formData = req.body || {};
     view.on('post', { action: 'newsletter' }, function(next) {

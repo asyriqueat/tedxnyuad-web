@@ -41,7 +41,7 @@ var speakersArray =  [{
                   origin:'USA',
                   srcScreen:'/images/speakers/module/DOugnCoudchens.jpg',
                   srcThumb:'/images/speakers/module/doug-thumb.jpg',
-                  topic:'How to win a Rhode’s Scholarship',
+                  topic:'How to win a Rhodes Scholarship',
                   text:'<p>Doug is a beloved and successful careers advisor at NYUAD. He has an impressive track record of advising two dozen Rhodes national finalists, and four Rhodes scholarship recipients. In his talk, Doug will unveil his key to success and question what success really is!</p>'
                   },
                   {name:'Jessica Mow',
@@ -58,7 +58,7 @@ var speakersArray =  [{
                   year:'Sophomore',                               
                   origin:'USA',                    
                   srcScreen:'/images/speakers/module/John.jpg',      
-                  srcThumb:'/images/speakers/module/John-thumb.jpg',
+                  srcThumb:'/images/speakers/module/john-thumb.jpg',
                   topic:'My Jihad',
                   text:'<p>Jihad in Arabic means an act of struggle. On receiving his offer to attend New York University Abu Dhabi, Yahya received a less-than-supportive letter from his grandmother. She said ”Your decision that you make now will affect you for the rest of your life” and she was right. In his talk, Yahya addresses the letter and discusses that his jihad is to raise awareness of the true values and beauty of Islam.</p>'
                   },
