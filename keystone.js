@@ -15,7 +15,7 @@ keystone.init({
 
 	'name': 'TEDxNYUAD',
 	'brand': 'TEDxNYUAD',
-	
+
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
@@ -23,9 +23,9 @@ keystone.init({
 	'view engine': 'html',
 	'custom engine': cons.nunjucks,
 	'mongo': process.env.MONGO_URI,
-	
+
 	'emails': 'templates/emails',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -91,12 +91,12 @@ keystone.set('email locals', {
 
 // Configure the navigation bar in Keystone's Admin UI
 
-keystone.set('nav', {
-	'posts': ['posts', 'post-categories'],
-	'galleries': 'galleries',
-	'enquiries': 'enquiries',
-	'users': 'users'
-});
+// keystone.set('nav', {
+// 	'posts': ['posts', 'post-categories'],
+// 	'galleries': 'galleries',
+// 	'enquiries': 'enquiries',
+// 	'users': 'users'
+// });
 
 // Start Keystone to connect to your database and initialise the web server
 
