@@ -11,11 +11,12 @@ var keystone = require('keystone'),
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
 
+console.log(process.env.MONGO_URI)
 keystone.init({
 
 	'name': 'TEDxNYUAD',
 	'brand': 'TEDxNYUAD',
-	
+
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
@@ -23,9 +24,9 @@ keystone.init({
 	'view engine': 'html',
 	'custom engine': cons.nunjucks,
 	'mongo': process.env.MONGO_URI,
-	
+
 	'emails': 'templates/emails',
-	
+
 	'auto update': true,
 	'session': true,
 	'auth': true,

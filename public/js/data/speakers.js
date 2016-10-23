@@ -1,16 +1,16 @@
 var speakersArray =  [{
                   name:'Krishna Gaire',
-                  id:1,                  
+                  id:1,
                   year:'Sophomore',
                   origin:'Nepal',
                   srcScreen:'/images/speakers/module/Krishnu.jpg',
-                  srcThumb:'/images/speakers/module/Krishnu-thumb.jpg', 
+                  srcThumb:'/images/speakers/module/Krishnu-thumb.jpg',
                   topic:'Making Students Lucky',
                   text:'<p>Krishna made it to an U.S. American university from Nepal. He was lucky, meaning not in a four-leaf clover way, but through various opportunities. In his talk, Krishna describes his new initiative that makes other students lucky.</p>'
                   },
                   {name:'Chaeri Lee',
-                  id:2,            
-                  year:'Alumni',
+                  id:2,
+                  year:'Alumni',§
                   origin:'South Korea',
                   srcScreen:'/images/speakers/module/empty.jpg',
                   srcThumb:'/images/speakers/module/X.jpg',
@@ -18,7 +18,7 @@ var speakersArray =  [{
                   text:'<p>Where is Waldo really? A seemingly simple question on a university application form got Chaeri thinking. What would happen if we described ourselves not by what or who we are, but by where we are? In her talk, Chaeri will reflect on self-identity and how we define ourselves.</p>'
                   },
                   {name:'Mariam ElZoghbi',
-                  id:3,        
+                  id:3,
                   year:'Sophomore',
                   origin:'Egypt',
                   srcScreen:'/images/speakers/module/empty.jpg',
@@ -26,8 +26,8 @@ var speakersArray =  [{
                   topic:'Revolution of Home',
                   text:'<p>In January 2011, there were violent revolutions in Egypt. Mariam was trapped in her home, one day making molotov cocktails and the next baking a cake! In her talk, Mariam tells us her story of those revolutions and how Cairo remains her home. </p>'
                   },
-                  {name:'Amal Al Gergawi',               
-                  id:4,        
+                  {name:'Amal Al Gergawi',
+                  id:4,
                   year:'Sophomore',
                   origin:'United Arab Emirates',
                   srcScreen:'/images/speakers/module/Amal.jpg',
@@ -36,7 +36,7 @@ var speakersArray =  [{
                   text:'<p>As an Emirati, Amal is proud of the traditions and culture in which she lives. Yet, sometimes she cannot help feeling a little distant as she thinks about her Egyptian roots through her mother. In her talk, Amal shares her thoughts on her transnationalism and encourages us to embrace the diversity of our heritage.</p>'
                   },
                   {name:'Doug Cutchins',
-                  id:5,           
+                  id:5,
                   year:'Staff',
                   origin:'USA',
                   srcScreen:'/images/speakers/module/DOugnCoudchens.jpg',
@@ -45,7 +45,7 @@ var speakersArray =  [{
                   text:'<p>Doug is a beloved and successful careers advisor at NYUAD. He has an impressive track record of advising two dozen Rhodes national finalists, and four Rhodes scholarship recipients. In his talk, Doug will unveil his key to success and question what success really is!</p>'
                   },
                   {name:'Jessica Mow',
-                  id:6,           
+                  id:6,
                   year:'Freshman',
                   origin:'USA',
                   srcScreen:'/images/speakers/module/jessica.jpg',
@@ -54,10 +54,10 @@ var speakersArray =  [{
                   text:'<p>After graduating from Tufts University, Jessica came to NYUAD to be a Research Assistant in the Neuroscience of Language Lab. As well as her interest in science, Jessica has a passion for media and has been involved in print and radio media. Science and media have a complicated relationship with the ability to educate or misinform. In her talk, Jessica explores this relationship and suggests ways we could be more effective in our efforts.</p>'
                   },
                   {name:'Yahya John Scaccia',
-                  id:7,           
-                  year:'Sophomore',                               
-                  origin:'USA',                    
-                  srcScreen:'/images/speakers/module/John.jpg',      
+                  id:7,
+                  year:'Sophomore',
+                  origin:'USA',
+                  srcScreen:'/images/speakers/module/John.jpg',
                   srcThumb:'/images/speakers/module/john-thumb.jpg',
                   topic:'My Jihad',
                   text:'<p>Jihad in Arabic means an act of struggle. On receiving his offer to attend New York University Abu Dhabi, Yahya received a less-than-supportive letter from his grandmother. She said ”The decision that you make now will affect you for the rest of your life” and she was right. In his talk, Yahya addresses the letter and discusses his <i>jihad</i>, which is to raise awareness of the true values and beauty of Islam.</p>'
@@ -69,15 +69,15 @@ var speakersArray =  [{
                   srcScreen:'/images/speakers/module/Joey.jpg',
                   srcThumb:'/images/speakers/module/joey-thumb.jpg',
                   topic:'Linear Kharma',
-                  text:'<p>What goes around comes around. That’s what they say, but what if your decisions today include thoughts of the past and future? What if what you do today goes on to affect someone else? Joey’s parents fled the Vietnam War and arrived in Australia as refugees. Today she has the immigrant drive to do well not only for herself, but also for her parents and her grandparents. In her talk, Joey will present the idea of linear kharma, in which what you do today can inspire and impact others for the greater good.</p>'    
-                  }                
+                  text:'<p>What goes around comes around. That’s what they say, but what if your decisions today include thoughts of the past and future? What if what you do today goes on to affect someone else? Joey’s parents fled the Vietnam War and arrived in Australia as refugees. Today she has the immigrant drive to do well not only for herself, but also for her parents and her grandparents. In her talk, Joey will present the idea of linear kharma, in which what you do today can inspire and impact others for the greater good.</p>'
+                  }
                 ];
 
 
 exports = module.exports = {
                         content: [{ template:'speakers',
                                     macro:'standard',
-                                    arguments:{ 
+                                    arguments:{
                                         speakers: speakersArray,
                                         speakersMenu: speakerMenuArrangement(2,speakersArray),
                                         arrangement: rowSetup(speakersArray.length),
@@ -168,10 +168,10 @@ function speakerMenuArrangement(n,speakersArray){
     for(var i=1;i<=speakersArray.length;i++){
         //Get the start position in the array for the given column
         var start=(i-1)*numberOfCols;
-        
+
         //Find the end position in the array for the given column
         var end=(i*numberOfCols>=speakersArray.length) ? speakersArray.length : i*numberOfCols;
-        
+
         speakersMenu[i-1]=[];
         speakersArray.slice(start,end).forEach(function(element){
             speakersMenu[i-1].push(element);
